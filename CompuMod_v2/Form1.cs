@@ -24,24 +24,12 @@ namespace CompuMod_v2
 
         }
 
-        private void btnDegradado_Click(object sender, EventArgs e)
-        {
-            for(int i = 0; i < 600; i++)
-            {
-                for(int j = 0; j < 500; j++)
-                {
-                    pixelVec.SetPixel(i, j, Color.FromArgb((int)(-0.118 * i + 178), (int)(-0.071 * i + 170), (int)(0.32 * i + 49)));
-                }
-            }
-            ptbPixel.Image = pixelVec;
-        }
-
         private void btnLetra_Click(object sender, EventArgs e)
         {
             // Coordenadas del dibujo
             int x = 270, y = 250;
-            
-            for(int i = 270; i <= 320; i++)
+
+            for (int i = 270; i <= 320; i++)
             {
                 pixelVec.SetPixel(i, y, Color.Blue);
             }
@@ -52,5 +40,21 @@ namespace CompuMod_v2
             }
             ptbPixel.Image = pixelVec;
         }
+
+        private void btnDegradado_Click(object sender, EventArgs e)
+        {
+            for(int i = 0; i < 600; i++)
+            {
+                for(int j = 0; j < 500; j++)
+                {
+                    //pixelVec.SetPixel(i, j, Color.FromArgb((int)(0), (int)(0.42 * i), (int)(-0.42 * i + 255)));
+
+                    pixelVec.SetPixel(i, j, Color.FromArgb((int)(-0.118 * i + 178), (int)(-0.071 * i + 170), (int)(0.32 * i + 49)));
+                }
+            }
+            ptbPixel.Image = pixelVec;
+        }
+
+        
     }
 }
