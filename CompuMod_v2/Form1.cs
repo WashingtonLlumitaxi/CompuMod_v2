@@ -55,6 +55,45 @@ namespace CompuMod_v2
             ptbPixel.Image = pixelVec;
         }
 
-        
+       
+
+        private void btnTrazo_Click_1(object sender, EventArgs e)
+        {
+
+            ClaseVector cv = new ClaseVector();
+            double x = -9;
+            do
+            {
+
+                cv.Xo = x;
+                cv.Yo = 2 * x - 5;
+                cv.color0 = Color.Blue;
+
+                cv.Encender(pixelVec);
+
+
+
+                x += 0.02;
+
+            } while (x < 2.5);
+
+            double x2 = 2.5;
+            do
+            {
+
+                cv.Xo = x2;
+                cv.Yo = -2 * x2 + 5;
+                cv.color0 = Color.Blue;
+
+                cv.Encender(pixelVec);
+
+
+
+                x2 += 0.02;
+
+            } while (x2 < 9);
+
+            ptbPixel.Image = pixelVec;
+        }
     }
 }

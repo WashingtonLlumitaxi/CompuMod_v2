@@ -34,6 +34,7 @@ namespace CompuMod_v2
             this.btnEncender = new System.Windows.Forms.Button();
             this.btnDegradado = new System.Windows.Forms.Button();
             this.btnLetra = new System.Windows.Forms.Button();
+            this.btnTrazo = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.ptbPixel)).BeginInit();
             this.SuspendLayout();
             // 
@@ -86,12 +87,23 @@ namespace CompuMod_v2
             this.btnLetra.UseVisualStyleBackColor = true;
             this.btnLetra.Click += new System.EventHandler(this.btnLetra_Click);
             // 
+            // btnTrazo
+            // 
+            this.btnTrazo.Location = new System.Drawing.Point(244, 561);
+            this.btnTrazo.Name = "btnTrazo";
+            this.btnTrazo.Size = new System.Drawing.Size(75, 23);
+            this.btnTrazo.TabIndex = 5;
+            this.btnTrazo.Text = "Trazo";
+            this.btnTrazo.UseVisualStyleBackColor = true;
+            this.btnTrazo.Click += new System.EventHandler(this.btnTrazo_Click_1);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.InactiveCaption;
             this.ClientSize = new System.Drawing.Size(718, 655);
+            this.Controls.Add(this.btnTrazo);
             this.Controls.Add(this.btnLetra);
             this.Controls.Add(this.btnDegradado);
             this.Controls.Add(this.btnEncender);
@@ -113,6 +125,7 @@ namespace CompuMod_v2
         private System.Windows.Forms.Button btnEncender;
         private System.Windows.Forms.Button btnDegradado;
         private System.Windows.Forms.Button btnLetra;
+        private System.Windows.Forms.Button btnTrazo;
     }
 }
 
