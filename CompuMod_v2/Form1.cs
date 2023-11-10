@@ -95,5 +95,36 @@ namespace CompuMod_v2
 
             ptbPixel.Image = pixelVec;
         }
+
+        private void btnSegmento_Click(object sender, EventArgs e)
+        {
+            ClaseSegmento cs = new ClaseSegmento();
+            cs.color0 = Color.Red;
+            cs.Xo = -10;
+            cs.Yo = -2;
+            cs.Xf = 6;
+            cs.Yf = 4;
+            cs.EncenderSeg(pixelVec);
+
+            ClaseSegmento cs1 = new ClaseSegmento();
+            cs1.color0 = Color.Red;
+            cs1.Xo = 6;
+            cs1.Yo = 4;
+            cs1.Xf = 6;
+            cs1.Yf = -2;
+            cs1.EncenderSeg(pixelVec);
+
+            ClaseSegmento cs2 = new ClaseSegmento();
+            cs2.color0 = Color.Red;
+            cs2.Xo = 6;
+            cs2.Yo = -2;
+            cs2.Xf = 10;
+            cs2.Yf = 5;
+            cs2.EncenderSeg(pixelVec);
+
+
+            ptbPixel.Image = pixelVec;
+
+        }
     }
 }
