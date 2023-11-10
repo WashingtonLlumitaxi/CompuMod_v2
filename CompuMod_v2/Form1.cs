@@ -122,6 +122,57 @@ namespace CompuMod_v2
             cs2.Yf = 5;
             cs2.EncenderSeg(pixelVec);
 
+            ClaseCircunferencia cc = new();
+
+            cc.Xo = -2;
+            cc.Yo = -1;
+            cc.Rd = 3;
+            cc.color0 = Color.Blue;
+            cc.EncenderCirc(pixelVec);
+            
+
+            ////Tarea en clase
+
+            //ClaseCircunferencia cc1 = new();
+
+            //cc1.Xo = -2;
+            //cc1.Yo = -1;
+            //cc1.Rd = 1;
+            //cc1.color0 = Color.Black;
+            //cc1.EncenderCirc(pixelVec);
+
+            //ClaseCircunferencia cc2 = new();
+
+            //cc2.Xo = 6;
+            //cc2.Yo = 4;
+            //cc2.Rd = 1;
+            //cc2.color0 = Color.Green;
+            //cc2.EncenderCirc(pixelVec);
+
+            ptbPixel.Image = pixelVec;
+
+        }
+
+        private void btnCircunferencia_Click(object sender, EventArgs e)
+        {
+
+            //Tarea en clase
+
+            ClaseCircunferencia cc1 = new();
+
+            cc1.Xo = -2;
+            cc1.Yo = -1;
+            cc1.Rd = 1;
+            cc1.color0 = Color.Black;
+            cc1.EncenderCirc(pixelVec);
+
+            ClaseCircunferencia cc2 = new();
+
+            cc2.Xo = 6;
+            cc2.Yo = 4;
+            cc2.Rd = 1;
+            cc2.color0 = Color.Green;
+            cc2.EncenderCirc(pixelVec);
 
             ptbPixel.Image = pixelVec;
 

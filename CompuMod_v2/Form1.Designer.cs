@@ -36,6 +36,7 @@ namespace CompuMod_v2
             this.btnLetra = new System.Windows.Forms.Button();
             this.btnTrazo = new System.Windows.Forms.Button();
             this.btnSegmento = new System.Windows.Forms.Button();
+            this.btnCircunferencia = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.ptbPixel)).BeginInit();
             this.SuspendLayout();
             // 
@@ -104,9 +105,19 @@ namespace CompuMod_v2
             this.btnSegmento.Name = "btnSegmento";
             this.btnSegmento.Size = new System.Drawing.Size(75, 23);
             this.btnSegmento.TabIndex = 6;
-            this.btnSegmento.Text = "button1";
+            this.btnSegmento.Text = "Segmentos";
             this.btnSegmento.UseVisualStyleBackColor = true;
             this.btnSegmento.Click += new System.EventHandler(this.btnSegmento_Click);
+            // 
+            // btnCircunferencia
+            // 
+            this.btnCircunferencia.Location = new System.Drawing.Point(408, 560);
+            this.btnCircunferencia.Name = "btnCircunferencia";
+            this.btnCircunferencia.Size = new System.Drawing.Size(75, 23);
+            this.btnCircunferencia.TabIndex = 7;
+            this.btnCircunferencia.Text = "Circunferencia";
+            this.btnCircunferencia.UseVisualStyleBackColor = true;
+            this.btnCircunferencia.Click += new System.EventHandler(this.btnCircunferencia_Click);
             // 
             // Form1
             // 
@@ -114,6 +125,7 @@ namespace CompuMod_v2
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.InactiveCaption;
             this.ClientSize = new System.Drawing.Size(718, 655);
+            this.Controls.Add(this.btnCircunferencia);
             this.Controls.Add(this.btnSegmento);
             this.Controls.Add(this.btnTrazo);
             this.Controls.Add(this.btnLetra);
@@ -139,6 +151,7 @@ namespace CompuMod_v2
         private System.Windows.Forms.Button btnLetra;
         private System.Windows.Forms.Button btnTrazo;
         private System.Windows.Forms.Button btnSegmento;
+        private System.Windows.Forms.Button btnCircunferencia;
     }
 }
 

@@ -15,8 +15,8 @@ namespace CompuMod_v2
         public int sy2 = 500;
         public double x1 = -10;
         public double x2 = 10;
-        public double y1 = -5;
-        public double y2 = 5;
+        public double y1 = -8.33;//-5;
+        public double y2 = 8.33;//5;
         public double Xo;
         public double Yo;
         public Color color0;
