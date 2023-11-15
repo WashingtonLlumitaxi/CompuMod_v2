@@ -48,8 +48,29 @@ namespace CompuMod_v2
                 for(int j = 0; j < 500; j++)
                 {
                     //pixelVec.SetPixel(i, j, Color.FromArgb((int)(0), (int)(0.42 * i), (int)(-0.42 * i + 255)));
+                    
+                    if (j <= 250)
+                    {
+                        pixelVec.SetPixel(i, j, Color.FromArgb((int)(0), (int)(0.51 * j), (int)(-0.51 * j + 255)));
 
-                    pixelVec.SetPixel(i, j, Color.FromArgb((int)(-0.118 * i + 178), (int)(-0.071 * i + 170), (int)(0.32 * i + 49)));
+                    }
+                    else
+                    {
+                        pixelVec.SetPixel(i, j, Color.FromArgb((int)(0), (int)(-0.51 * j + 255), (int)(0.51 * j)));
+
+                    }
+
+                   
+
+                    //pixelVec.SetPixel(i, j, Color.FromArgb((int)(-0.118 * i + 178), (int)(-0.071 * i + 170), (int)(0.32 * i + 49)));
+                    //if(j <= 300)
+                    //{
+                    //    pixelVec.SetPixel(i, j, Color.FromArgb((int)(-0.118 * i + 178), (int)(-0.071 * i + 170), (int)(0.32 * i + 49)));
+
+                    //} else
+                    //{
+                    //    pixelVec.SetPixel(i, j, Color.FromArgb((int)(-0.118 * i + 178), (int)(-0.071 * i + 170), (int)(0.32 * i + 49)));
+                    //}
                 }
             }
             ptbPixel.Image = pixelVec;
