@@ -198,5 +198,17 @@ namespace CompuMod_v2
             ptbPixel.Image = pixelVec;
 
         }
+
+        private void btnCurvaV_Click(object sender, EventArgs e)
+        {
+            ClaseCurvaV cv = new();
+            cv.Xo = 3;
+            cv.Yo = -1;
+            cv.Rd = 2;
+            cv.color0 = Color.Blue;
+            cv.EncenderCurvaV(pixelVec);
+
+            ptbPixel.Image = pixelVec;
+        }
     }
 }

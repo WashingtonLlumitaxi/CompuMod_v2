@@ -37,6 +37,7 @@ namespace CompuMod_v2
             this.btnTrazo = new System.Windows.Forms.Button();
             this.btnSegmento = new System.Windows.Forms.Button();
             this.btnCircunferencia = new System.Windows.Forms.Button();
+            this.btnCurvaV = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.ptbPixel)).BeginInit();
             this.SuspendLayout();
             // 
@@ -119,12 +120,23 @@ namespace CompuMod_v2
             this.btnCircunferencia.UseVisualStyleBackColor = true;
             this.btnCircunferencia.Click += new System.EventHandler(this.btnCircunferencia_Click);
             // 
+            // btnCurvaV
+            // 
+            this.btnCurvaV.Location = new System.Drawing.Point(489, 560);
+            this.btnCurvaV.Name = "btnCurvaV";
+            this.btnCurvaV.Size = new System.Drawing.Size(75, 23);
+            this.btnCurvaV.TabIndex = 8;
+            this.btnCurvaV.Text = "button1";
+            this.btnCurvaV.UseVisualStyleBackColor = true;
+            this.btnCurvaV.Click += new System.EventHandler(this.btnCurvaV_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.InactiveCaption;
             this.ClientSize = new System.Drawing.Size(718, 655);
+            this.Controls.Add(this.btnCurvaV);
             this.Controls.Add(this.btnCircunferencia);
             this.Controls.Add(this.btnSegmento);
             this.Controls.Add(this.btnTrazo);
@@ -152,6 +164,7 @@ namespace CompuMod_v2
         private System.Windows.Forms.Button btnTrazo;
         private System.Windows.Forms.Button btnSegmento;
         private System.Windows.Forms.Button btnCircunferencia;
+        private System.Windows.Forms.Button btnCurvaV;
     }
 }
 
