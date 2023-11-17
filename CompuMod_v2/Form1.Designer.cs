@@ -38,6 +38,8 @@ namespace CompuMod_v2
             this.btnSegmento = new System.Windows.Forms.Button();
             this.btnCircunferencia = new System.Windows.Forms.Button();
             this.btnCurvaV = new System.Windows.Forms.Button();
+            this.btnCurvaV2 = new System.Windows.Forms.Button();
+            this.btnRectas = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.ptbPixel)).BeginInit();
             this.SuspendLayout();
             // 
@@ -126,9 +128,29 @@ namespace CompuMod_v2
             this.btnCurvaV.Name = "btnCurvaV";
             this.btnCurvaV.Size = new System.Drawing.Size(75, 23);
             this.btnCurvaV.TabIndex = 8;
-            this.btnCurvaV.Text = "button1";
+            this.btnCurvaV.Text = "CurvaV1";
             this.btnCurvaV.UseVisualStyleBackColor = true;
             this.btnCurvaV.Click += new System.EventHandler(this.btnCurvaV_Click);
+            // 
+            // btnCurvaV2
+            // 
+            this.btnCurvaV2.Location = new System.Drawing.Point(570, 560);
+            this.btnCurvaV2.Name = "btnCurvaV2";
+            this.btnCurvaV2.Size = new System.Drawing.Size(75, 23);
+            this.btnCurvaV2.TabIndex = 9;
+            this.btnCurvaV2.Text = "CurvaV2";
+            this.btnCurvaV2.UseVisualStyleBackColor = true;
+            this.btnCurvaV2.Click += new System.EventHandler(this.btnCurvaV2_Click);
+            // 
+            // btnRectas
+            // 
+            this.btnRectas.Location = new System.Drawing.Point(1, 590);
+            this.btnRectas.Name = "btnRectas";
+            this.btnRectas.Size = new System.Drawing.Size(75, 23);
+            this.btnRectas.TabIndex = 10;
+            this.btnRectas.Text = "Rectas";
+            this.btnRectas.UseVisualStyleBackColor = true;
+            this.btnRectas.Click += new System.EventHandler(this.btnRectas_Click);
             // 
             // Form1
             // 
@@ -136,6 +158,8 @@ namespace CompuMod_v2
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.InactiveCaption;
             this.ClientSize = new System.Drawing.Size(718, 655);
+            this.Controls.Add(this.btnRectas);
+            this.Controls.Add(this.btnCurvaV2);
             this.Controls.Add(this.btnCurvaV);
             this.Controls.Add(this.btnCircunferencia);
             this.Controls.Add(this.btnSegmento);
@@ -165,6 +189,8 @@ namespace CompuMod_v2
         private System.Windows.Forms.Button btnSegmento;
         private System.Windows.Forms.Button btnCircunferencia;
         private System.Windows.Forms.Button btnCurvaV;
+        private System.Windows.Forms.Button btnCurvaV2;
+        private System.Windows.Forms.Button btnRectas;
     }
 }
 

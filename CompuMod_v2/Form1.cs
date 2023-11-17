@@ -210,5 +210,54 @@ namespace CompuMod_v2
 
             ptbPixel.Image = pixelVec;
         }
+
+        private void btnCurvaV2_Click(object sender, EventArgs e)
+        {
+
+            ClaseCurvaV cv = new();
+            cv.Xo = 5;
+            cv.Yo = -1;
+            cv.Rd = 3;
+            cv.color0 = Color.Red;
+            cv.EncenderCurvaV2(pixelVec);
+
+            ClaseCurvaV cv1 = new();
+            cv1.Xo = -4;
+            cv1.Yo = 5;
+            cv1.Rd = 2;
+            cv1.color0 = Color.Blue;
+            cv1.EncenderCurvaV2(pixelVec);
+
+            ClaseCurvaV cv2 = new();
+            cv2.Xo = -6;
+            cv2.Yo = -6;
+            cv2.Rd = 1;
+            cv2.color0 = Color.Green;
+            cv2.EncenderCurvaV2(pixelVec);
+
+            ptbPixel.Image = pixelVec;
+
+        }
+
+        private void btnRectas_Click(object sender, EventArgs e)
+        {
+            ClaseSegmento cs = new ClaseSegmento();
+            cs.color0 = Color.Black;
+            cs.Xo = -10;
+            cs.Yo = 0;
+            cs.Xf = 10;
+            cs.Yf = 0;
+            cs.EncenderSeg(pixelVec);
+
+            ClaseSegmento cs1 = new ClaseSegmento();
+            cs1.color0 = Color.Black;
+            cs1.Xo = 0;
+            cs1.Yo = -8.33;
+            cs1.Xf = 0;
+            cs1.Yf = 8.33;
+            cs1.EncenderSeg(pixelVec);
+
+            ptbPixel.Image = pixelVec;
+        }
     }
 }

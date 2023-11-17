@@ -93,11 +93,36 @@ namespace CompuMod_v2
 
                 } while (t2 <= 2 * Math.PI);
 
+                
 
             }
         }
 
+        public void EncenderCurvaV2(Bitmap pixelVec)
+        {
+
+
+            double t = 0;
+            double dt = 0.001;
+            int tipo = 2;
+
+            ClaseVector cv = new();
+
+            ///Tercera ecuacion 
+            double t2 = 0;
+            do
+            {
+                cv.Xo = Xo + Rd * (Math.Sin((8 * t2)/5) * Math.Cos(t2));
+                cv.Yo = Yo + Rd * (Math.Sin((8 * t2) / 5) * Math.Sin(t2));
+                cv.color0 = color0;
+                cv.Encender(pixelVec);
+                t2 = t2 + dt;
+
+            } while (t2 <= 10 * Math.PI);
+
+
+        }
 
 
     }
-}
+    }
