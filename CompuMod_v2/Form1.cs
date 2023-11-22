@@ -10,11 +10,11 @@ using System.Windows.Forms;
 
 namespace CompuMod_v2
 {
-    public partial class Form1 : Form
+    public partial class btnTaylor1 : Form
     {
         Bitmap pixelVec = new Bitmap(600, 500); //Demencion de la ventana
 
-        public Form1()
+        public btnTaylor1()
         {
             InitializeComponent();
         }
@@ -258,6 +258,47 @@ namespace CompuMod_v2
             cs1.EncenderSeg(pixelVec);
 
             ptbPixel.Image = pixelVec;
+        }
+
+        private void btnCurvas3_Click(object sender, EventArgs e)
+        {
+            ClaseCurvaV cv2 = new();
+            //cv2.Xo = -6;
+            //cv2.Yo = -6;
+            //cv2.Rd = 1;
+            cv2.color0 = Color.Green;
+            cv2.EncenderCurvaV3(pixelVec);
+
+            ptbPixel.Image = pixelVec;
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            double t = -8;
+            double dt = 0.001;
+
+            ClaseVector cv = new();
+
+
+            do
+            {
+                cv.Xo = (t);
+                cv.Yo = Math.Pow(3, t);
+                cv.color0 = Color.Red;
+                cv.Encender(pixelVec);
+
+                //Taylor
+                cv.Yo = 1 + (1.098 * (t -0)) + (((1.206) * Math.Pow((t - 0), 2))/ 2) + (((1.325) * Math.Pow((t - 0), 3)) / 6) + (((1.456) * Math.Pow((t - 0), 4)) / 24);
+                cv.color0 = Color.Blue;
+                cv.Encender(pixelVec);
+
+
+                t = t + dt;
+
+            } while (t <= 8);
+            ptbPixel.Image = pixelVec;
+
         }
     }
 }

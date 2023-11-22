@@ -1,7 +1,7 @@
 ﻿
 namespace CompuMod_v2
 {
-    partial class Form1
+    partial class btnTaylor1
     {
         /// <summary>
         ///  Required designer variable.
@@ -40,6 +40,8 @@ namespace CompuMod_v2
             this.btnCurvaV = new System.Windows.Forms.Button();
             this.btnCurvaV2 = new System.Windows.Forms.Button();
             this.btnRectas = new System.Windows.Forms.Button();
+            this.btnCurvas3 = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.ptbPixel)).BeginInit();
             this.SuspendLayout();
             // 
@@ -152,12 +154,34 @@ namespace CompuMod_v2
             this.btnRectas.UseVisualStyleBackColor = true;
             this.btnRectas.Click += new System.EventHandler(this.btnRectas_Click);
             // 
-            // Form1
+            // btnCurvas3
+            // 
+            this.btnCurvas3.Location = new System.Drawing.Point(651, 560);
+            this.btnCurvas3.Name = "btnCurvas3";
+            this.btnCurvas3.Size = new System.Drawing.Size(75, 23);
+            this.btnCurvas3.TabIndex = 11;
+            this.btnCurvas3.Text = "CurvaV3";
+            this.btnCurvas3.UseVisualStyleBackColor = true;
+            this.btnCurvas3.Click += new System.EventHandler(this.btnCurvas3_Click);
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(83, 589);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 12;
+            this.button1.Text = "Taylor";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // btnTaylor1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.InactiveCaption;
-            this.ClientSize = new System.Drawing.Size(718, 655);
+            this.ClientSize = new System.Drawing.Size(725, 655);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnCurvas3);
             this.Controls.Add(this.btnRectas);
             this.Controls.Add(this.btnCurvaV2);
             this.Controls.Add(this.btnCurvaV);
@@ -169,7 +193,7 @@ namespace CompuMod_v2
             this.Controls.Add(this.btnEncender);
             this.Controls.Add(this.ptbPixel);
             this.Controls.Add(this.label1);
-            this.Name = "Form1";
+            this.Name = "btnTaylor1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
             ((System.ComponentModel.ISupportInitialize)(this.ptbPixel)).EndInit();
@@ -191,6 +215,8 @@ namespace CompuMod_v2
         private System.Windows.Forms.Button btnCurvaV;
         private System.Windows.Forms.Button btnCurvaV2;
         private System.Windows.Forms.Button btnRectas;
+        private System.Windows.Forms.Button btnCurvas3;
+        private System.Windows.Forms.Button button1;
     }
 }
 

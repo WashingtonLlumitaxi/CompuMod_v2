@@ -123,6 +123,51 @@ namespace CompuMod_v2
 
         }
 
+        ///Curvas 3
+        public void EncenderCurvaV3(Bitmap pixelVec)
+        {
+
+
+            double t = -8;
+            double dt = 0.001;
+
+            ClaseVector cv = new();
+
+            
+            do
+            {
+                cv.Xo =  (t);
+                cv.Yo = Math.Pow(2,t);
+                cv.color0 = Color.Red;
+                cv.Encender(pixelVec);
+
+                cv.Yo = (Math.Pow(t, 2) / 5 -3 );
+                cv.color0 = Color.Brown;
+                cv.Encender(pixelVec);
+
+                cv.Yo = Math.Log(t);
+                cv.color0 = Color.Blue;
+                cv.Encender(pixelVec);
+
+                //
+                cv.Yo = Math.Sin(t);
+                cv.color0 = Color.Green;
+                cv.Encender(pixelVec);
+
+                //
+                //Funcion Cubica
+                cv.Yo = Math.Pow(t,3);
+                cv.color0 = Color.BlueViolet;
+                cv.Encender(pixelVec);
+
+                t = t + dt;
+
+            } while (t <= 8);
+
+
+        }
+
+
 
     }
-    }
+}
