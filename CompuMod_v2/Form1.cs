@@ -10,9 +10,18 @@ using System.Windows.Forms;
 
 namespace CompuMod_v2
 {
+  /// <summary>
+  /// Clase principal del formulario
+  /// en esta clase se insertan solamente los puntos estrategios y se hace el llamado
+  /// a las distintas funciones de las clases que se han desarrollado, no obstante se puede 
+  /// relaizar la programacion general de lo que se nos pidiera pues todas las clases se hallan
+  /// heredadas unas a otras.
+  /// </summary>
+  /// 
+
     public partial class btnTaylor1 : Form
     {
-        Bitmap pixelVec = new Bitmap(600, 500); //Demencion de la ventana
+        Bitmap pixelVec = new Bitmap(600, 500); //Demensiones de la ventana Pantalla
 
         public btnTaylor1()
         {
@@ -297,6 +306,68 @@ namespace CompuMod_v2
                 t = t + dt;
 
             } while (t <= 8);
+            ptbPixel.Image = pixelVec;
+
+        }
+
+        private void btnEspejo_Click(object sender, EventArgs e)
+        {
+            ClaseVector cv = new();
+            double t = -10;
+
+            do
+            {
+                cv.Xo = t;
+                cv.Yo = (-0.03 * Math.Pow(t, 2) + 3);
+                cv.color0 = Color.Red;
+                cv.Encender(pixelVec);
+                t += 0.001;
+            } while (t <= 10);
+
+            ptbPixel.Image = pixelVec;
+        }
+
+        private void btnTangen_Click(object sender, EventArgs e)
+        {
+            ///
+            /// Grafica la tangente
+         
+            /// 
+            double Xa1 = 3;
+
+            ClaseSegmento cs = new ClaseSegmento();
+            cs.color0 = Color.Blue;
+            cs.Xo = -10;
+            cs.Yo = ((-0.06 * Xa1) * ((-10) - Xa1) + (-0.03 * Math.Pow(Xa1, 2) + 3));
+            cs.Xf = 10;
+            cs.Yf = ((-0.06 * Xa1) * ((10) - Xa1) + (-0.03 * Math.Pow(Xa1, 2) + 3)); ;
+            cs.EncenderSeg(pixelVec);
+
+            //////
+            double Xa = -5;
+
+         
+            cs.color0 = Color.Blue;
+            cs.Xo = -10;
+            cs.Yo = ((-0.06 * Xa) * ((-10) - Xa) + (-0.03 * Math.Pow(Xa, 2) + 3));
+            cs.Xf = 10;
+            cs.Yf = ((-0.06 * Xa) * ((10) - Xa) + (-0.03 * Math.Pow(Xa, 2) + 3)); ;
+            cs.EncenderSeg(pixelVec);
+
+
+            ////
+            ///
+              //////
+            double Xa2 = 6;
+
+
+            cs.color0 = Color.Blue;
+            cs.Xo = -10;
+            cs.Yo = ((-0.06 * Xa2) * ((-10) - Xa2) + (-0.03 * Math.Pow(Xa2, 2) + 3));
+            cs.Xf = 10;
+            cs.Yf = ((-0.06 * Xa2) * ((10) - Xa2) + (-0.03 * Math.Pow(Xa2, 2) + 3)); ;
+            cs.EncenderSeg(pixelVec);
+
             ptbPixel.Image = pixelVec;
 
         }

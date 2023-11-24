@@ -9,6 +9,10 @@ namespace CompuMod_v2
 {
     class ClaseVector
     {
+
+        //Parametros Iniciales de la ventana pantalla y real
+
+
         public int sx1 = 0;
         public int sx2 = 600;
         public int sy1 = 0;
@@ -21,23 +25,27 @@ namespace CompuMod_v2
         public double Yo;
         public Color color0;
 
+        
          public ClaseVector() { }
-        //constructor
+        //constructor con parametros
         public ClaseVector(double Xo, double Yo, Color color0)
         {
             this.Xo = Xo;
             this.Yo = Yo;
             this.color0 = color0;
         }
+         
 
+        //Procesos iniciales de para el fucnionamiento correcto del aplicativo
         //Proceso Pantalla
-        public void Pantalla(double x, double y, out int sx, out int sy)
+        public void Pantalla(double x, double y, out int sx, out int sy) //Prametros de ingreso y salisa
         {
             sx = (int)(((x - x1) / (x1 - x2)) * (sx1 - sx2)) + sx1;
             sy = (int)(((y - y2) / (y2 - y1)) * (sy1 - sy2)) + sy1;
         }
 
-        //Proceso Encencer
+        //Proceso Encender
+        //Funcion principal que utiliza la funcion Pantalla
         public void Encender(Bitmap pixelVec)
         {
             int Sx, Sy;

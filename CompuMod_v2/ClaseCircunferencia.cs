@@ -9,6 +9,10 @@ namespace CompuMod_v2
 {
     class ClaseCircunferencia: ClaseVector
     {
+        /// <summary>
+        /// La clase circunferencia grafica un circulo en donde se agrega radio y los puntos del centro
+        /// de igual manera procede con la herencia de la funcion encender que utiliza el proceso pantalla.
+        /// </summary>
         public double Rd;
 
         //Constructores

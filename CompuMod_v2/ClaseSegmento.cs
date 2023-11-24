@@ -9,6 +9,15 @@ namespace CompuMod_v2
 {
     class ClaseSegmento : ClaseVector //Herencia 
     {
+        /// <summary>
+        /// La clase segmento grafica una linea, gracias a que utiliza la herencia 
+        ///  de la clase vector, le podemos dar una longitud de acuerdo a 
+        ///  que utiliza los puntos iniciales y finales.
+        ///  Principalmente utiliza la funcion encender pues el segmento es un vector
+        /// </summary>
+
+        
+
         public double Xf;
         public double Yf;
 

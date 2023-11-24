@@ -10,7 +10,12 @@ namespace CompuMod_v2
     class ClaseCurvaV: ClaseCircunferencia
     {
         
-
+        /// <summary>
+        /// La clase curva como su nombre lo dice, realiza la graficacion de una curva, hereda
+        /// valores y funciones de la circunferencia pues la curva es una parte de circunferencia
+        /// En este se añadido valores la traslación y escalamiento de la curva, lo que nos 
+        /// permite el posicionamiento en cualquier punto de nuestra ventana.
+        /// </summary>
         public ClaseCurvaV() { }
 
         public void EncenderCurvaV(Bitmap pixelVec)
