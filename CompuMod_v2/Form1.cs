@@ -422,7 +422,7 @@ namespace CompuMod_v2
             {
                 for(int j = 0; j < 500; j++)
                 {
-                    colorT = (int)(i*i + j* j) % 15;
+                    colorT = (int)(i + j * j + Math.Sin(j)) % 15; ;
                     c = paleta1[colorT];
                     pixelVec.SetPixel(i, j, c);
                     
