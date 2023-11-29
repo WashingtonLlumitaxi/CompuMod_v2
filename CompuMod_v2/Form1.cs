@@ -374,13 +374,16 @@ namespace CompuMod_v2
 
         private void btnLimpiar_Click(object sender, EventArgs e)
         {
-            for (int i = 0; i < 600; i++)
-            {
-                for (int j = 0; j < 500; j++)
-                {
-                    pixelVec.SetPixel(i, j, Color.White);
-                }
-            }
+            //for (int i = 0; i < 600; i++)
+            //{
+            //    for (int j = 0; j < 500; j++)
+            //    {
+            //        pixelVec.SetPixel(i, j, Color.White);
+            //    }
+            //}
+
+            ClaseVector cv = new();
+            cv.Apagar(pixelVec);
             ptbPixel.Image = pixelVec;
         }
     }

@@ -58,5 +58,29 @@ namespace CompuMod_v2
 
             }
         }
+
+
+        //Proceso Encencer
+        public void Apagar(Bitmap pixelVec)
+        {
+            int Sx, Sy;
+
+            Pantalla(Xo, Yo, out Sx, out Sy);
+
+            if (Sx >= 0 && Sx < 600 && Sy >= 0 && Sy < 500)
+            {
+                for (int i = 0; i < 600; i++)
+                {
+                    for (int j = 0; j < 500; j++)
+                    {
+                        pixelVec.SetPixel(i, j, Color.White);
+                    }
+                }
+
+
+                //pixelVec.SetPixel(Sx, Sy, Color.White);
+
+            }
+        }
     }
 }
