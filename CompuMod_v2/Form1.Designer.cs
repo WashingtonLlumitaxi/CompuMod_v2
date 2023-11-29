@@ -45,6 +45,7 @@ namespace CompuMod_v2
             this.btnEspejo = new System.Windows.Forms.Button();
             this.btnTangen = new System.Windows.Forms.Button();
             this.btnLimpiar = new System.Windows.Forms.Button();
+            this.btnPaleta = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.ptbPixel)).BeginInit();
             this.SuspendLayout();
             // 
@@ -207,12 +208,23 @@ namespace CompuMod_v2
             this.btnLimpiar.UseVisualStyleBackColor = true;
             this.btnLimpiar.Click += new System.EventHandler(this.btnLimpiar_Click);
             // 
+            // btnPaleta
+            // 
+            this.btnPaleta.Location = new System.Drawing.Point(408, 590);
+            this.btnPaleta.Name = "btnPaleta";
+            this.btnPaleta.Size = new System.Drawing.Size(75, 23);
+            this.btnPaleta.TabIndex = 16;
+            this.btnPaleta.Text = "Paleta";
+            this.btnPaleta.UseVisualStyleBackColor = true;
+            this.btnPaleta.Click += new System.EventHandler(this.btnPaleta_Click);
+            // 
             // btnTaylor1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.InactiveCaption;
             this.ClientSize = new System.Drawing.Size(725, 660);
+            this.Controls.Add(this.btnPaleta);
             this.Controls.Add(this.btnLimpiar);
             this.Controls.Add(this.btnTangen);
             this.Controls.Add(this.btnEspejo);
@@ -256,6 +268,7 @@ namespace CompuMod_v2
         private System.Windows.Forms.Button btnEspejo;
         private System.Windows.Forms.Button btnTangen;
         private System.Windows.Forms.Button btnLimpiar;
+        private System.Windows.Forms.Button btnPaleta;
     }
 }
 

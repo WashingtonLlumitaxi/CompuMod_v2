@@ -23,6 +23,12 @@ namespace CompuMod_v2
     {
         Bitmap pixelVec = new Bitmap(600, 500); //Demensiones de la ventana Pantalla
 
+
+      
+
+      
+
+
         public btnTaylor1()
         {
             InitializeComponent();
@@ -385,6 +391,46 @@ namespace CompuMod_v2
             ClaseVector cv = new();
             cv.Apagar(pixelVec);
             ptbPixel.Image = pixelVec;
+        }
+
+        private void btnPaleta_Click(object sender, EventArgs e)
+        {
+            Color[] paleta1 = new Color[16];
+
+            paleta1[0] = Color.Black;
+            paleta1[1] = Color.Navy;
+            paleta1[2] = Color.Green;
+            paleta1[3] = Color.Aqua;
+            paleta1[4] = Color.Red;
+            paleta1[5] = Color.Purple;
+            paleta1[6] = Color.Maroon;
+            paleta1[7] = Color.LightGray;
+            paleta1[8] = Color.DarkGray;
+            paleta1[9] = Color.Blue;
+            paleta1[10] = Color.Lime;
+            paleta1[11] = Color.Silver;
+            paleta1[12] = Color.Teal;
+            paleta1[13] = Color.Fuchsia;
+            paleta1[14] = Color.Yellow;
+            paleta1[15] = Color.White;
+
+            int colorT;
+            Color c;
+
+            ClaseVector cv = new();
+            for (int i = 0; i < 600; i++)
+            {
+                for(int j = 0; j < 500; j++)
+                {
+                    colorT = (int)(i*i + j* j) % 15;
+                    c = paleta1[colorT];
+                    pixelVec.SetPixel(i, j, c);
+                    
+                }
+          
+            }
+            ptbPixel.Image = pixelVec;
+
         }
     }
 }
