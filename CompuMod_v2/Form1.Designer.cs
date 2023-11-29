@@ -44,6 +44,7 @@ namespace CompuMod_v2
             this.button1 = new System.Windows.Forms.Button();
             this.btnEspejo = new System.Windows.Forms.Button();
             this.btnTangen = new System.Windows.Forms.Button();
+            this.btnLimpiar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.ptbPixel)).BeginInit();
             this.SuspendLayout();
             // 
@@ -148,7 +149,7 @@ namespace CompuMod_v2
             // 
             // btnRectas
             // 
-            this.btnRectas.Location = new System.Drawing.Point(1, 590);
+            this.btnRectas.Location = new System.Drawing.Point(82, 590);
             this.btnRectas.Name = "btnRectas";
             this.btnRectas.Size = new System.Drawing.Size(75, 23);
             this.btnRectas.TabIndex = 10;
@@ -168,7 +169,7 @@ namespace CompuMod_v2
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(83, 589);
+            this.button1.Location = new System.Drawing.Point(164, 589);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 12;
@@ -178,7 +179,7 @@ namespace CompuMod_v2
             // 
             // btnEspejo
             // 
-            this.btnEspejo.Location = new System.Drawing.Point(165, 588);
+            this.btnEspejo.Location = new System.Drawing.Point(246, 588);
             this.btnEspejo.Name = "btnEspejo";
             this.btnEspejo.Size = new System.Drawing.Size(75, 23);
             this.btnEspejo.TabIndex = 13;
@@ -188,7 +189,7 @@ namespace CompuMod_v2
             // 
             // btnTangen
             // 
-            this.btnTangen.Location = new System.Drawing.Point(244, 587);
+            this.btnTangen.Location = new System.Drawing.Point(325, 587);
             this.btnTangen.Name = "btnTangen";
             this.btnTangen.Size = new System.Drawing.Size(75, 23);
             this.btnTangen.TabIndex = 14;
@@ -196,12 +197,23 @@ namespace CompuMod_v2
             this.btnTangen.UseVisualStyleBackColor = true;
             this.btnTangen.Click += new System.EventHandler(this.btnTangen_Click);
             // 
+            // btnLimpiar
+            // 
+            this.btnLimpiar.Location = new System.Drawing.Point(1, 590);
+            this.btnLimpiar.Name = "btnLimpiar";
+            this.btnLimpiar.Size = new System.Drawing.Size(75, 23);
+            this.btnLimpiar.TabIndex = 15;
+            this.btnLimpiar.Text = "Limpiar";
+            this.btnLimpiar.UseVisualStyleBackColor = true;
+            this.btnLimpiar.Click += new System.EventHandler(this.btnLimpiar_Click);
+            // 
             // btnTaylor1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.InactiveCaption;
             this.ClientSize = new System.Drawing.Size(725, 660);
+            this.Controls.Add(this.btnLimpiar);
             this.Controls.Add(this.btnTangen);
             this.Controls.Add(this.btnEspejo);
             this.Controls.Add(this.button1);
@@ -243,6 +255,7 @@ namespace CompuMod_v2
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button btnEspejo;
         private System.Windows.Forms.Button btnTangen;
+        private System.Windows.Forms.Button btnLimpiar;
     }
 }
 

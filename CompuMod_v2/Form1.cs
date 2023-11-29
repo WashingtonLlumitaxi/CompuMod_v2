@@ -371,5 +371,17 @@ namespace CompuMod_v2
             ptbPixel.Image = pixelVec;
 
         }
+
+        private void btnLimpiar_Click(object sender, EventArgs e)
+        {
+            for (int i = 0; i < 600; i++)
+            {
+                for (int j = 0; j < 500; j++)
+                {
+                    pixelVec.SetPixel(i, j, Color.White);
+                }
+            }
+            ptbPixel.Image = pixelVec;
+        }
     }
 }
