@@ -24,8 +24,33 @@ namespace CompuMod_v2
         Bitmap pixelVec = new Bitmap(600, 500); //Demensiones de la ventana Pantalla
 
 
-      
 
+        public Color[] paleta2 = new Color[16];
+
+
+        public void paleta ()
+        {
+            paleta2[0] = Color.Black;
+            paleta2[1] = Color.Navy;
+            paleta2[2] = Color.Green;
+            paleta2[3] = Color.Aqua;
+            paleta2[4] = Color.Red;
+            paleta2[5] = Color.Purple;
+            paleta2[6] = Color.Maroon;
+            paleta2[7] = Color.LightGray;
+            paleta2[8] = Color.DarkGray;
+            paleta2[9] = Color.Blue;
+            paleta2[10] = Color.Lime;
+            paleta2[11] = Color.Silver;
+            paleta2[12] = Color.Teal;
+            paleta2[13] = Color.Fuchsia;
+            paleta2[14] = Color.Yellow;
+            paleta2[15] = Color.White;
+
+
+        }
+
+        
       
 
 
@@ -431,6 +456,182 @@ namespace CompuMod_v2
             }
             ptbPixel.Image = pixelVec;
 
+        }
+
+       
+
+        private void cbxTapetes_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string tapeteSelect = cbxTapetes.SelectedItem.ToString();
+
+            ///Paleta de colores
+            ///
+            Color[] paleta1 = new Color[16];
+
+            paleta1[0] = Color.Black;
+            paleta1[1] = Color.Navy;
+            paleta1[2] = Color.Green;
+            paleta1[3] = Color.Aqua;
+            paleta1[4] = Color.Red;
+            paleta1[5] = Color.Purple;
+            paleta1[6] = Color.Maroon;
+            paleta1[7] = Color.LightGray;
+            paleta1[8] = Color.DarkGray;
+            paleta1[9] = Color.Blue;
+            paleta1[10] = Color.Lime;
+            paleta1[11] = Color.Silver;
+            paleta1[12] = Color.Teal;
+            paleta1[13] = Color.Fuchsia;
+            paleta1[14] = Color.Yellow;
+            paleta1[15] = Color.White;
+
+            switch (tapeteSelect)
+            {
+                case "Tapete 1":
+
+                    int colorT;
+                    Color c;
+
+                   
+                    for (int i = 0; i < 600; i++)
+                    {
+                        for (int j = 0; j < 500; j++)
+                        {
+                            colorT = (int)(Math.Pow( i + j , 3)/ 5) % 15; 
+                            c = paleta1[colorT];
+                            pixelVec.SetPixel(i, j, c);
+
+                        }
+
+                    }
+                    ptbPixel.Image = pixelVec;
+               
+
+                    break;
+
+
+                case "Tapete 2":
+
+
+                    for (int i = 0; i < 600; i++)
+                    {
+                        for (int j = 0; j < 500; j++)
+                        {
+                            colorT = (int)(i * Math.Sqrt(j) * 3.14) % 15; ;
+                            c = paleta1[colorT];
+                            pixelVec.SetPixel(i, j, c);
+
+                        }
+
+                    }
+                    ptbPixel.Image = pixelVec;
+
+                    break;
+
+                case "Tapete 3":
+
+                    for (int i = 0; i < 600; i++)
+                    {
+                        for (int j = 0; j < 500; j++)
+                        {
+                            colorT = (int)(Math.Exp(Math.Sin(j * i / 6))) % 15; ;
+                            c = paleta1[colorT];
+                            pixelVec.SetPixel(i, j, c);
+
+                        }
+
+                    }
+                    ptbPixel.Image = pixelVec;
+                    break;
+
+                case "Tapete 4":
+
+                    for (int i = 0; i < 600; i++)
+                    {
+                        for (int j = 0; j < 500; j++)
+                        {
+                            colorT = (int)(Math.Sqrt(j) * Math.Sqrt(i) * j / 100) % 15; 
+                            c = paleta1[colorT];
+                            pixelVec.SetPixel(i, j, c);
+
+                        }
+
+                    }
+                    ptbPixel.Image = pixelVec;
+                    break;
+
+                case "Tapete 5":
+
+                    for (int i = 0; i < 600; i++)
+                    {
+                        for (int j = 0; j < 500; j++)
+                        {
+                            colorT = (int)(Math.Sqrt(j) * j / 70) % 15;
+                            c = paleta1[colorT];
+                            pixelVec.SetPixel(i, j, c);
+
+                        }
+
+                    }
+                    ptbPixel.Image = pixelVec;
+                    break;
+
+                case "Tapete 6":
+
+                    for (int i = 0; i < 600; i++)
+                    {
+                        for (int j = 0; j < 500; j++)
+                        {
+                            colorT = (int)((Math.Sqrt(j) * i / 80) + 6) % 15;
+                            c = paleta1[colorT];
+                            pixelVec.SetPixel(i, j, c);
+
+                        }
+
+                    }
+                    ptbPixel.Image = pixelVec;
+                    break;
+
+                case "Tapete 7":
+
+
+                    for (int i = 0; i < 600; i++)
+                    {
+                        for (int j = 0; j < 500; j++)
+                        {
+                            colorT = (int)((j * Math.Sqrt(i) * j + Math.Cos(j)) / 100) % 15; ;
+                            c = paleta1[colorT];
+                            pixelVec.SetPixel(i, j, c);
+
+                        }
+
+                    }
+                    ptbPixel.Image = pixelVec;
+                    break;
+
+                case "Tapete 8":
+
+
+                    for (int i = 0; i < 600; i++)
+                    {
+                        for (int j = 0; j < 500; j++)
+                        {
+                            colorT = (int)((i + j * 0.5 * j + Math.Sin(i * 7.9)) / 40) % 15;
+                            c = paleta1[colorT];
+                            pixelVec.SetPixel(i, j, c);
+
+                        }
+
+                    }
+                    ptbPixel.Image = pixelVec; ;
+                    break;
+
+                default:
+                    MessageBox.Show("Elija alguna de las opciones");
+                    break;
+
+
+            }
         }
     }
 }

@@ -46,6 +46,7 @@ namespace CompuMod_v2
             this.btnTangen = new System.Windows.Forms.Button();
             this.btnLimpiar = new System.Windows.Forms.Button();
             this.btnPaleta = new System.Windows.Forms.Button();
+            this.cbxTapetes = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.ptbPixel)).BeginInit();
             this.SuspendLayout();
             // 
@@ -194,7 +195,7 @@ namespace CompuMod_v2
             this.btnTangen.Name = "btnTangen";
             this.btnTangen.Size = new System.Drawing.Size(75, 23);
             this.btnTangen.TabIndex = 14;
-            this.btnTangen.Text = "button2";
+            this.btnTangen.Text = "Tangente";
             this.btnTangen.UseVisualStyleBackColor = true;
             this.btnTangen.Click += new System.EventHandler(this.btnTangen_Click);
             // 
@@ -218,12 +219,31 @@ namespace CompuMod_v2
             this.btnPaleta.UseVisualStyleBackColor = true;
             this.btnPaleta.Click += new System.EventHandler(this.btnPaleta_Click);
             // 
+            // cbxTapetes
+            // 
+            this.cbxTapetes.FormattingEnabled = true;
+            this.cbxTapetes.Items.AddRange(new object[] {
+            "Tapete 1",
+            "Tapete 2",
+            "Tapete 3",
+            "Tapete 4",
+            "Tapete 5",
+            "Tapete 6",
+            "Tapete 7",
+            "Tapete 8"});
+            this.cbxTapetes.Location = new System.Drawing.Point(490, 589);
+            this.cbxTapetes.Name = "cbxTapetes";
+            this.cbxTapetes.Size = new System.Drawing.Size(74, 23);
+            this.cbxTapetes.TabIndex = 17;
+            this.cbxTapetes.SelectedIndexChanged += new System.EventHandler(this.cbxTapetes_SelectedIndexChanged);
+            // 
             // btnTaylor1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.InactiveCaption;
             this.ClientSize = new System.Drawing.Size(725, 660);
+            this.Controls.Add(this.cbxTapetes);
             this.Controls.Add(this.btnPaleta);
             this.Controls.Add(this.btnLimpiar);
             this.Controls.Add(this.btnTangen);
@@ -269,6 +289,7 @@ namespace CompuMod_v2
         private System.Windows.Forms.Button btnTangen;
         private System.Windows.Forms.Button btnLimpiar;
         private System.Windows.Forms.Button btnPaleta;
+        private System.Windows.Forms.ComboBox cbxTapetes;
     }
 }
 
