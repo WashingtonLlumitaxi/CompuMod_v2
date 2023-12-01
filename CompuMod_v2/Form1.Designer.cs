@@ -235,6 +235,7 @@ namespace CompuMod_v2
             this.cbxTapetes.Name = "cbxTapetes";
             this.cbxTapetes.Size = new System.Drawing.Size(74, 23);
             this.cbxTapetes.TabIndex = 17;
+            this.cbxTapetes.Text = "Tapetes";
             this.cbxTapetes.SelectedIndexChanged += new System.EventHandler(this.cbxTapetes_SelectedIndexChanged);
             // 
             // btnTaylor1

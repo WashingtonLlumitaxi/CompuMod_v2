@@ -530,11 +530,14 @@ namespace CompuMod_v2
 
                 case "Tapete 3":
 
+                    int cont3 = 1;
+
                     for (int i = 0; i < 600; i++)
                     {
                         for (int j = 0; j < 500; j++)
                         {
-                            colorT = (int)(Math.Exp(Math.Sin(j * i / 6))) % 15; ;
+                            cont3 += 5;
+                            colorT = (int)(((j + cont3) / Math.Log(cont3) / 5) % 15);
                             c = paleta1[colorT];
                             pixelVec.SetPixel(i, j, c);
 
@@ -550,7 +553,8 @@ namespace CompuMod_v2
                     {
                         for (int j = 0; j < 500; j++)
                         {
-                            colorT = (int)(Math.Sqrt(j) * Math.Sqrt(i) * j / 100) % 15; 
+                            //colorT = (int)(Math.Sqrt(j) * Math.Sqrt(i) * j / 100) % 15; 
+                            colorT = (int)((Math.Sqrt(i + 50.5) + Math.Cos(i) + 10 * j) / 2.3) % 15;
                             c = paleta1[colorT];
                             pixelVec.SetPixel(i, j, c);
 
@@ -561,12 +565,14 @@ namespace CompuMod_v2
                     break;
 
                 case "Tapete 5":
-
+                    double acum = 0;
                     for (int i = 0; i < 600; i++)
                     {
                         for (int j = 0; j < 500; j++)
                         {
-                            colorT = (int)(Math.Sqrt(j) * j / 70) % 15;
+                            acum =+ 2.4;
+                            //colorT = (int)(Math.Sqrt(j) * j / 70) % 15;
+                            colorT = (int)((Math.Pow(j, acum) *  Math.Sin(acum * j) / 100) + Math.Pow(j, acum)) % 15;
                             c = paleta1[colorT];
                             pixelVec.SetPixel(i, j, c);
 
@@ -599,7 +605,7 @@ namespace CompuMod_v2
                     {
                         for (int j = 0; j < 500; j++)
                         {
-                            colorT = (int)((j * Math.Sqrt(i) * j + Math.Cos(j)) / 100) % 15; ;
+                            colorT = (int)(((j * Math.Sqrt(i) * i + Math.Cos(j) * 4)) + (Math.Sqrt(j) * i + Math.Pow(i, 2)) ) / 1000 % 15; ;
                             c = paleta1[colorT];
                             pixelVec.SetPixel(i, j, c);
 
@@ -616,7 +622,8 @@ namespace CompuMod_v2
                     {
                         for (int j = 0; j < 500; j++)
                         {
-                            colorT = (int)((i + j * 0.5 * j + Math.Sin(i * 7.9)) / 40) % 15;
+                            //colorT = (int)((i + j * 0.5 * j + Math.Sin(i * 7.9)) / 40) % 15;
+                            colorT = (int)(((Math.Pow(3, i * 0.01) + Math.Pow(4, j * 0.01))) % 15);
                             c = paleta1[colorT];
                             pixelVec.SetPixel(i, j, c);
 
