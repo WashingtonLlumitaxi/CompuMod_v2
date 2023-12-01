@@ -640,5 +640,39 @@ namespace CompuMod_v2
 
             }
         }
+
+        private void btnTextMade_Click(object sender, EventArgs e)
+        {
+
+        
+            int colorT;
+            Color c;
+
+            Color[] paletaT = new Color[16];
+
+            int red, green, blue;
+            for (int ir = 0; ir <= 15; ir++)
+            {
+                red = (int)((4.666 * ir) + 130);
+                green = (int)((2 * ir) + 70);
+                blue = (int)((1.333 * ir) + 30);
+                paletaT[ir] = Color.FromArgb(red, green, blue);
+            }
+
+            for (int i = 0; i < 600; i++)
+            {
+                for (int j = 0; j < 500; j++)
+                {
+                    
+                    colorT = (int)((Math.Sqrt(i + 50.5) + Math.Cos(i) + 10 * j) / 2.3) % 15;
+                    c = paletaT[colorT];
+                    pixelVec.SetPixel(i, j, c);
+
+                }
+
+            }
+            ptbPixel.Image = pixelVec;
+
+        }
     }
 }

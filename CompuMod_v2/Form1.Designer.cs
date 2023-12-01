@@ -47,6 +47,7 @@ namespace CompuMod_v2
             this.btnLimpiar = new System.Windows.Forms.Button();
             this.btnPaleta = new System.Windows.Forms.Button();
             this.cbxTapetes = new System.Windows.Forms.ComboBox();
+            this.btnTextMade = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.ptbPixel)).BeginInit();
             this.SuspendLayout();
             // 
@@ -238,12 +239,23 @@ namespace CompuMod_v2
             this.cbxTapetes.Text = "Tapetes";
             this.cbxTapetes.SelectedIndexChanged += new System.EventHandler(this.cbxTapetes_SelectedIndexChanged);
             // 
+            // btnTextMade
+            // 
+            this.btnTextMade.Location = new System.Drawing.Point(571, 586);
+            this.btnTextMade.Name = "btnTextMade";
+            this.btnTextMade.Size = new System.Drawing.Size(75, 23);
+            this.btnTextMade.TabIndex = 18;
+            this.btnTextMade.Text = "Madera";
+            this.btnTextMade.UseVisualStyleBackColor = true;
+            this.btnTextMade.Click += new System.EventHandler(this.btnTextMade_Click);
+            // 
             // btnTaylor1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.InactiveCaption;
             this.ClientSize = new System.Drawing.Size(725, 660);
+            this.Controls.Add(this.btnTextMade);
             this.Controls.Add(this.cbxTapetes);
             this.Controls.Add(this.btnPaleta);
             this.Controls.Add(this.btnLimpiar);
@@ -291,6 +303,7 @@ namespace CompuMod_v2
         private System.Windows.Forms.Button btnLimpiar;
         private System.Windows.Forms.Button btnPaleta;
         private System.Windows.Forms.ComboBox cbxTapetes;
+        private System.Windows.Forms.Button btnTextMade;
     }
 }
 
