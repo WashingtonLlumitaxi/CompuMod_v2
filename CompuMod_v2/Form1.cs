@@ -622,8 +622,8 @@ namespace CompuMod_v2
                     {
                         for (int j = 0; j < 500; j++)
                         {
-                            //colorT = (int)((i + j * 0.5 * j + Math.Sin(i * 7.9)) / 40) % 15;
-                            colorT = (int)(((Math.Pow(3, i * 0.01) + Math.Pow(4, j * 0.01))) % 15);
+                            colorT = (int)((i + j * 0.5 * j + Math.Sin(i * 7.9))) % 15;
+                            //colorT = (int)(((Math.Pow(3, i * 0.01) + Math.Pow(4, j * 0.01))) % 15);
                             c = paleta1[colorT];
                             pixelVec.SetPixel(i, j, c);
 
@@ -673,6 +673,148 @@ namespace CompuMod_v2
             }
             ptbPixel.Image = pixelVec;
 
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string tapeteSelect = cbxTexturas.SelectedItem.ToString();
+
+
+
+            int colorT;
+            Color c;
+
+
+
+            switch (tapeteSelect)
+            {
+                case "Madera":
+
+                    Color[] paletaM = new Color[16];
+
+                    int red, green, blue;
+                    int acumM = 0;
+
+                    for (int ir = 0; ir <= 15; ir++)
+                    {
+                        red = (int)((-9 * ir) + 213);
+                        green = (int)((-4.266 * ir) + 116);
+                        blue = (int)((-2.466 * ir) + 37);
+                        paletaM[ir] = Color.FromArgb(red, green, blue);
+                    }
+
+                    for (int i = 0; i < 600; i++)
+                    {
+                        for (int j = 0; j < 500; j++)
+                        {
+                            acumM += 5;
+                            colorT = (int)(((j + acumM) / Math.Log(acumM) / 5) % 15);
+                            c = paletaM[colorT];
+                            pixelVec.SetPixel(i, j, c);
+
+                        }
+
+                    }
+                    ptbPixel.Image = pixelVec;
+                    break;
+
+                case "Tela":
+
+                    Color[] paletaJ = new Color[16];
+
+               
+                    double acum = 0;
+
+                    for (int ir = 0; ir <= 15; ir++)
+                    {
+                        red = (int)((-10.8 * ir) + 170);
+                        green = (int)((-2.73 * ir) + 175);
+                        blue = (int)((1.86 * ir) + 176);
+                        paletaJ[ir] = Color.FromArgb(red, green, blue);
+                    }
+
+                    for (int i = 0; i < 600; i++)
+                    {
+                        for (int j = 0; j < 500; j++)
+                        {
+                            acum = + 1.4;
+                            //colorT = (int)(Math.Sqrt(j) * j / 70) % 15;
+                            //colorT = (int)((Math.Pow(j, acum) * Math.Sin(acum * j) / 80) + Math.Pow(j, 2)) % 15;
+                            //colorT = (int)((j + i * 0.5 * Math.Sqrt(j) + Math.Cos(i * 7.9))) % 15;
+                            colorT = (int)((j + i * 0.8 * Math.Sqrt(j) + Math.Sin(i * 5))) % 15;
+                            c = paletaJ[colorT];
+                            pixelVec.SetPixel(i, j, c);
+
+                        }
+
+                    }
+                    ptbPixel.Image = pixelVec;
+                    break;
+
+                case "Fuego":
+
+                    //Color[] paletaM = new Color[16];
+
+                    //int red, green, blue;
+                    //int cont3 = 0;
+
+                    //for (int ir = 0; ir <= 15; ir++)
+                    //{
+                    //    red = (int)((-9 * ir) + 213);
+                    //    green = (int)((-4.26 * ir) + 116);
+                    //    blue = (int)((-2.46 * ir) + 37);
+                    //    paletaM[ir] = Color.FromArgb(red, green, blue);
+                    //}
+
+                    //for (int i = 0; i < 600; i++)
+                    //{
+                    //    for (int j = 0; j < 500; j++)
+                    //    {
+                    //        cont3 += 5;
+                    //        colorT = (int)(((j + cont3) / Math.Log(cont3) / 5) % 15);
+                    //        c = paletaM[colorT];
+                    //        pixelVec.SetPixel(i, j, c);
+
+                    //    }
+
+                    //}
+                    //ptbPixel.Image = pixelVec;
+                    //break;
+
+                case "Cesped":
+
+                    //Color[] paletaC = new Color[16];
+
+                    
+                    //int cont3 = 0;
+
+                    //for (int ir = 0; ir <= 15; ir++)
+                    //{
+                    //    red = (int)((-9 * ir) + 213);
+                    //    green = (int)((-4.26 * ir) + 116);
+                    //    blue = (int)((-2.46 * ir) + 37);
+                    //    paletaM[ir] = Color.FromArgb(red, green, blue);
+                    //}
+
+                    //for (int i = 0; i < 600; i++)
+                    //{
+                    //    for (int j = 0; j < 500; j++)
+                    //    {
+                    //        cont3 += 5;
+                    //        colorT = (int)(((j + cont3) / Math.Log(cont3) / 5) % 15);
+                    //        c = paletaM[colorT];
+                    //        pixelVec.SetPixel(i, j, c);
+
+                    //    }
+
+                    //}
+                    //ptbPixel.Image = pixelVec;
+                    break;
+
+
+
+
+            }
         }
     }
 }

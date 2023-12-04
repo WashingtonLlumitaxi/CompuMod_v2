@@ -48,6 +48,7 @@ namespace CompuMod_v2
             this.btnPaleta = new System.Windows.Forms.Button();
             this.cbxTapetes = new System.Windows.Forms.ComboBox();
             this.btnTextMade = new System.Windows.Forms.Button();
+            this.cbxTexturas = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.ptbPixel)).BeginInit();
             this.SuspendLayout();
             // 
@@ -64,7 +65,7 @@ namespace CompuMod_v2
             // ptbPixel
             // 
             this.ptbPixel.BackColor = System.Drawing.Color.White;
-            this.ptbPixel.Location = new System.Drawing.Point(60, 44);
+            this.ptbPixel.Location = new System.Drawing.Point(67, 45);
             this.ptbPixel.Name = "ptbPixel";
             this.ptbPixel.Size = new System.Drawing.Size(600, 500);
             this.ptbPixel.TabIndex = 1;
@@ -249,12 +250,28 @@ namespace CompuMod_v2
             this.btnTextMade.UseVisualStyleBackColor = true;
             this.btnTextMade.Click += new System.EventHandler(this.btnTextMade_Click);
             // 
+            // cbxTexturas
+            // 
+            this.cbxTexturas.FormattingEnabled = true;
+            this.cbxTexturas.Items.AddRange(new object[] {
+            "Madera",
+            "Tela",
+            "Fuego",
+            "Cesped"});
+            this.cbxTexturas.Location = new System.Drawing.Point(653, 588);
+            this.cbxTexturas.Name = "cbxTexturas";
+            this.cbxTexturas.Size = new System.Drawing.Size(78, 23);
+            this.cbxTexturas.TabIndex = 19;
+            this.cbxTexturas.Text = "Texturas";
+            this.cbxTexturas.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            // 
             // btnTaylor1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.InactiveCaption;
-            this.ClientSize = new System.Drawing.Size(725, 660);
+            this.ClientSize = new System.Drawing.Size(743, 660);
+            this.Controls.Add(this.cbxTexturas);
             this.Controls.Add(this.btnTextMade);
             this.Controls.Add(this.cbxTapetes);
             this.Controls.Add(this.btnPaleta);
@@ -304,6 +321,7 @@ namespace CompuMod_v2
         private System.Windows.Forms.Button btnPaleta;
         private System.Windows.Forms.ComboBox cbxTapetes;
         private System.Windows.Forms.Button btnTextMade;
+        private System.Windows.Forms.ComboBox cbxTexturas;
     }
 }
 
