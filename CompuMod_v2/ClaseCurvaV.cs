@@ -24,7 +24,7 @@ namespace CompuMod_v2
 
             double t = 0;
             double dt = 0.001;
-            int tipo = 2;
+            int tipo = 1;
 
             ClaseVector cv = new();
 
@@ -60,43 +60,43 @@ namespace CompuMod_v2
             } else if( tipo == 2)
             {
 
-                ///
-                  //Primera Ecuacion
-                do
-                {
-                    cv.Xo = -2 + Rd * Math.Sin(2 * t);
-                    cv.Yo = -3 + Rd * Math.Cos(3 * t);
-                    cv.color0 = color0;
-                    cv.Encender(pixelVec);
-                    t = t + dt;
+                /////
+                //  //Primera Ecuacion
+                //do
+                //{
+                //    cv.Xo = -2 + Rd * Math.Sin(2 * t);
+                //    cv.Yo = -3 + Rd * Math.Cos(3 * t);
+                //    cv.color0 = color0;
+                //    cv.Encender(pixelVec);
+                //    t = t + dt;
 
-                } while (t <= 2 * Math.PI);
-                //
+                //} while (t <= 2 * Math.PI);
+                ////
 
-                double t1 = 0;
-                //Segunda Ecuacion 
-                do
-                {
-                    cv.Xo = -4 + Rd * Math.Cos(4 * t1) * Math.Cos(t1);
-                    cv.Yo = 6 + Rd * Math.Cos(4 * t1) * Math.Sin(t1);
-                    cv.color0 = color0;
-                    cv.Encender(pixelVec);
-                    t1 = t1 + dt;
+                //double t1 = 0;
+                ////Segunda Ecuacion 
+                //do
+                //{
+                //    cv.Xo = -4 + Rd * Math.Cos(4 * t1) * Math.Cos(t1);
+                //    cv.Yo = 6 + Rd * Math.Cos(4 * t1) * Math.Sin(t1);
+                //    cv.color0 = color0;
+                //    cv.Encender(pixelVec);
+                //    t1 = t1 + dt;
 
-                } while (t1 <= 2 * Math.PI);
+                //} while (t1 <= 2 * Math.PI);
 
-                ///
-                //Tercera Ecuacion 
-                double t2 = 0;
-                do
-                {
-                    cv.Xo = 4 + Rd * (Math.Sin(t2) * Math.Sin(t2) * Math.Sin(t2));
-                    cv.Yo = 4 + Rd * (Math.Cos(t2) * Math.Cos(t2) * Math.Cos(t2));
-                    cv.color0 = color0;
-                    cv.Encender(pixelVec);
-                    t2 = t2 + dt;
+                /////
+                ////Tercera Ecuacion 
+                //double t2 = 0;
+                //do
+                //{
+                //    cv.Xo = 4 + Rd * (Math.Sin(t2) * Math.Sin(t2) * Math.Sin(t2));
+                //    cv.Yo = 4 + Rd * (Math.Cos(t2) * Math.Cos(t2) * Math.Cos(t2));
+                //    cv.color0 = color0;
+                //    cv.Encender(pixelVec);
+                //    t2 = t2 + dt;
 
-                } while (t2 <= 2 * Math.PI);
+                //} while (t2 <= 2 * Math.PI);
 
                 
 
@@ -146,24 +146,24 @@ namespace CompuMod_v2
                 cv.color0 = Color.Red;
                 cv.Encender(pixelVec);
 
-                cv.Yo = (Math.Pow(t, 2) / 5 -3 );
-                cv.color0 = Color.Brown;
-                cv.Encender(pixelVec);
+                //cv.Yo = (Math.Pow(t, 2) / 5 -3 );
+                //cv.color0 = Color.Brown;
+                //cv.Encender(pixelVec);
 
-                cv.Yo = Math.Log(t);
-                cv.color0 = Color.Blue;
-                cv.Encender(pixelVec);
+                //cv.Yo = Math.Log(t);
+                //cv.color0 = Color.Blue;
+                //cv.Encender(pixelVec);
 
-                //
-                cv.Yo = Math.Sin(t);
-                cv.color0 = Color.Green;
-                cv.Encender(pixelVec);
+                ////
+                //cv.Yo = Math.Sin(t);
+                //cv.color0 = Color.Green;
+                //cv.Encender(pixelVec);
 
-                //
-                //Funcion Cubica
-                cv.Yo = Math.Pow(t,3);
-                cv.color0 = Color.BlueViolet;
-                cv.Encender(pixelVec);
+                ////
+                ////Funcion Cubica
+                //cv.Yo = Math.Pow(t,3);
+                //cv.color0 = Color.BlueViolet;
+                //cv.Encender(pixelVec);
 
                 t = t + dt;
 

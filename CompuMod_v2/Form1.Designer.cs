@@ -49,6 +49,8 @@ namespace CompuMod_v2
             this.cbxTapetes = new System.Windows.Forms.ComboBox();
             this.btnTextMade = new System.Windows.Forms.Button();
             this.cbxTexturas = new System.Windows.Forms.ComboBox();
+            this.btnAnim1 = new System.Windows.Forms.Button();
+            this.btnTiro = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.ptbPixel)).BeginInit();
             this.SuspendLayout();
             // 
@@ -265,12 +267,34 @@ namespace CompuMod_v2
             this.cbxTexturas.Text = "Texturas";
             this.cbxTexturas.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
+            // btnAnim1
+            // 
+            this.btnAnim1.Location = new System.Drawing.Point(1, 625);
+            this.btnAnim1.Name = "btnAnim1";
+            this.btnAnim1.Size = new System.Drawing.Size(75, 23);
+            this.btnAnim1.TabIndex = 20;
+            this.btnAnim1.Text = "button2";
+            this.btnAnim1.UseVisualStyleBackColor = true;
+            this.btnAnim1.Click += new System.EventHandler(this.btnAnim1_Click);
+            // 
+            // btnTiro
+            // 
+            this.btnTiro.Location = new System.Drawing.Point(83, 625);
+            this.btnTiro.Name = "btnTiro";
+            this.btnTiro.Size = new System.Drawing.Size(75, 23);
+            this.btnTiro.TabIndex = 21;
+            this.btnTiro.Text = "button2";
+            this.btnTiro.UseVisualStyleBackColor = true;
+            this.btnTiro.Click += new System.EventHandler(this.btnTiro_Click);
+            // 
             // btnTaylor1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.InactiveCaption;
             this.ClientSize = new System.Drawing.Size(743, 660);
+            this.Controls.Add(this.btnTiro);
+            this.Controls.Add(this.btnAnim1);
             this.Controls.Add(this.cbxTexturas);
             this.Controls.Add(this.btnTextMade);
             this.Controls.Add(this.cbxTapetes);
@@ -322,6 +346,8 @@ namespace CompuMod_v2
         private System.Windows.Forms.ComboBox cbxTapetes;
         private System.Windows.Forms.Button btnTextMade;
         private System.Windows.Forms.ComboBox cbxTexturas;
+        private System.Windows.Forms.Button btnAnim1;
+        private System.Windows.Forms.Button btnTiro;
     }
 }
 

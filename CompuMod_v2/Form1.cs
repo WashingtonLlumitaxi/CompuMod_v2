@@ -727,9 +727,9 @@ namespace CompuMod_v2
 
                     for (int ir = 0; ir <= 15; ir++)
                     {
-                        red = (int)((-10.8 * ir) + 170);
-                        green = (int)((-2.73 * ir) + 175);
-                        blue = (int)((1.86 * ir) + 176);
+                        red = (int)((12.133 * ir) + 30);
+                        green = (int)((9.6 * ir) + 78);
+                        blue = (int)((7.6 * ir) + 138);
                         paletaJ[ir] = Color.FromArgb(red, green, blue);
                     }
 
@@ -737,11 +737,20 @@ namespace CompuMod_v2
                     {
                         for (int j = 0; j < 500; j++)
                         {
-                            acum = + 1.4;
+                            //acum = + 1.4;
                             //colorT = (int)(Math.Sqrt(j) * j / 70) % 15;
                             //colorT = (int)((Math.Pow(j, acum) * Math.Sin(acum * j) / 80) + Math.Pow(j, 2)) % 15;
                             //colorT = (int)((j + i * 0.5 * Math.Sqrt(j) + Math.Cos(i * 7.9))) % 15;
-                            colorT = (int)((j + i * 0.8 * Math.Sqrt(j) + Math.Sin(i * 5))) % 15;
+                            //colorT = (int)((j + i * 0.8 * Math.Sqrt(j) + Math.Sin(i * 5))) % 15;
+
+                            //colorT = (int)(20 * Math.Sqrt(Math.Pow(i, 2) + Math.Pow(j, 3)) + Math.Log(i)) % 15;
+                            colorT = (int)((j * i * Math.Sin(i * j)) + (Math.Sin(j)) / Math.Log(i + j)) % 15;
+                            if (colorT > 15 || colorT < 0)
+                            {
+                                colorT = 1;
+                            }
+
+
                             c = paletaJ[colorT];
                             pixelVec.SetPixel(i, j, c);
 
@@ -753,68 +762,206 @@ namespace CompuMod_v2
 
                 case "Fuego":
 
-                    //Color[] paletaM = new Color[16];
+                    Color[] paletaF = new Color[16];
 
-                    //int red, green, blue;
-                    //int cont3 = 0;
+                   
 
-                    //for (int ir = 0; ir <= 15; ir++)
-                    //{
-                    //    red = (int)((-9 * ir) + 213);
-                    //    green = (int)((-4.26 * ir) + 116);
-                    //    blue = (int)((-2.46 * ir) + 37);
-                    //    paletaM[ir] = Color.FromArgb(red, green, blue);
-                    //}
+                    for (int ir = 0; ir <= 15; ir++)
+                    {
+                        red = (int)((10.866 * ir) + 92);
+                        green = (int)((15.8 * ir) + 1);
+                        blue = (int)((11.8 * ir));
+                        paletaF[ir] = Color.FromArgb(red, green, blue);
+                    }
 
-                    //for (int i = 0; i < 600; i++)
-                    //{
-                    //    for (int j = 0; j < 500; j++)
-                    //    {
-                    //        cont3 += 5;
-                    //        colorT = (int)(((j + cont3) / Math.Log(cont3) / 5) % 15);
-                    //        c = paletaM[colorT];
-                    //        pixelVec.SetPixel(i, j, c);
+                    for (int i = 0; i < 600; i++)
+                    {
+                        for (int j = 0; j < 500; j++)
+                        {
 
-                    //    }
+                            //colorT = (int)(20 * Math.Sqrt(Math.Pow(i, 2) + Math.Pow(j, 3)) + Math.Log(i)) % 15;
+                            colorT = (int)((((600 + i - 2) * (600 + i - 2)) / (int)Math.PI) + ((500 + j - 2) / 6)) % 15;
+                            c = paletaF[colorT];
+                            pixelVec.SetPixel(i, j, c);
 
-                    //}
-                    //ptbPixel.Image = pixelVec;
-                    //break;
+                        }
+
+                    }
+                    ptbPixel.Image = pixelVec;
+                    break;
 
                 case "Cesped":
 
-                    //Color[] paletaC = new Color[16];
+                    Color[] paletaC = new Color[16];
 
-                    
-                    //int cont3 = 0;
+                    for (int ir = 0; ir <= 15; ir++)
+                    {
+                        red = (int)((7.866 * ir));
+                        green = (int)((3.4 * ir) + 151);
+                        blue = (int)((2 * ir) + 9);
+                        paletaC[ir] = Color.FromArgb(red, green, blue);
+                    }
 
-                    //for (int ir = 0; ir <= 15; ir++)
-                    //{
-                    //    red = (int)((-9 * ir) + 213);
-                    //    green = (int)((-4.26 * ir) + 116);
-                    //    blue = (int)((-2.46 * ir) + 37);
-                    //    paletaM[ir] = Color.FromArgb(red, green, blue);
-                    //}
+                    for (int i = 0; i < 600; i++)
+                    {
+                        for (int j = 0; j < 500; j++)
+                        {
+                           
+                            //colorT = (int)(((j + cont3) / Math.Log(cont3) / 5) % 15);
+                            colorT = (int)((((600 - i - 1) * (600 - i - 1)) / (int)Math.PI) + ((500 - j - 1) / 2)) % 15;
 
-                    //for (int i = 0; i < 600; i++)
-                    //{
-                    //    for (int j = 0; j < 500; j++)
-                    //    {
-                    //        cont3 += 5;
-                    //        colorT = (int)(((j + cont3) / Math.Log(cont3) / 5) % 15);
-                    //        c = paletaM[colorT];
-                    //        pixelVec.SetPixel(i, j, c);
+                            c = paletaC[colorT];
+                            pixelVec.SetPixel(i, j, c);
 
-                    //    }
+                        }
 
-                    //}
-                    //ptbPixel.Image = pixelVec;
+                    }
+                    ptbPixel.Image = pixelVec;
                     break;
 
 
 
 
             }
+        }
+
+        private void btnAnim1_Click(object sender, EventArgs e)
+        {
+            ClaseCurvaV cv = new();
+            cv.Xo = 3;
+            cv.Yo = -1;
+            cv.Rd = 2;
+            cv.color0 = Color.Blue;
+            cv.EncenderCurvaV(pixelVec);
+
+            ClaseCurvaV cv3 = new();
+            cv3.Xo = 6;
+            cv3.Yo = -6;
+            cv3.Rd = 1;
+            cv3.color0 = Color.Blue;
+            cv3.EncenderCurvaV2(pixelVec);
+
+            ptbPixel.Image = pixelVec;
+
+            Application.DoEvents();
+            System.Threading.Thread.Sleep(2000);
+
+
+
+            cv.Xo = 3;
+            cv.Yo = -1;
+            cv.Rd = 2;
+            cv.color0 = Color.White;
+            cv.EncenderCurvaV(pixelVec);
+
+            ptbPixel.Image = pixelVec;
+
+
+        }
+
+        private void btnTiro_Click(object sender, EventArgs e)
+        {
+
+            ClaseVector cv = new();
+            double t = -8;
+            double dt = 0.001;
+
+            double x = -8; //8
+            do
+            {
+                cv.Xo = x;
+                cv.Yo = -((x * x) + (10 * x) + 16) / 2.25;
+                cv.color0 = Color.Red;
+                cv.Encender(pixelVec);
+                x += 0.001;
+
+            } while (x <= -2);
+
+            x = -2;
+            do
+            {
+                cv.Xo = x;
+                cv.Yo = -((x * x) - 4) / 1.33;
+                cv.color0 = Color.Red;
+                cv.Encender(pixelVec);
+                x += 0.001;
+
+            } while (x <= 2);
+
+            x = 2;
+            do
+            {
+                cv.Xo = x;
+                //cv.Yo = -((x * x) - (8 * x) + 12) / ;
+                cv.Yo = -((x - 2) * (x - 6)) / 2.33;
+                cv.color0 = Color.Red;
+                cv.Encender(pixelVec);
+                x += 0.001;
+
+            } while (x <= 6);
+            ptbPixel.Image = pixelVec;
+
+
+            //ANIMACION
+
+            ClaseCircunferencia cc = new();
+            cc.Rd = 0.25;
+            double x0;
+            x0 = -8;
+
+            do
+            {
+                cc.Xo = x0;
+            
+                //cc.Yo = -((x0 + 6) * (x0 + 1)) / 1.1;
+                cc.Yo = -((x0 * x0) + (10 * x0) + 16) / 2.25;
+                cc.color0 = Color.Blue;
+                cc.EncenderCirc(pixelVec);
+                x0 += 0.5;
+
+                ptbPixel.Image = pixelVec;
+                Application.DoEvents();
+                System.Threading.Thread.Sleep(100);
+
+                cc.ApagarCirc(pixelVec);
+            } while (x0 <= -2);
+
+
+            x0 = -2;
+            do
+            {
+                cc.Xo = x0;
+                //cc.Yo = -((x0 + 1) * (x0 - 3)) / 1.1;
+                cc.Yo = -((x0 * x0) - 4) / 1.33;
+                cc.color0 = Color.Blue;
+                cc.EncenderCirc(pixelVec);
+                x0 += 0.5;
+
+                ptbPixel.Image = pixelVec;
+                Application.DoEvents();
+                System.Threading.Thread.Sleep(100);
+
+                cc.ApagarCirc(pixelVec);
+            } while (x0 <= 2);
+
+
+            x0 = 2;
+            do
+            {
+                cc.Xo = x0;
+                //cc.Yo = -((x0 - 3) * (x0 - 5));
+                cc.Yo = -((x0 - 2) * (x0 - 6)) / 2.33;
+                cc.color0 = Color.Blue;
+                cc.EncenderCirc(pixelVec);
+                x0 += 0.5;
+
+                ptbPixel.Image = pixelVec;
+                Application.DoEvents();
+                System.Threading.Thread.Sleep(100);
+
+                cc.ApagarCirc(pixelVec);
+            } while (x0 <= 6);
+
         }
     }
 }

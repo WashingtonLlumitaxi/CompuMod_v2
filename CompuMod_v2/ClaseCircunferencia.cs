@@ -47,5 +47,28 @@ namespace CompuMod_v2
 
         }
 
+
+        public void ApagarCirc(Bitmap pixelVec)
+        {
+            double pi = Math.PI;
+            double t = -pi;
+            double dt = 0.001;
+
+            ClaseVector cv = new();
+
+            do
+            {
+                cv.Xo = Xo + Rd * Math.Cos(t);
+                cv.Yo = Yo + Rd * Math.Sin(t);
+                cv.color0 = Color.White;
+                cv.Encender(pixelVec);
+                t += dt;
+            }
+            while (t <= pi);
+
+        }
+
+
+
     }
 }
