@@ -963,5 +963,43 @@ namespace CompuMod_v2
             } while (x0 <= 6);
 
         }
+
+        private void btnDisparo_Click(object sender, EventArgs e)
+        {
+            ClaseSegmento seg = new();
+            //PUNTO 1
+            //seg.Xo = 1;
+            //seg.Yo = 1;
+            //seg.Xf = 8;
+            //seg.Yf = 8.33;
+            //seg.color0 = Color.Red;
+            //seg.EncenderSeg(pixelVec);
+            //ptbPixel.Image = pixelVec;
+            ////PUNTO 2
+            //seg.Xo = 8;
+            //seg.Yo = 8.33;
+            //seg.Xf = 10;
+            //seg.Yf = 6.3;
+            //seg.color0 = Color.Blue;
+            //seg.EncenderSeg(pixelVec);
+            //ptbPixel.Image = pixelVec;
+
+           // PUNTO 1
+            seg.Xo = 1;
+            seg.Yo = 1;
+            seg.Xf = -6.2;
+            seg.Yf = 7.4;
+            seg.color0 = Color.Red;
+            seg.EncenderSeg(pixelVec);
+            ptbPixel.Image = pixelVec;
+            //PUNTO 2
+            seg.Xo = -6.2;
+            seg.Yo = 7.4;
+            seg.Xf = -10;
+            seg.Yf = 4.36;
+            seg.color0 = Color.Blue;
+            seg.EncenderSeg(pixelVec);
+            ptbPixel.Image = pixelVec;
+        }
     }
 }

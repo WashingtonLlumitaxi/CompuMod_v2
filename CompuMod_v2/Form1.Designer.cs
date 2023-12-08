@@ -51,6 +51,7 @@ namespace CompuMod_v2
             this.cbxTexturas = new System.Windows.Forms.ComboBox();
             this.btnAnim1 = new System.Windows.Forms.Button();
             this.btnTiro = new System.Windows.Forms.Button();
+            this.btnDisparo = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.ptbPixel)).BeginInit();
             this.SuspendLayout();
             // 
@@ -287,12 +288,23 @@ namespace CompuMod_v2
             this.btnTiro.UseVisualStyleBackColor = true;
             this.btnTiro.Click += new System.EventHandler(this.btnTiro_Click);
             // 
+            // btnDisparo
+            // 
+            this.btnDisparo.Location = new System.Drawing.Point(165, 624);
+            this.btnDisparo.Name = "btnDisparo";
+            this.btnDisparo.Size = new System.Drawing.Size(75, 23);
+            this.btnDisparo.TabIndex = 22;
+            this.btnDisparo.Text = "button2";
+            this.btnDisparo.UseVisualStyleBackColor = true;
+            this.btnDisparo.Click += new System.EventHandler(this.btnDisparo_Click);
+            // 
             // btnTaylor1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.InactiveCaption;
             this.ClientSize = new System.Drawing.Size(743, 660);
+            this.Controls.Add(this.btnDisparo);
             this.Controls.Add(this.btnTiro);
             this.Controls.Add(this.btnAnim1);
             this.Controls.Add(this.cbxTexturas);
@@ -348,6 +360,7 @@ namespace CompuMod_v2
         private System.Windows.Forms.ComboBox cbxTexturas;
         private System.Windows.Forms.Button btnAnim1;
         private System.Windows.Forms.Button btnTiro;
+        private System.Windows.Forms.Button btnDisparo;
     }
 }
 
