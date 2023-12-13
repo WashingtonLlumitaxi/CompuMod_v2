@@ -1001,5 +1001,61 @@ namespace CompuMod_v2
             seg.EncenderSeg(pixelVec);
             ptbPixel.Image = pixelVec;
         }
+
+        private void btnCurvasNi_Click(object sender, EventArgs e)
+        {
+            ClaseVector cv = new();
+
+          
+            double x = -8;
+            double dx = 0.0002;
+            do
+            {
+                cv.Xo = x;
+                cv.Yo = 3 * Math.Pow(Math.E,-4 * x);
+                cv.color0 = Color.Green;
+                cv.Encender(pixelVec);
+                x += dx;
+
+                cv.Xo = x;
+                cv.Yo = 6 * Math.Pow(Math.E, -4 * x);
+                cv.color0 = Color.Green;
+                cv.Encender(pixelVec);
+                x += dx;
+
+                cv.Xo = x;
+                cv.Yo = 8 * Math.Pow(Math.E, -4 * x);
+                cv.color0 = Color.Red;
+                cv.Encender(pixelVec);
+                x += dx;
+
+                cv.Xo = x;
+                cv.Yo = 9 * Math.Pow(Math.E, -4 * x);
+                cv.color0 = Color.Green;
+                cv.Encender(pixelVec);
+                x += dx;
+
+                cv.Xo = x;
+                cv.Yo = -3 * Math.Pow(Math.E, -4 * x);
+                cv.color0 = Color.Red;
+                cv.Encender(pixelVec);
+                x += dx;
+
+                cv.Xo = x;
+                cv.Yo = -4 * Math.Pow(Math.E, -4 * x);
+                cv.color0 = Color.Green;
+                cv.Encender(pixelVec);
+                x += dx;
+
+                cv.Xo = x;
+                cv.Yo = -7 * Math.Pow(Math.E, -4 * x);
+                cv.color0 = Color.Green;
+                cv.Encender(pixelVec);
+                x += dx;
+
+            } while (x <= 8);
+            ptbPixel.Image = pixelVec;
+
+        }
     }
 }

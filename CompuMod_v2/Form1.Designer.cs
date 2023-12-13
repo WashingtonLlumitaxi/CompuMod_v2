@@ -52,6 +52,7 @@ namespace CompuMod_v2
             this.btnAnim1 = new System.Windows.Forms.Button();
             this.btnTiro = new System.Windows.Forms.Button();
             this.btnDisparo = new System.Windows.Forms.Button();
+            this.btnCurvasNi = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.ptbPixel)).BeginInit();
             this.SuspendLayout();
             // 
@@ -298,12 +299,23 @@ namespace CompuMod_v2
             this.btnDisparo.UseVisualStyleBackColor = true;
             this.btnDisparo.Click += new System.EventHandler(this.btnDisparo_Click);
             // 
+            // btnCurvasNi
+            // 
+            this.btnCurvasNi.Location = new System.Drawing.Point(244, 625);
+            this.btnCurvasNi.Name = "btnCurvasNi";
+            this.btnCurvasNi.Size = new System.Drawing.Size(75, 23);
+            this.btnCurvasNi.TabIndex = 23;
+            this.btnCurvasNi.Text = "button2";
+            this.btnCurvasNi.UseVisualStyleBackColor = true;
+            this.btnCurvasNi.Click += new System.EventHandler(this.btnCurvasNi_Click);
+            // 
             // btnTaylor1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.InactiveCaption;
             this.ClientSize = new System.Drawing.Size(743, 660);
+            this.Controls.Add(this.btnCurvasNi);
             this.Controls.Add(this.btnDisparo);
             this.Controls.Add(this.btnTiro);
             this.Controls.Add(this.btnAnim1);
@@ -361,6 +373,7 @@ namespace CompuMod_v2
         private System.Windows.Forms.Button btnAnim1;
         private System.Windows.Forms.Button btnTiro;
         private System.Windows.Forms.Button btnDisparo;
+        private System.Windows.Forms.Button btnCurvasNi;
     }
 }
 
