@@ -48,5 +48,24 @@ namespace CompuMod_v2
             }
             while (t <= 1);
         }
+
+        public void ApagarSeg(Bitmap pixelVec)
+        {
+            double t = 0, dt = 0.001;
+
+            ClaseVector cv = new ClaseVector();
+
+            do
+            {
+                cv.Xo = Xo + (Xf - Xo) * t;
+                cv.Yo = Yo + (Yf - Yo) * t;
+                cv.color0 = Color.Black;
+                cv.Encender(pixelVec);
+                t += dt;
+
+            }
+            while (t <= 1);
+        }
+
     }
 }

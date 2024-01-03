@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -324,12 +325,14 @@ namespace CompuMod_v2
             do
             {
                 cv.Xo = (t);
-                cv.Yo = Math.Pow(3, t);
+                //cv.Yo = Math.Pow(3, t);
+                cv.Yo = Math.Log(t + 8);
                 cv.color0 = Color.Red;
                 cv.Encender(pixelVec);
 
                 //Taylor
-                cv.Yo = 1 + (1.098 * (t -0)) + (((1.206) * Math.Pow((t - 0), 2))/ 2) + (((1.325) * Math.Pow((t - 0), 3)) / 6) + (((1.456) * Math.Pow((t - 0), 4)) / 24);
+                //cv.Yo = 1 + (1.098 * (t - 0)) + (((1.206) * Math.Pow((t - 0), 2)) / 2) + (((1.325) * Math.Pow((t - 0), 3)) / 6) + (((1.456) * Math.Pow((t - 0), 4)) / 24);
+                cv.Yo = 2.19 + (0.11 * (t -1)) - (0.012* Math.Pow((t-1),2)/2) + (0.0027 * Math.Pow((t - 1), 3)/6);
                 cv.color0 = Color.Blue;
                 cv.Encender(pixelVec);
 
@@ -988,15 +991,15 @@ namespace CompuMod_v2
             seg.Xo = 1;
             seg.Yo = 1;
             seg.Xf = -6.2;
-            seg.Yf = 7.4;
+            seg.Yf = 8.33;
             seg.color0 = Color.Red;
             seg.EncenderSeg(pixelVec);
             ptbPixel.Image = pixelVec;
             //PUNTO 2
             seg.Xo = -6.2;
-            seg.Yo = 7.4;
+            seg.Yo = 8.33;
             seg.Xf = -10;
-            seg.Yf = 4.36;
+            seg.Yf = 4.64;
             seg.color0 = Color.Blue;
             seg.EncenderSeg(pixelVec);
             ptbPixel.Image = pixelVec;
@@ -1056,6 +1059,381 @@ namespace CompuMod_v2
             } while (x <= 8);
             ptbPixel.Image = pixelVec;
 
+        }
+
+        private void btnPracticaPP2_Click(object sender, EventArgs e)
+        {
+            //Animacion letra
+            ClaseSegmento cs = new();
+            cs.Xo = 1;
+            cs.Yo = 1;
+            cs.Xf = 1;
+            cs.Yf = 5;
+            cs.color0 = Color.Red;
+            cs.EncenderSeg(pixelVec);
+
+            cs.Xo = 1;
+            cs.Yo = 1;
+            cs.Xf = -3;
+            cs.Yf = 5;
+            cs.color0 = Color.Red;
+            cs.EncenderSeg(pixelVec);
+
+            ptbPixel.Image = pixelVec;
+
+            //Animación
+
+            ClaseCircunferencia cc = new();
+            cc.Rd = 0.25;
+            double x0 = 1; // punto de inicio
+            double y0 = 1;
+
+            do
+            {
+                cc.Xo = x0;
+                cc.Yo = y0;
+                cc.color0 = Color.Green;
+                cc.EncenderCirc(pixelVec);
+                x0 -= 0.5;
+                y0 -= 0.5;
+                ptbPixel.Image = pixelVec;
+                Application.DoEvents();
+                System.Threading.Thread.Sleep(100);
+                cc.ApagarCirc(pixelVec);
+            } while (y0 <= -3);
+
+
+            ///Crear dos curvas y en medio relizar una animacion
+            ///
+
+
+
+            //ClaseVector cv = new();
+            //double t = -4;
+
+
+            //do
+            //{
+            //    cv.Xo = t;
+            //    cv.Yo = ((t + 6) * (t - 5)) / 12;
+            //    cv.color0 = Color.Red;
+
+            //    cv.Encender(pixelVec);
+
+            //    t = t + 0.001;
+
+            //} while (t <= 4);
+
+            //ptbPixel.Image = pixelVec;
+
+            //ClaseVector cv2 = new();
+            //double t2 = -4;
+
+            //do
+            //{
+            //    cv2.Xo = t2;
+            //    cv2.Yo = ((t2 + 6) * (t2 - 5)) / 12 + 4;
+            //    cv2.color0 = Color.Red;
+
+            //    cv2.Encender(pixelVec);
+
+            //    t2 = t2 + 0.001;
+
+            //} while (t2 <= 4);
+
+            //ptbPixel.Image = pixelVec;
+
+
+            ////Animacion
+
+            //ClaseCircunferencia cc = new();
+            //cc.Rd = 0.1;
+            //double x0 = -4; // punto de inicio
+            ////double y0 = 1;
+
+            //do
+            //{
+            //    cc.Xo = x0;
+            //    cc.Yo = (((x0 + 6) * (x0 - 5)) / 12) + 2;
+            //    cc.color0 = Color.Green;
+            //    cc.EncenderCirc(pixelVec);
+            //    x0 += 0.5;
+            //    ptbPixel.Image = pixelVec;
+            //    Application.DoEvents();
+            //    System.Threading.Thread.Sleep(100);
+            //    //cc.ApagarCirc(pixelVec);
+            //} while (x0 <= 4);
+
+
+
+
+
+
+        }
+
+        private async void Pract2_Click(object sender, EventArgs e)
+        {
+            ////Animar una curva
+
+            //double t = 0;
+            //double dt = 0.001;
+
+
+            //ClaseCircunferencia cc = new();
+            //ClaseVector cv = new();
+
+            //double Rd = 2;
+            //double PosX = cc.Xo;
+            //double PosY = cc.Yo;
+            //do
+            //{
+            //    //cc.Xo = 1 + Rd * Math.Sin(2 * t);
+            //    //cc.Yo = 1 + Rd * Math.Cos(3 * t);
+
+            //    cc.Xo = 1 + Rd * Math.Cos(4 * t) * Math.Cos(t);
+            //    cc.Yo = 1 + Rd * Math.Cos(4 * t) * Math.Sin(t);
+            //    cc.color0 = Color.Green;
+            //    cc.Encender(pixelVec);
+            //    t = t + dt;
+
+            //} while (t <= 2 * Math.PI);
+
+            //ptbPixel.Image = pixelVec;
+
+
+            //ClaseCircunferencia cc1 = new();
+            //cc1.Rd = 0.10;
+            //double x0 = -4; // punto de inicio
+            ////double y0 = 1;
+
+            //do
+            //{
+            //    //cc1.Xo = 1 + Rd * Math.Sin(2 * x0); 
+            //    //cc1.Yo = 1 + Rd * Math.Cos(3 * x0);
+
+            //    cc1.Xo = 1 + Rd * Math.Cos(4 * x0) * Math.Cos(x0);
+            //    cc1.Yo = 1 + Rd * Math.Cos(4 * x0) * Math.Sin(x0);
+            //    cc1.color0 = Color.Green;
+            //    cc1.EncenderCirc(pixelVec);
+            //    x0 += 0.5;
+            //    ptbPixel.Image = pixelVec;
+            //    Application.DoEvents();
+            //    System.Threading.Thread.Sleep(500);
+            //    cc1.color0 = Color.White;
+            //    cc1.ApagarCirc(pixelVec);
+
+
+
+            //} while (x0 <= 4);
+
+            ///Reloj
+            ///
+            //ClaseCircunferencia cc = new();
+            //cc.Rd = 2;
+            //cc.Xo = 2;
+            //cc.Yo = 2;
+            //cc.color0 = Color.Blue;
+            //cc.EncenderCirc(pixelVec);
+            //ptbPixel.Image = pixelVec;
+
+            ////Segmento a girar
+            //ClaseSegmento cs = new();
+            //cs.Xo = 2;
+            //cs.Yo = 2;
+
+            //double t = 0;
+            //double dt = 0.1;
+
+            //do
+            //{
+            //    //cv.Xo = Xo + Rd * Math.Cos(t);
+            //    //cv.Yo = Yo + Rd * Math.Sin(t);
+
+            //    cs.Xf = cs.Xo + (cc.Rd - 0.05) * Math.Sin(t);
+            //    cs.Yf = cs.Yo + (cc.Rd - 0.05) * Math.Cos(t);
+
+
+            //    cs.color0 = Color.Red;
+            //    cs.EncenderSeg(pixelVec);
+
+            //    ptbPixel.Image = pixelVec;
+
+            //    //Application.DoEvents();
+            //    //System.Threading.Thread.Sleep(100);
+            //    ptbPixel.Refresh();
+            //    await Task.Delay(50);
+
+            //    cs.ApagarSeg(pixelVec);
+            //    ptbPixel.Image = pixelVec;
+            //    //t -= dt; // va borrando de poco a poco  el circulo
+            //    t = t + dt;
+            //} while (t <= 2 * Math.PI);
+
+
+
+            //Animar un segmento
+            //ClaseSegmento cs = new();
+
+            //cs.Xo = 1;
+            //cs.Yo = 1;
+            //cs.Xf = -7;
+            //cs.Yf = -7;
+            ////cs.color0 = Color.Brown;
+            ////cs.EncenderSeg(pixelVec);
+            ////ptbPixel.Image = pixelVec;
+
+            //ClaseVector cv = new();
+            //double t = 0, dt = 0.001;
+            //do
+            //{
+            //    cs.Xo = cs.Xo + (cs.Xf - cs.Xo) * t;
+            //    cs.Yo = cs.Yo + (cs.Yf - cs.Yo) * t;
+            //    cs.color0 = Color.Red;
+            //    cs.EncenderSeg(pixelVec);
+            //    //t += dt;
+            //    ptbPixel.Image = pixelVec;
+            //    Application.DoEvents();
+            //    System.Threading.Thread.Sleep(100);
+            //    cs.ApagarSeg(pixelVec);
+            //    ptbPixel.Image = pixelVec;
+            //    t += dt;
+            //}
+            //while (t <= 2);
+
+            ////////////////
+            ///
+            //Animar una curva
+
+            double t = 0;
+            double dt = 0.001;
+
+
+            ClaseCircunferencia cc = new();
+            ClaseVector cv = new();
+
+            double Rd = 2;
+            double PosX = cc.Xo;
+            double PosY = cc.Yo;
+            do
+            {
+                cc.Xo = 1 + Rd * Math.Sin(2 * t);
+                cc.Yo = 1 + Rd * Math.Cos(3 * t);
+
+                //cc.Xo = 1 + Rd * Math.Cos(4 * t) * Math.Cos(t);
+                //cc.Yo = 1 + Rd * Math.Cos(4 * t) * Math.Sin(t);
+                cc.color0 = Color.Green;
+                cc.Encender(pixelVec);
+                t = t + dt;
+
+            } while (t <= 2 * Math.PI);
+
+            ptbPixel.Image = pixelVec;
+
+
+        }
+
+        private void Pract3PP_2_Click(object sender, EventArgs e)
+        {
+            ClaseCircunferencia cc = new();
+            cc.Rd = 0.2;
+            double x0 = 1;
+            //do
+            //{
+            //    cc.Xo = x0;
+            //    cc.Yo = x0;
+            //    cc.color0 = Color.Green;
+            //    cc.EncenderCirc(pixelVec);
+            //    x0 += 0.1;
+            //    ptbPixel.Image = pixelVec;
+
+            //    Application.DoEvents();
+            //    System.Threading.Thread.Sleep(100);
+            //    //cc.ApagarCirc(pixelVec);
+
+            //} while (x0 <= 3);
+
+            double x1 = -1;
+            do
+            {
+                cc.Xo = x1;
+                cc.Yo = (((-0.168) * Math.Pow(x1, 2)) + ((2.10) * x1) + (2.27));
+                cc.color0 = Color.Green;
+                cc.EncenderCirc(pixelVec);
+                x1 += 0.1;
+                ptbPixel.Image = pixelVec;
+
+                Application.DoEvents();
+                System.Threading.Thread.Sleep(100);
+                cc.ApagarCirc(pixelVec);
+
+            } while (x1 <= 10);
+
+
+
+        }
+
+        private void btnPP2_Click(object sender, EventArgs e)
+        {
+            ClaseSegmento seg = new();
+          
+
+            // PUNTO 1
+            seg.Xo = -1;
+            seg.Yo = 0;
+            seg.Xf = 8;
+            seg.Yf = 8.33;
+            seg.color0 = Color.Blue;
+            seg.EncenderSeg(pixelVec);
+            ptbPixel.Image = pixelVec;
+            //PUNTO 2
+            seg.Xo = 8;
+            seg.Yo = 8.33;
+            seg.Xf = 10;
+            seg.Yf = 6.48;
+            seg.color0 = Color.Blue;
+            seg.EncenderSeg(pixelVec);
+            ptbPixel.Image = pixelVec;
+
+
+            ClaseCircunferencia cc = new();
+            cc.Rd = 0.25;
+            double x0;
+            x0 = -1;
+
+            do
+            {
+                cc.Xo = x0;
+
+                //cc.Yo = -((x0 + 6) * (x0 + 1)) / 1.1;
+                cc.Yo = -((x0 * x0) + (10 * x0) + 16) / 2.25;
+                cc.color0 = Color.Blue;
+                cc.EncenderCirc(pixelVec);
+                x0 += 0.5;
+
+                ptbPixel.Image = pixelVec;
+                Application.DoEvents();
+                System.Threading.Thread.Sleep(100);
+
+                cc.ApagarCirc(pixelVec);
+            } while (x0 <= 8);
+
+        }
+
+        private void btn3d_1_Click(object sender, EventArgs e)
+        {
+            ClaseVector3D cv3d = new();
+            double t;
+            t = 0;
+            do
+            {
+                cv3d.Xo = (t / 3) - 2;
+                cv3d.Yo = 1 + (3 * Math.Sin(t));//t / 2;
+                cv3d.Zo = 2 + (3 * Math.Cos(t)); 
+                cv3d.color0 = Color.Black;
+                cv3d.Encender3D(pixelVec);
+                t = t + 0.001;
+            } while (t <= 15);
+            ptbPixel.Image = pixelVec;
         }
     }
 }

@@ -53,6 +53,11 @@ namespace CompuMod_v2
             this.btnTiro = new System.Windows.Forms.Button();
             this.btnDisparo = new System.Windows.Forms.Button();
             this.btnCurvasNi = new System.Windows.Forms.Button();
+            this.btnPracticaPP2 = new System.Windows.Forms.Button();
+            this.Pract2 = new System.Windows.Forms.Button();
+            this.Pract3PP_2 = new System.Windows.Forms.Button();
+            this.btnPP2 = new System.Windows.Forms.Button();
+            this.btn3d_1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.ptbPixel)).BeginInit();
             this.SuspendLayout();
             // 
@@ -275,7 +280,7 @@ namespace CompuMod_v2
             this.btnAnim1.Name = "btnAnim1";
             this.btnAnim1.Size = new System.Drawing.Size(75, 23);
             this.btnAnim1.TabIndex = 20;
-            this.btnAnim1.Text = "button2";
+            this.btnAnim1.Text = "Amin1";
             this.btnAnim1.UseVisualStyleBackColor = true;
             this.btnAnim1.Click += new System.EventHandler(this.btnAnim1_Click);
             // 
@@ -285,7 +290,7 @@ namespace CompuMod_v2
             this.btnTiro.Name = "btnTiro";
             this.btnTiro.Size = new System.Drawing.Size(75, 23);
             this.btnTiro.TabIndex = 21;
-            this.btnTiro.Text = "button2";
+            this.btnTiro.Text = "Disparo";
             this.btnTiro.UseVisualStyleBackColor = true;
             this.btnTiro.Click += new System.EventHandler(this.btnTiro_Click);
             // 
@@ -295,7 +300,7 @@ namespace CompuMod_v2
             this.btnDisparo.Name = "btnDisparo";
             this.btnDisparo.Size = new System.Drawing.Size(75, 23);
             this.btnDisparo.TabIndex = 22;
-            this.btnDisparo.Text = "button2";
+            this.btnDisparo.Text = "Disparo2";
             this.btnDisparo.UseVisualStyleBackColor = true;
             this.btnDisparo.Click += new System.EventHandler(this.btnDisparo_Click);
             // 
@@ -305,16 +310,71 @@ namespace CompuMod_v2
             this.btnCurvasNi.Name = "btnCurvasNi";
             this.btnCurvasNi.Size = new System.Drawing.Size(75, 23);
             this.btnCurvasNi.TabIndex = 23;
-            this.btnCurvasNi.Text = "button2";
+            this.btnCurvasNi.Text = "CurvasN";
             this.btnCurvasNi.UseVisualStyleBackColor = true;
             this.btnCurvasNi.Click += new System.EventHandler(this.btnCurvasNi_Click);
+            // 
+            // btnPracticaPP2
+            // 
+            this.btnPracticaPP2.Location = new System.Drawing.Point(326, 625);
+            this.btnPracticaPP2.Name = "btnPracticaPP2";
+            this.btnPracticaPP2.Size = new System.Drawing.Size(75, 23);
+            this.btnPracticaPP2.TabIndex = 24;
+            this.btnPracticaPP2.Text = "PracticaPP2";
+            this.btnPracticaPP2.UseVisualStyleBackColor = true;
+            this.btnPracticaPP2.Click += new System.EventHandler(this.btnPracticaPP2_Click);
+            // 
+            // Pract2
+            // 
+            this.Pract2.Location = new System.Drawing.Point(408, 623);
+            this.Pract2.Name = "Pract2";
+            this.Pract2.Size = new System.Drawing.Size(75, 23);
+            this.Pract2.TabIndex = 25;
+            this.Pract2.Text = "Pract2";
+            this.Pract2.UseVisualStyleBackColor = true;
+            this.Pract2.Click += new System.EventHandler(this.Pract2_Click);
+            // 
+            // Pract3PP_2
+            // 
+            this.Pract3PP_2.Location = new System.Drawing.Point(489, 622);
+            this.Pract3PP_2.Name = "Pract3PP_2";
+            this.Pract3PP_2.Size = new System.Drawing.Size(75, 23);
+            this.Pract3PP_2.TabIndex = 26;
+            this.Pract3PP_2.Text = "Pract3";
+            this.Pract3PP_2.UseVisualStyleBackColor = true;
+            this.Pract3PP_2.Click += new System.EventHandler(this.Pract3PP_2_Click);
+            // 
+            // btnPP2
+            // 
+            this.btnPP2.Location = new System.Drawing.Point(571, 621);
+            this.btnPP2.Name = "btnPP2";
+            this.btnPP2.Size = new System.Drawing.Size(75, 23);
+            this.btnPP2.TabIndex = 27;
+            this.btnPP2.Text = "PP2";
+            this.btnPP2.UseVisualStyleBackColor = true;
+            this.btnPP2.Click += new System.EventHandler(this.btnPP2_Click);
+            // 
+            // btn3d_1
+            // 
+            this.btn3d_1.Location = new System.Drawing.Point(682, 45);
+            this.btn3d_1.Name = "btn3d_1";
+            this.btn3d_1.Size = new System.Drawing.Size(75, 23);
+            this.btn3d_1.TabIndex = 28;
+            this.btn3d_1.Text = "3D_1";
+            this.btn3d_1.UseVisualStyleBackColor = true;
+            this.btn3d_1.Click += new System.EventHandler(this.btn3d_1_Click);
             // 
             // btnTaylor1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.InactiveCaption;
-            this.ClientSize = new System.Drawing.Size(743, 660);
+            this.ClientSize = new System.Drawing.Size(856, 660);
+            this.Controls.Add(this.btn3d_1);
+            this.Controls.Add(this.btnPP2);
+            this.Controls.Add(this.Pract3PP_2);
+            this.Controls.Add(this.Pract2);
+            this.Controls.Add(this.btnPracticaPP2);
             this.Controls.Add(this.btnCurvasNi);
             this.Controls.Add(this.btnDisparo);
             this.Controls.Add(this.btnTiro);
@@ -374,6 +434,11 @@ namespace CompuMod_v2
         private System.Windows.Forms.Button btnTiro;
         private System.Windows.Forms.Button btnDisparo;
         private System.Windows.Forms.Button btnCurvasNi;
+        private System.Windows.Forms.Button btnPracticaPP2;
+        private System.Windows.Forms.Button Pract2;
+        private System.Windows.Forms.Button Pract3PP_2;
+        private System.Windows.Forms.Button btnPP2;
+        private System.Windows.Forms.Button btn3d_1;
     }
 }
 

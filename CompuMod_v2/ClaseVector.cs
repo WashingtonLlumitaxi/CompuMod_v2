@@ -17,10 +17,10 @@ namespace CompuMod_v2
         public int sx2 = 600;
         public int sy1 = 0;
         public int sy2 = 500;
-        public double x1 = -2.5;//-10;
-        public double x2 = 2.5;//10;
-        public double y1 = -2;//-8.33;//-5;
-        public double y2 = 2;//8.33;//5;
+        public double x1 = -10;//-2.5;//-10;
+        public double x2 = 10;//2.5;//10;
+        public double y1 = -8.33;//-2;//-8.33;//-5;
+        public double y2 = 8.33;//2;//8.33;//5;
         public double Xo;
         public double Yo;
         public Color color0;
@@ -63,24 +63,28 @@ namespace CompuMod_v2
         //Proceso Encencer
         public void Apagar(Bitmap pixelVec)
         {
-            int Sx, Sy;
+            //    int Sx, Sy;
 
-            Pantalla(Xo, Yo, out Sx, out Sy);
+            //    Pantalla(Xo, Yo, out Sx, out Sy);
 
-            if (Sx >= 0 && Sx < 600 && Sy >= 0 && Sy < 500)
-            {
-                for (int i = 0; i < 600; i++)
-                {
-                    for (int j = 0; j < 500; j++)
-                    {
-                        pixelVec.SetPixel(i, j, Color.White);
-                    }
-                }
+            //    if (Sx >= 0 && Sx < 600 && Sy >= 0 && Sy < 500)
+            //    {
+            //        for (int i = 0; i < 600; i++)
+            //        {
+            //            for (int j = 0; j < 500; j++)
+            //            {
+            //                pixelVec.SetPixel(i, j, Color.White);
+            //            }
+            //        }
 
 
-                //pixelVec.SetPixel(Sx, Sy, Color.White);
+            //        //pixelVec.SetPixel(Sx, Sy, Color.White);
 
-            }
+            //    }
+            //}
+
+            color0 = Color.White;
+            Encender(pixelVec);
         }
     }
 }
