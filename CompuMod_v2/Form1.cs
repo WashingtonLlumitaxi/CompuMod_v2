@@ -1435,5 +1435,34 @@ namespace CompuMod_v2
             } while (t <= 15);
             ptbPixel.Image = pixelVec;
         }
+
+        private void btnEjes3D_Click(object sender, EventArgs e)
+        {
+            ClaseSegmento csX = new ClaseSegmento();
+            csX.color0 = Color.Black;
+            csX.Xo = 0;
+            csX.Yo = 0;
+            csX.Xf = 10;
+            csX.Yf = 0;
+            csX.EncenderSeg(pixelVec);
+
+            ClaseSegmento csZ = new ClaseSegmento();
+            csZ.color0 = Color.Black;
+            csZ.Xo = 0;
+            csZ.Yo = 0;
+            csZ.Xf = 0;
+            csZ.Yf = 8.33;
+            csZ.EncenderSeg(pixelVec);
+
+            ClaseSegmento csY = new ClaseSegmento();
+            csY.color0 = Color.Black;
+            csY.Xo = 0;
+            csY.Yo = 0;
+            csY.Xf = 10;
+            csY.Yf = 8.33;
+            csY.EncenderSeg(pixelVec);
+
+            ptbPixel.Image = pixelVec;
+        }
     }
 }
