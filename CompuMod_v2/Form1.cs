@@ -1464,5 +1464,80 @@ namespace CompuMod_v2
 
             ptbPixel.Image = pixelVec;
         }
+
+        private void btn3D_2_Click(object sender, EventArgs e)
+        {
+            ClaseVector3D cv3d = new();
+            double t, dt, h, dh, Rd;
+            t = 0;
+            h = 0;
+            dt = 0.1;
+            dh = 0.2;
+            Rd = 2;
+            do
+            {
+                do
+                {
+                    cv3d.Xo = -5 + 2 * Math.Cos(t); //los 1 dan la posicion a la superficie
+                    cv3d.Yo = 1 + 3 * Math.Sin(t);
+                    cv3d.Zo = 3 + (h / 3);
+                    cv3d.color0 = Color.Blue;
+                    cv3d.Encender3D(pixelVec);
+                    h = h + dh;
+
+                } while (h <= 9);
+                t = t + dt;
+                h = 0;
+            } while (t <= 6.3);
+            ptbPixel.Image = pixelVec;
+
+
+            double t1 = 0;
+            double h1 = 0;
+            dt = 0.1;
+            dh = 0.2;
+
+            do
+            {
+                do
+                {
+                    cv3d.Xo = 5 + Rd * Math.Cos(t1) * Math.Cos(h1);
+                    cv3d.Yo = 5 +  Rd * Math.Cos(t1) * Math.Sin(h1);
+                    cv3d.Zo = 1 + Rd * Math.Sin(t1);
+                    cv3d.color0 = Color.Red;
+                    cv3d.Encender3D(pixelVec);
+                    h1 = h1 + dh;
+
+                } while (h1 <= 6.3);
+                t1 = t1 + dt;
+                h1 = 0;
+            } while (t1 <= 6.3);
+            ptbPixel.Image = pixelVec;
+
+
+            double t2 = 0;
+            double h2 = 0;
+            dt = 0.04;
+            dh = 0.07;
+            //
+            do
+            {
+                h2 = 0;
+                do
+                {
+                    cv3d.Xo = -4 + 1 * (2.4 + Math.Cos(t2)) * Math.Cos(h2);
+                    cv3d.Yo = -4 + 1 * (2.4 + Math.Cos(t2)) * Math.Sin(h2);
+                    cv3d.Zo = -1 + 1 * Math.Sin(t2);
+                    cv3d.color0 = Color.Green;
+                    cv3d.Encender3D(pixelVec);
+                    h2 = h2 + dh;
+
+                } while (h2 <= 2 *Math.PI);
+                t2 = t2 + dt;
+               
+            } while (t2 <= 2 * Math.PI);
+            ptbPixel.Image = pixelVec;
+
+        }
     }
 }

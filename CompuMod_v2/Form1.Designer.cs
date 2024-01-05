@@ -59,6 +59,7 @@ namespace CompuMod_v2
             this.btnPP2 = new System.Windows.Forms.Button();
             this.btn3d_1 = new System.Windows.Forms.Button();
             this.btnEjes3D = new System.Windows.Forms.Button();
+            this.btn3D_2 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.ptbPixel)).BeginInit();
             this.SuspendLayout();
             // 
@@ -375,12 +376,23 @@ namespace CompuMod_v2
             this.btnEjes3D.UseVisualStyleBackColor = true;
             this.btnEjes3D.Click += new System.EventHandler(this.btnEjes3D_Click);
             // 
+            // btn3D_2
+            // 
+            this.btn3D_2.Location = new System.Drawing.Point(682, 75);
+            this.btn3D_2.Name = "btn3D_2";
+            this.btn3D_2.Size = new System.Drawing.Size(75, 23);
+            this.btn3D_2.TabIndex = 30;
+            this.btn3D_2.Text = "3D_2";
+            this.btn3D_2.UseVisualStyleBackColor = true;
+            this.btn3D_2.Click += new System.EventHandler(this.btn3D_2_Click);
+            // 
             // btnTaylor1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.InactiveCaption;
             this.ClientSize = new System.Drawing.Size(856, 660);
+            this.Controls.Add(this.btn3D_2);
             this.Controls.Add(this.btnEjes3D);
             this.Controls.Add(this.btn3d_1);
             this.Controls.Add(this.btnPP2);
@@ -452,6 +464,7 @@ namespace CompuMod_v2
         private System.Windows.Forms.Button btnPP2;
         private System.Windows.Forms.Button btn3d_1;
         private System.Windows.Forms.Button btnEjes3D;
+        private System.Windows.Forms.Button btn3D_2;
     }
 }
 
