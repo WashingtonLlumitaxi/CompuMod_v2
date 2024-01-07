@@ -1380,42 +1380,109 @@ namespace CompuMod_v2
             // PUNTO 1
             seg.Xo = -1;
             seg.Yo = 0;
-            seg.Xf = 8;
-            seg.Yf = 8.33;
+            seg.Xf = -2;
+            seg.Yf = -8.33;
             seg.color0 = Color.Blue;
             seg.EncenderSeg(pixelVec);
             ptbPixel.Image = pixelVec;
             //PUNTO 2
-            seg.Xo = 8;
-            seg.Yo = 8.33;
-            seg.Xf = 10;
-            seg.Yf = 6.48;
+            seg.Xo = -2;
+            seg.Yo = -8.33;
+            seg.Xf = -4.20;
+            seg.Yf = 10;
             seg.color0 = Color.Blue;
             seg.EncenderSeg(pixelVec);
             ptbPixel.Image = pixelVec;
 
 
-            ClaseCircunferencia cc = new();
-            cc.Rd = 0.25;
-            double x0;
-            x0 = -1;
 
+
+            //ClaseCircunferencia cc = new();
+            //cc.Rd = 0.15;
+            //double x0, dx;
+
+            //x0 = -1;
+            //dx = 0.5;
+            //do
+            //{
+            //    cc.Xo = x0;
+
+            //    //cc.Yo = -((x0 + 6) * (x0 + 1)) / 1.1;
+            //    cc.Yo = (2.776 * x0 + 2.776);
+            //    cc.color0 = Color.Blue;
+            //    cc.EncenderCirc(pixelVec);
+            //    x0 += dx;
+
+            //    ptbPixel.Image = pixelVec;
+            //    Application.DoEvents();
+            //    System.Threading.Thread.Sleep(500);
+
+            //    //cc.ApagarCirc(pixelVec);
+            //} while (x0 <= 2);
+
+            //x0 = 2;
+
+            //do
+            //{
+            //    cc.Xo = x0;
+
+            //    //cc.Yo = -((x0 + 6) * (x0 + 1)) / 1.1;
+            //    cc.Yo = -2.776 * x0 + 13.882;
+            //    cc.color0 = Color.Blue;
+            //    cc.EncenderCirc(pixelVec);
+            //    x0 += dx;
+
+            //    ptbPixel.Image = pixelVec;
+            //    Application.DoEvents();
+            //    System.Threading.Thread.Sleep(500);
+
+            //    //cc.ApagarCirc(pixelVec);
+            //} while (x0 <= 9);
+
+
+
+            ClaseCircunferencia cc = new();
+            cc.Rd = 0.15;
+            double x0, dx;
+
+            x0 = -4.20;
+            dx = 0.5;
             do
             {
                 cc.Xo = x0;
 
                 //cc.Yo = -((x0 + 6) * (x0 + 1)) / 1.1;
-                cc.Yo = -((x0 * x0) + (10 * x0) + 16) / 2.25;
+                //cc.Yo = (8.33 * (x0) + 8.33);
+                cc.Yo = (-8.33 * (x0) + 24.99);
                 cc.color0 = Color.Blue;
                 cc.EncenderCirc(pixelVec);
-                x0 += 0.5;
+                x0 += dx;
 
                 ptbPixel.Image = pixelVec;
                 Application.DoEvents();
-                System.Threading.Thread.Sleep(100);
+                System.Threading.Thread.Sleep(500);
 
-                cc.ApagarCirc(pixelVec);
-            } while (x0 <= 8);
+                //cc.ApagarCirc(pixelVec);
+            } while (x0 <= -2);
+
+            //x0 = 2;
+
+            //do
+            //{
+            //    cc.Xo = x0;
+
+            //    //cc.Yo = -((x0 + 6) * (x0 + 1)) / 1.1;
+            //    cc.Yo = -2.776 * x0 + 13.882;
+            //    cc.color0 = Color.Blue;
+            //    cc.EncenderCirc(pixelVec);
+            //    x0 += dx;
+
+            //    ptbPixel.Image = pixelVec;
+            //    Application.DoEvents();
+            //    System.Threading.Thread.Sleep(500);
+
+            //    //cc.ApagarCirc(pixelVec);
+            //} while (x0 <= 9);
 
         }
 
