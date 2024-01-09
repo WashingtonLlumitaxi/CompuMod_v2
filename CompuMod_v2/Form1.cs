@@ -1606,5 +1606,91 @@ namespace CompuMod_v2
             ptbPixel.Image = pixelVec;
 
         }
+
+        private void btnPlano3D_Click(object sender, EventArgs e)
+        {
+            //ClaseSegmento csZ = new ClaseSegmento();
+            //csZ.color0 = Color.Black;
+            //csZ.Xo = 0;
+            //csZ.Yo = 0;
+            //csZ.Xf = 0;
+            //csZ.Yf = 8.33;
+            //csZ.EncenderSeg(pixelVec);
+            ClaseSegmento cs = new();
+            cs.color0 = Color.Blue;
+            cs.Xo = -10;
+            cs.Yo = -6.13;
+            cs.Xf = 10;
+            cs.Yf = -6.13;
+            cs.EncenderSeg(pixelVec);
+
+            cs.Xo = -10;
+            cs.Yo = -6.63;
+            cs.Xf = 10;
+            cs.Yf = -6.63;
+            cs.EncenderSeg(pixelVec);
+
+            cs.Xo = -10;
+            cs.Yo = -7.33;
+            cs.Xf = 10;
+            cs.Yf = -7.33;
+            cs.EncenderSeg(pixelVec);
+
+            ///
+            cs.Xo = 0.5;
+            cs.Yo = -6.13;
+            cs.Xf = 2;
+            cs.Yf = -8.33;
+            cs.EncenderSeg(pixelVec);
+
+            cs.Xo = 1.5;
+            cs.Yo = -6.13;
+            cs.Xf = 5;
+            cs.Yf = -8.33;
+            cs.EncenderSeg(pixelVec);
+
+            cs.Xo = 3;
+            cs.Yo = -6.13;
+            cs.Xf = 9;
+            cs.Yf = -8.33;
+            cs.EncenderSeg(pixelVec);
+
+            cs.Xo = 5;
+            cs.Yo = -6.13;
+            cs.Xf = 10;
+            cs.Yf = -7.33;
+            cs.EncenderSeg(pixelVec);
+
+            //
+
+            cs.Xo = -0.5;
+            cs.Yo = -6.13;
+            cs.Xf = -2;
+            cs.Yf = -8.33;
+            cs.EncenderSeg(pixelVec);
+
+            cs.Xo = -1.5;
+            cs.Yo = -6.13;
+            cs.Xf = -5;
+            cs.Yf = -8.33;
+            cs.EncenderSeg(pixelVec);
+
+            cs.Xo = -3;
+            cs.Yo = -6.13;
+            cs.Xf = -9;
+            cs.Yf = -8.33;
+            cs.EncenderSeg(pixelVec);
+
+            cs.Xo = -5;
+            cs.Yo = -6.13;
+            cs.Xf = -10;
+            cs.Yf = -7.33;
+            cs.EncenderSeg(pixelVec);
+
+            ptbPixel.Image = pixelVec;
+
+
+
+        }
     }
 }
