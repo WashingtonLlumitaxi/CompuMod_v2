@@ -86,5 +86,20 @@ namespace CompuMod_v2
             color0 = Color.White;
             Encender(pixelVec);
         }
+
+
+        //Proceso Transforma
+
+        public void Transforma(int sx, int sy, out double x, out double y)
+        {
+            //x = (int)(((sx - sx1) * (x1 - x2)) / (sx1 - sx2) + x1);
+            //y = (int)(((sy - sy1) * (y2 - y1)) / (sy1 - sy2) + y2);
+
+            x = ((x1 - x2) * (sx - sx1) / (sx1 - sx2)) + x1;
+            y = ((y2 - y1) * (sy - sy1) / (sy1 - sy2)) + y2;
+
+            //x = (((sx - sx1) * (x1 - x2)) / (sx1 - sx2) + x1);
+            //y = (((sy - sy1) * (y2 - y1)) / (sy1 - sy2) + y2);
+        }
     }
 }

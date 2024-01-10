@@ -1692,5 +1692,23 @@ namespace CompuMod_v2
 
 
         }
+
+        private void btnOnda_1_Click(object sender, EventArgs e)
+        {
+            ClaseOnda co = new ClaseOnda();
+            // d =  Distancia del punto(x, y)
+            co.w = 1.5;  // Parametro que determina la longitud de onda
+            co.v = 9.3;  // Velocidad de proporcion 
+            co.m = 1;    // Altura máxima
+            co.t = 0;    // Tiempo
+
+            co.GrafOnda(pixelVec);
+            ptbPixel.Image = pixelVec;
+        }
+
+        private void ptbPixel_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

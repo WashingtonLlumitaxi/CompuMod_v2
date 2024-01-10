@@ -61,6 +61,7 @@ namespace CompuMod_v2
             this.btnEjes3D = new System.Windows.Forms.Button();
             this.btn3D_2 = new System.Windows.Forms.Button();
             this.btnPlano3D = new System.Windows.Forms.Button();
+            this.btnOnda_1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.ptbPixel)).BeginInit();
             this.SuspendLayout();
             // 
@@ -82,6 +83,7 @@ namespace CompuMod_v2
             this.ptbPixel.Size = new System.Drawing.Size(600, 500);
             this.ptbPixel.TabIndex = 1;
             this.ptbPixel.TabStop = false;
+            this.ptbPixel.Click += new System.EventHandler(this.ptbPixel_Click);
             // 
             // btnEncender
             // 
@@ -397,12 +399,23 @@ namespace CompuMod_v2
             this.btnPlano3D.UseVisualStyleBackColor = true;
             this.btnPlano3D.Click += new System.EventHandler(this.btnPlano3D_Click);
             // 
+            // btnOnda_1
+            // 
+            this.btnOnda_1.Location = new System.Drawing.Point(682, 135);
+            this.btnOnda_1.Name = "btnOnda_1";
+            this.btnOnda_1.Size = new System.Drawing.Size(75, 23);
+            this.btnOnda_1.TabIndex = 32;
+            this.btnOnda_1.Text = "Onda_1";
+            this.btnOnda_1.UseVisualStyleBackColor = true;
+            this.btnOnda_1.Click += new System.EventHandler(this.btnOnda_1_Click);
+            // 
             // btnTaylor1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.InactiveCaption;
             this.ClientSize = new System.Drawing.Size(856, 660);
+            this.Controls.Add(this.btnOnda_1);
             this.Controls.Add(this.btnPlano3D);
             this.Controls.Add(this.btn3D_2);
             this.Controls.Add(this.btnEjes3D);
@@ -478,6 +491,7 @@ namespace CompuMod_v2
         private System.Windows.Forms.Button btnEjes3D;
         private System.Windows.Forms.Button btn3D_2;
         private System.Windows.Forms.Button btnPlano3D;
+        private System.Windows.Forms.Button btnOnda_1;
     }
 }
 
