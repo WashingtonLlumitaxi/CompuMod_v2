@@ -1702,13 +1702,47 @@ namespace CompuMod_v2
             co.m = 1;    // Altura máxima
             co.t = 0;    // Tiempo
 
-            co.GrafOnda(pixelVec);
-            ptbPixel.Image = pixelVec;
+            //co.GrafOnda(pixelVec);
+            //ptbPixel.Image = pixelVec;
+
+            double tp = 0;
+            double dtp = 0.1;
+            do
+            {
+                co.t = tp;
+                co.GrafOnda(pixelVec);
+                ptbPixel.Image = pixelVec;
+                System.Windows.Forms.Application.DoEvents();
+                tp += dtp;
+            } while (tp <= 7);
         }
 
         private void ptbPixel_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnInterf_1_Click(object sender, EventArgs e)
+        {
+            ClaseOnda co = new ClaseOnda();
+            co.w = 1.5;  //Inversamente propocional a la longitud de onda
+            co.v = 9.3;
+            co.m = 1;
+            co.t = 2;
+            co.Interferencia2(pixelVec);
+            ptbPixel.Image = pixelVec;
+
+            ////Animación
+            //double tp = 0;
+            //double dtp = 0.04; // velocidad de la animacion
+            //do
+            //{
+            //    co.t = tp;
+            //    co.Interferencia(pixelVec);
+            //    ptbPixel.Image = pixelVec;
+            //    System.Windows.Forms.Application.DoEvents(); //Procesa mensajes pendientes
+            //    tp += dtp;
+            //} while (tp <= 2);
         }
     }
 }
