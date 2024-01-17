@@ -1756,7 +1756,7 @@ namespace CompuMod_v2
             co.w = 2;  //Inversamente propocional a la longitud de onda
             co.v = 9.3;
             co.m = 0.4;
-            co.t = 1;
+            co.t = 0; //Ojo cambia mucho este parametro 
 
             co.GrafOnda3D2(pixelVec);
             ptbPixel.Image = pixelVec;
