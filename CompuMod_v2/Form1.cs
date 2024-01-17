@@ -1729,20 +1729,20 @@ namespace CompuMod_v2
             co.v = 9.3;
             co.m = 1;
             co.t = 2;
-            co.Interferencia2(pixelVec);
-            ptbPixel.Image = pixelVec;
+            //co.Interferencia2(pixelVec);
+            //ptbPixel.Image = pixelVec;
 
-            ////Animación
-            //double tp = 0;
-            //double dtp = 0.04; // velocidad de la animacion
-            //do
-            //{
-            //    co.t = tp;
-            //    co.Interferencia(pixelVec);
-            //    ptbPixel.Image = pixelVec;
-            //    System.Windows.Forms.Application.DoEvents(); //Procesa mensajes pendientes
-            //    tp += dtp;
-            //} while (tp <= 2);
+            //Animación
+            double tp = 0;
+            double dtp = 0.04; // velocidad de la animacion
+            do
+            {
+                co.t = tp;
+                co.Interferencia2(pixelVec);
+                ptbPixel.Image = pixelVec;
+                System.Windows.Forms.Application.DoEvents(); //Procesa mensajes pendientes
+                tp += dtp;
+            } while (tp <= 2);
         }
     }
 }
