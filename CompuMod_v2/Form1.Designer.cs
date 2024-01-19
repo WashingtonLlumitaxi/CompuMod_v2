@@ -65,7 +65,10 @@ namespace CompuMod_v2
             this.btnInterf_1 = new System.Windows.Forms.Button();
             this.btnGraf3D1 = new System.Windows.Forms.Button();
             this.btnGraf3d2 = new System.Windows.Forms.Button();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.lbl1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.ptbPixel)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -86,7 +89,6 @@ namespace CompuMod_v2
             this.ptbPixel.Size = new System.Drawing.Size(600, 500);
             this.ptbPixel.TabIndex = 1;
             this.ptbPixel.TabStop = false;
-            this.ptbPixel.Click += new System.EventHandler(this.ptbPixel_Click);
             // 
             // btnEncender
             // 
@@ -442,12 +444,32 @@ namespace CompuMod_v2
             this.btnGraf3d2.UseVisualStyleBackColor = true;
             this.btnGraf3d2.Click += new System.EventHandler(this.btnGraf3d2_Click);
             // 
+            // dataGridView1
+            // 
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(549, 444);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RowTemplate.Height = 25;
+            this.dataGridView1.Size = new System.Drawing.Size(295, 200);
+            this.dataGridView1.TabIndex = 36;
+            // 
+            // lbl1
+            // 
+            this.lbl1.AutoSize = true;
+            this.lbl1.Location = new System.Drawing.Point(682, 255);
+            this.lbl1.Name = "lbl1";
+            this.lbl1.Size = new System.Drawing.Size(38, 15);
+            this.lbl1.TabIndex = 37;
+            this.lbl1.Text = "label2";
+            // 
             // btnTaylor1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.InactiveCaption;
             this.ClientSize = new System.Drawing.Size(856, 660);
+            this.Controls.Add(this.lbl1);
+            this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.btnGraf3d2);
             this.Controls.Add(this.btnGraf3D1);
             this.Controls.Add(this.btnInterf_1);
@@ -488,6 +510,7 @@ namespace CompuMod_v2
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
             ((System.ComponentModel.ISupportInitialize)(this.ptbPixel)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -531,6 +554,8 @@ namespace CompuMod_v2
         private System.Windows.Forms.Button btnInterf_1;
         private System.Windows.Forms.Button btnGraf3D1;
         private System.Windows.Forms.Button btnGraf3d2;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.Label lbl1;
     }
 }
 

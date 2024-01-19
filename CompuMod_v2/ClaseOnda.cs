@@ -51,15 +51,27 @@ namespace CompuMod_v2
             }
         }
 
+        public class DatosPunto
+        {
+            public double X { get; set; }
+            public double Y { get; set; }
+            public double Z { get; set; }
+        }
+
+        public List<DatosPunto> datosPuntos = new List<DatosPunto>();
+
+
         public void GrafOnda(Bitmap pixelVec)
         {
             double x, y, z;
             int sx, sy;
             int color0;
 
-            //ColoresPaleta(); //Paleta para que se pinte
-            PaletaOndaNew();
+            ColoresPaleta(); //Paleta para que se pinte
+            //PaletaOndaNew();
             Color c;
+
+           
 
             for (int i = 0; i < 600; i++)
             {
@@ -71,11 +83,22 @@ namespace CompuMod_v2
                     z = w * (Math.Sqrt((x * x) + (y * y))) - v * t;
                     //z = w * (Math.Sqrt((x * x) + (y * y)) - t * v);
                     z = m * Math.Sin(z) + 1;
+
+
+                    datosPuntos.Add(new DatosPunto { X = x, Y = y, Z = z });
+
                     color0 = (int)(z * 7.5);
                     c = paleta0[color0];
                     pixelVec.SetPixel(i, j, c);
                 }
             }
+
+            //foreach (var punto in datosPuntos)
+            //{
+            //    dataGridView1.Rows.Add(punto.X, punto.Y, punto.Z);
+            //    Console.WriteLine($"X={punto.X}, Y={punto.Y}, Z={punto.Z}");
+
+            //}
         }
 
         public void Interferencia(Bitmap pixelVec)

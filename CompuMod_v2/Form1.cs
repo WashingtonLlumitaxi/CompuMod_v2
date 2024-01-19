@@ -1702,25 +1702,38 @@ namespace CompuMod_v2
             co.m = 1;    // Altura máxima
             co.t = 0;    // Tiempo
 
-            //co.GrafOnda(pixelVec);
-            //ptbPixel.Image = pixelVec;
+            
 
-            double tp = 0;
-            double dtp = 0.1;
-            do
-            {
-                co.t = tp;
-                co.GrafOnda(pixelVec);
-                ptbPixel.Image = pixelVec;
-                System.Windows.Forms.Application.DoEvents();
-                tp += dtp;
-            } while (tp <= 7);
+            co.GrafOnda(pixelVec);
+            ptbPixel.Image = pixelVec;
+
+            //double tp = 0;
+            //double dtp = 0.1;
+            //do
+            //{
+            //    co.t = tp;
+            //    co.GrafOnda(pixelVec);
+            //    ptbPixel.Image = pixelVec;
+            //    System.Windows.Forms.Application.DoEvents();
+            //    tp += dtp;
+            //} while (tp <= 7);
+
+            dataGridView1.ColumnCount = 3;
+            dataGridView1.Columns[0].Name = "X";
+            dataGridView1.Columns[1].Name = "Y";
+            dataGridView1.Columns[2].Name = "Z";
+
+            //foreach (var punto in co.datosPuntos)
+            //{
+            //    dataGridView1.Rows.Add(punto.X, punto.Y, punto.Z);
+            //    Console.WriteLine($"X={punto.X}, Y={punto.Y}, Z={punto.Z}");
+               
+            //}
         }
 
-        private void ptbPixel_Click(object sender, EventArgs e)
-        {
+       
 
-        }
+      
 
         private void btnInterf_1_Click(object sender, EventArgs e)
         {
