@@ -64,6 +64,7 @@ namespace CompuMod_v2
             this.btnOnda_1 = new System.Windows.Forms.Button();
             this.btnInterf_1 = new System.Windows.Forms.Button();
             this.btnGraf3D1 = new System.Windows.Forms.Button();
+            this.btnGraf3d2 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.ptbPixel)).BeginInit();
             this.SuspendLayout();
             // 
@@ -431,12 +432,23 @@ namespace CompuMod_v2
             this.btnGraf3D1.UseVisualStyleBackColor = true;
             this.btnGraf3D1.Click += new System.EventHandler(this.btnGraf3D1_Click);
             // 
+            // btnGraf3d2
+            // 
+            this.btnGraf3d2.Location = new System.Drawing.Point(682, 225);
+            this.btnGraf3d2.Name = "btnGraf3d2";
+            this.btnGraf3d2.Size = new System.Drawing.Size(75, 23);
+            this.btnGraf3d2.TabIndex = 35;
+            this.btnGraf3d2.Text = "Graf3D2";
+            this.btnGraf3d2.UseVisualStyleBackColor = true;
+            this.btnGraf3d2.Click += new System.EventHandler(this.btnGraf3d2_Click);
+            // 
             // btnTaylor1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.InactiveCaption;
             this.ClientSize = new System.Drawing.Size(856, 660);
+            this.Controls.Add(this.btnGraf3d2);
             this.Controls.Add(this.btnGraf3D1);
             this.Controls.Add(this.btnInterf_1);
             this.Controls.Add(this.btnOnda_1);
@@ -518,6 +530,7 @@ namespace CompuMod_v2
         private System.Windows.Forms.Button btnOnda_1;
         private System.Windows.Forms.Button btnInterf_1;
         private System.Windows.Forms.Button btnGraf3D1;
+        private System.Windows.Forms.Button btnGraf3d2;
     }
 }
 

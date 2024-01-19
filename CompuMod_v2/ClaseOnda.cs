@@ -50,8 +50,6 @@ namespace CompuMod_v2
                 paleta0[i] = Color.FromArgb(r, g, b);
             }
         }
-        //ColoresPaleta(); //Paleta para que se pinte
-       //PaletaOndaNew();
 
         public void GrafOnda(Bitmap pixelVec)
         {
@@ -151,47 +149,71 @@ namespace CompuMod_v2
             dy = 0.1;
             cv3d.color0 = Color.Green;
 
-            x = -9;
-            do
-            {
-                y = -7;
-                do
-                {
-                    //No se utiliza el proceso Carta ya que esto es parte de la pantalla Real, antes se utilizaba porque
-                    //Era de la ventana Pantalla convietia en valores reales por que cual ya no es necesario pues ya son reales
-                    cv3d.Xo = x;
-                    cv3d.Yo = y;
-                    z1 = m * Math.Sin(w * (Math.Sqrt((x * x) + (y * y))) - v * t);
-                    z2 = m * Math.Sin(w * (Math.Sqrt((Math.Pow((x - 0), 2)) + (Math.Pow((y + 3), 2)))) - v * t);
-                    cv3d.Zo = z1 + z2;
-                    cv3d.Encender3D(pixelVec);
-
-                    y = y + 0.15;
-                } while (y <= 7);
-                x = x + 0.15;
-
-            } while (x <= 9);
-
-            //x = -7;
+            //x = -9;
             //do
             //{
-            //    y = -6;
+            //    y = -7;
             //    do
             //    {
             //        //No se utiliza el proceso Carta ya que esto es parte de la pantalla Real, antes se utilizaba porque
             //        //Era de la ventana Pantalla convietia en valores reales por que cual ya no es necesario pues ya son reales
-            //        //x = x - 3;
-            //        //y = y - 1;
             //        cv3d.Xo = x;
             //        cv3d.Yo = y;
-            //        cv3d.Zo = m * Math.Sin(w * (Math.Sqrt((x + 2) * (x + 2) + (y * y))) - v * t);
+            //        z1 = m * Math.Sin(w * (Math.Sqrt((x * x) + (y * y))) - v * t);
+            //        z2 = m * Math.Sin(w * (Math.Sqrt((Math.Pow((x - 0), 2)) + (Math.Pow((y + 3), 2)))) - v * t);
+            //        cv3d.Zo = z1 + z2;
             //        cv3d.Encender3D(pixelVec);
 
-            //        y = y + 0.1;
-            //    } while (y <= 6);
-            //    x = x + 0.1;
+            //        y = y + 0.15;
+            //    } while (y <= 7);
+            //    x = x + 0.15;
 
-            //} while (x <= 7);
+            //} while (x <= 9);
+
+            x = -7;
+            do
+            {
+                y = -6;
+                do
+                {
+                    //No se utiliza el proceso Carta ya que esto es parte de la pantalla Real, antes se utilizaba porque
+                    //Era de la ventana Pantalla convietia en valores reales por que cual ya no es necesario pues ya son reales
+                    //x = x - 3;
+                    //y = y - 1;
+                    cv3d.Xo = x;
+                    cv3d.Yo = y;
+                    cv3d.Zo = m * Math.Sin(w * (Math.Sqrt((x + 2) * (x + 2) + (y * y))) - v * t);
+                    cv3d.Encender3D(pixelVec);
+
+                    y = y + 0.1;
+                } while (y <= 6);
+                x = x + 0.1;
+
+            } while (x <= 7);
+        }
+
+        public void ApagarGrafOnda1(Bitmap pixelVec)
+        {
+            ClaseVector3D cv3d = new ClaseVector3D();
+            double x, y, z, z1, z2, z3, dx, dy;
+
+            cv3d.color0 = Color.White;
+
+            x = -7;
+            do
+            {
+                y = -6;
+                do
+                {
+                    cv3d.Xo = x;
+                    cv3d.Yo = y;
+                    cv3d.Zo = m * Math.Sin(w * (Math.Sqrt((x + 2) * (x + 2) + (y * y))) - v * t);
+                    cv3d.Encender3D(pixelVec);
+                    y = y + 0.1;
+                } while (y <= 6);
+                x = x + 0.1;
+
+            } while (x <= 7);
 
         }
 
@@ -216,6 +238,35 @@ namespace CompuMod_v2
                     double z1e = m * Math.Sin(z1);
                     double z2e = m * Math.Sin(z2);
                     //z3 = m * Math.Sin(z3);
+                    z = z1e + z2e;
+                    cv3d.Zo = z;
+                    cv3d.Encender3D(pixelVec);
+
+                    y = y + 0.15;
+                } while (y <= 7);
+                x = x + 0.15;
+            } while (x <= 8);
+
+        }
+
+        public void ApagarGrafOnda3D2(Bitmap pixelVec)
+        {
+            ClaseVector3D cv3d = new ClaseVector3D();
+            double x, y, z, z1, z2, z3, dx, dy;
+
+            cv3d.color0 = Color.White;
+            x = -8;
+            do
+            {
+                y = -7;
+                do
+                {
+                    cv3d.Xo = x;
+                    cv3d.Yo = y;
+                    z1 = w * (Math.Sqrt((x * x) + ((y - 3) * (y - 3)))) - t * v;
+                    z2 = w * (Math.Sqrt((x * x) + ((y + 3) * (y + 3)))) - t * v;
+                    double z1e = m * Math.Sin(z1);
+                    double z2e = m * Math.Sin(z2);
                     z = z1e + z2e;
                     cv3d.Zo = z;
                     cv3d.Encender3D(pixelVec);

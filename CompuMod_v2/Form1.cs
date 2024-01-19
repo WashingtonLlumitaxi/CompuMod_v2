@@ -1748,37 +1748,59 @@ namespace CompuMod_v2
         private void btnGraf3D1_Click(object sender, EventArgs e)
         {
             ClaseOnda co = new ClaseOnda();
-            //co.w = 5.2; //Estos cambios en el informe
-            //co.v = 2.3;
-            //co.m = 0.7;
-            //co.t = 1;
-
             co.w = 2;  //Inversamente propocional a la longitud de onda
             co.v = 9.3;
             co.m = 0.4;
             co.t = 0; //Ojo cambia mucho este parametro 
 
-            co.GrafOnda3D2(pixelVec);
-            ptbPixel.Image = pixelVec;
+            //co.GrafOnda3D(pixelVec);
+            //ptbPixel.Image = pixelVec;
 
             //Animación
-            //double tp = 0.5;
-            //double dtp = 0.01; //Velocidad 
-            //do
-            //{
-            //    co.t = tp;
-            //    co.GrafOnda3D(pixelVec);
-            //    ptbPixel.Image = pixelVec;
-            //    tp += dtp;
-            //    System.Windows.Forms.Application.DoEvents();
-            //    co.ApagarOnda3D(pixelVec);
-            //    ptbPixel.Image = pixelVec;
+            double tp = 0.5;
+            double dtp = 0.01; //Velocidad 
+            do
+            {
+                co.t = tp;
+                co.GrafOnda3D(pixelVec);
+                ptbPixel.Image = pixelVec;
+                tp += dtp;
+                System.Windows.Forms.Application.DoEvents();
+                co.ApagarGrafOnda1(pixelVec);
+                ptbPixel.Image = pixelVec;
 
 
-            //    //tp += dtp;
-            //} while (tp <= 30);
+                //tp += dtp;
+            } while (tp <= 30);
 
             ////
+        }
+
+        private void btnGraf3d2_Click(object sender, EventArgs e)
+        {
+            ClaseOnda co = new();
+            co.w = 2;
+            co.v = 9.3;
+            co.m = 0.4;
+            co.t = 0;
+
+
+            //co.GrafOnda3D2(pixelVec);
+            //ptbPixel.Image = pixelVec;
+
+            //Animación
+            double tp = 0.5;
+            double dtp = 0.01; //Velocidad
+            do
+            {
+                co.t = tp;
+                co.GrafOnda3D2(pixelVec);
+                tp += dtp;
+                System.Windows.Forms.Application.DoEvents();
+                co.ApagarGrafOnda3D2(pixelVec);
+                ptbPixel.Image = pixelVec;
+            } while (tp <= 30);
+
         }
     }
 }
