@@ -66,7 +66,11 @@ namespace CompuMod_v2
             this.btnGraf3D1 = new System.Windows.Forms.Button();
             this.btnGraf3d2 = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.lbl1 = new System.Windows.Forms.Label();
+            this.btnO1 = new System.Windows.Forms.Button();
+            this.btn3dInf = new System.Windows.Forms.Button();
+            this.x = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.y = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.z = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.ptbPixel)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -84,7 +88,7 @@ namespace CompuMod_v2
             // ptbPixel
             // 
             this.ptbPixel.BackColor = System.Drawing.Color.White;
-            this.ptbPixel.Location = new System.Drawing.Point(67, 45);
+            this.ptbPixel.Location = new System.Drawing.Point(12, 45);
             this.ptbPixel.Name = "ptbPixel";
             this.ptbPixel.Size = new System.Drawing.Size(600, 500);
             this.ptbPixel.TabIndex = 1;
@@ -366,7 +370,7 @@ namespace CompuMod_v2
             // 
             // btn3d_1
             // 
-            this.btn3d_1.Location = new System.Drawing.Point(682, 45);
+            this.btn3d_1.Location = new System.Drawing.Point(623, 45);
             this.btn3d_1.Name = "btn3d_1";
             this.btn3d_1.Size = new System.Drawing.Size(75, 23);
             this.btn3d_1.TabIndex = 28;
@@ -386,7 +390,7 @@ namespace CompuMod_v2
             // 
             // btn3D_2
             // 
-            this.btn3D_2.Location = new System.Drawing.Point(682, 75);
+            this.btn3D_2.Location = new System.Drawing.Point(623, 75);
             this.btn3D_2.Name = "btn3D_2";
             this.btn3D_2.Size = new System.Drawing.Size(75, 23);
             this.btn3D_2.TabIndex = 30;
@@ -396,7 +400,7 @@ namespace CompuMod_v2
             // 
             // btnPlano3D
             // 
-            this.btnPlano3D.Location = new System.Drawing.Point(682, 105);
+            this.btnPlano3D.Location = new System.Drawing.Point(704, 45);
             this.btnPlano3D.Name = "btnPlano3D";
             this.btnPlano3D.Size = new System.Drawing.Size(75, 23);
             this.btnPlano3D.TabIndex = 31;
@@ -406,7 +410,7 @@ namespace CompuMod_v2
             // 
             // btnOnda_1
             // 
-            this.btnOnda_1.Location = new System.Drawing.Point(682, 135);
+            this.btnOnda_1.Location = new System.Drawing.Point(704, 74);
             this.btnOnda_1.Name = "btnOnda_1";
             this.btnOnda_1.Size = new System.Drawing.Size(75, 23);
             this.btnOnda_1.TabIndex = 32;
@@ -416,7 +420,7 @@ namespace CompuMod_v2
             // 
             // btnInterf_1
             // 
-            this.btnInterf_1.Location = new System.Drawing.Point(682, 165);
+            this.btnInterf_1.Location = new System.Drawing.Point(785, 103);
             this.btnInterf_1.Name = "btnInterf_1";
             this.btnInterf_1.Size = new System.Drawing.Size(75, 23);
             this.btnInterf_1.TabIndex = 33;
@@ -426,7 +430,7 @@ namespace CompuMod_v2
             // 
             // btnGraf3D1
             // 
-            this.btnGraf3D1.Location = new System.Drawing.Point(682, 195);
+            this.btnGraf3D1.Location = new System.Drawing.Point(785, 45);
             this.btnGraf3D1.Name = "btnGraf3D1";
             this.btnGraf3D1.Size = new System.Drawing.Size(75, 23);
             this.btnGraf3D1.TabIndex = 34;
@@ -436,7 +440,7 @@ namespace CompuMod_v2
             // 
             // btnGraf3d2
             // 
-            this.btnGraf3d2.Location = new System.Drawing.Point(682, 225);
+            this.btnGraf3d2.Location = new System.Drawing.Point(785, 74);
             this.btnGraf3d2.Name = "btnGraf3d2";
             this.btnGraf3d2.Size = new System.Drawing.Size(75, 23);
             this.btnGraf3d2.TabIndex = 35;
@@ -447,28 +451,59 @@ namespace CompuMod_v2
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(549, 444);
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.x,
+            this.y,
+            this.z});
+            this.dataGridView1.Location = new System.Drawing.Point(623, 147);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowTemplate.Height = 25;
-            this.dataGridView1.Size = new System.Drawing.Size(295, 200);
+            this.dataGridView1.Size = new System.Drawing.Size(344, 501);
             this.dataGridView1.TabIndex = 36;
             // 
-            // lbl1
+            // btnO1
             // 
-            this.lbl1.AutoSize = true;
-            this.lbl1.Location = new System.Drawing.Point(682, 255);
-            this.lbl1.Name = "lbl1";
-            this.lbl1.Size = new System.Drawing.Size(38, 15);
-            this.lbl1.TabIndex = 37;
-            this.lbl1.Text = "label2";
+            this.btnO1.Location = new System.Drawing.Point(623, 104);
+            this.btnO1.Name = "btnO1";
+            this.btnO1.Size = new System.Drawing.Size(75, 23);
+            this.btnO1.TabIndex = 38;
+            this.btnO1.Text = "2D_INF";
+            this.btnO1.UseVisualStyleBackColor = true;
+            this.btnO1.Click += new System.EventHandler(this.btnO1_Click);
+            // 
+            // btn3dInf
+            // 
+            this.btn3dInf.Location = new System.Drawing.Point(704, 103);
+            this.btn3dInf.Name = "btn3dInf";
+            this.btn3dInf.Size = new System.Drawing.Size(75, 23);
+            this.btn3dInf.TabIndex = 39;
+            this.btn3dInf.Text = "3D_INF";
+            this.btn3dInf.UseVisualStyleBackColor = true;
+            this.btn3dInf.Click += new System.EventHandler(this.btn3dInf_Click);
+            // 
+            // x
+            // 
+            this.x.HeaderText = "X";
+            this.x.Name = "x";
+            // 
+            // y
+            // 
+            this.y.HeaderText = "Y";
+            this.y.Name = "y";
+            // 
+            // z
+            // 
+            this.z.HeaderText = "Z";
+            this.z.Name = "z";
             // 
             // btnTaylor1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.InactiveCaption;
-            this.ClientSize = new System.Drawing.Size(856, 660);
-            this.Controls.Add(this.lbl1);
+            this.ClientSize = new System.Drawing.Size(978, 660);
+            this.Controls.Add(this.btn3dInf);
+            this.Controls.Add(this.btnO1);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.btnGraf3d2);
             this.Controls.Add(this.btnGraf3D1);
@@ -555,7 +590,11 @@ namespace CompuMod_v2
         private System.Windows.Forms.Button btnGraf3D1;
         private System.Windows.Forms.Button btnGraf3d2;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.Label lbl1;
+        private System.Windows.Forms.Button btnO1;
+        private System.Windows.Forms.Button btn3dInf;
+        private System.Windows.Forms.DataGridViewTextBoxColumn x;
+        private System.Windows.Forms.DataGridViewTextBoxColumn y;
+        private System.Windows.Forms.DataGridViewTextBoxColumn z;
     }
 }
 

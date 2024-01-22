@@ -1697,12 +1697,10 @@ namespace CompuMod_v2
         {
             ClaseOnda co = new ClaseOnda();
             // d =  Distancia del punto(x, y)
-            co.w = 1.5;  // Parametro que determina la longitud de onda
-            co.v = 9.3;  // Velocidad de proporcion 
-            co.m = 1;    // Altura máxima
-            co.t = 0;    // Tiempo
-
-            
+            co.w = 1.5; 
+            co.v = 9.3;   
+            co.m = 1;    
+            co.t = 0;
 
             co.GrafOnda(pixelVec);
             ptbPixel.Image = pixelVec;
@@ -1718,23 +1716,10 @@ namespace CompuMod_v2
             //    tp += dtp;
             //} while (tp <= 7);
 
-            dataGridView1.ColumnCount = 3;
-            dataGridView1.Columns[0].Name = "X";
-            dataGridView1.Columns[1].Name = "Y";
-            dataGridView1.Columns[2].Name = "Z";
-
-            //foreach (var punto in co.datosPuntos)
-            //{
-            //    dataGridView1.Rows.Add(punto.X, punto.Y, punto.Z);
-            //    Console.WriteLine($"X={punto.X}, Y={punto.Y}, Z={punto.Z}");
-               
-            //}
+            
         }
 
        
-
-      
-
         private void btnInterf_1_Click(object sender, EventArgs e)
         {
             ClaseOnda co = new ClaseOnda();
@@ -1766,28 +1751,29 @@ namespace CompuMod_v2
             co.m = 0.4;
             co.t = 0; //Ojo cambia mucho este parametro 
 
-            //co.GrafOnda3D(pixelVec);
-            //ptbPixel.Image = pixelVec;
+            co.GrafOnda3D(pixelVec);
+            ptbPixel.Image = pixelVec;
 
             //Animación
-            double tp = 0.5;
-            double dtp = 0.01; //Velocidad 
-            do
-            {
-                co.t = tp;
-                co.GrafOnda3D(pixelVec);
-                ptbPixel.Image = pixelVec;
-                tp += dtp;
-                System.Windows.Forms.Application.DoEvents();
-                co.ApagarGrafOnda1(pixelVec);
-                ptbPixel.Image = pixelVec;
+            //double tp = 0.5;
+            //double dtp = 0.01; //Velocidad 
+            //do
+            //{
+            //    co.t = tp;
+            //    co.GrafOnda3D(pixelVec);
+            //    ptbPixel.Image = pixelVec;
+            //    tp += dtp;
+            //    System.Windows.Forms.Application.DoEvents();
+            //    co.ApagarGrafOnda1(pixelVec);
+            //    ptbPixel.Image = pixelVec;
 
 
-                //tp += dtp;
-            } while (tp <= 30);
+            //    //tp += dtp;
+            //} while (tp <= 30);
 
             ////
         }
+       
 
         private void btnGraf3d2_Click(object sender, EventArgs e)
         {
@@ -1813,6 +1799,93 @@ namespace CompuMod_v2
                 co.ApagarGrafOnda3D2(pixelVec);
                 ptbPixel.Image = pixelVec;
             } while (tp <= 30);
+
+        }
+
+        Color[] paleta0 = new Color[16];
+        public void ColoresPaleta()
+        {
+            paleta0[0] = Color.Black;
+            paleta0[1] = Color.Navy;
+            paleta0[2] = Color.Green;
+            paleta0[3] = Color.Aqua;
+            paleta0[4] = Color.Red;
+            paleta0[5] = Color.Purple;
+            paleta0[6] = Color.Maroon;
+            paleta0[7] = Color.LightGray;
+            paleta0[8] = Color.DarkGray;
+            paleta0[9] = Color.Blue;
+            paleta0[10] = Color.Lime;
+            paleta0[11] = Color.Silver;
+            paleta0[12] = Color.Teal;
+            paleta0[13] = Color.Fuchsia;
+            paleta0[14] = Color.Yellow;
+            paleta0[15] = Color.White;
+        }
+        private void btnO1_Click(object sender, EventArgs e)
+        {
+
+            ClaseOnda co = new ClaseOnda();
+            co.w = 1.5;
+            co.v = 9.3;
+            co.m = 1;
+            co.t = 0;
+
+            co.GrafOnda(pixelVec);
+            ptbPixel.Image = pixelVec;
+
+           
+            double[, ,] datosMatriz = co.ObtenerDatosMatriz(pixelVec);
+
+            // Asignar la matriz al DataGridView
+            dataGridView1.Rows.Clear();
+            dataGridView1.ColumnCount = 3;
+
+            for (int i = 0; i < 60; i++)
+            {
+                DataGridViewRow row = new DataGridViewRow();
+
+                for (int j = 0; j < 50; j++)
+                {
+                    dataGridView1.Rows.Add(datosMatriz[i, j, 0], datosMatriz[i, j, 1], datosMatriz[i, j, 2]);
+                }
+
+                dataGridView1.Rows.Add(row);
+            }
+
+
+        }
+
+        private void btn3dInf_Click(object sender, EventArgs e)
+        {
+            ClaseOnda co = new ClaseOnda();
+            co.w = 2;  //Inversamente propocional a la longitud de onda
+            co.v = 9.3;
+            co.m = 0.4;
+            co.t = 0; //Ojo cambia mucho este parametro 
+
+            co.GrafOnda3Infor(pixelVec);
+            ptbPixel.Image = pixelVec;
+
+            //ClaseOnda co = new ClaseOnda();
+            double[,,] datosMatriz = co.GrafOnda3Infor(pixelVec);
+
+            // Asignar la matriz al DataGridView
+            dataGridView1.Rows.Clear();
+            dataGridView1.ColumnCount = 3;
+
+            for (int i = 0; i < 60; i++)
+            {
+                DataGridViewRow row = new DataGridViewRow();
+
+                for (int j = 0; j < 50; j++)
+                {
+                    dataGridView1.Rows.Add(datosMatriz[i, j, 0], datosMatriz[i, j, 1], datosMatriz[i, j, 2]);
+                }
+
+                dataGridView1.Rows.Add(row);
+            }
+
 
         }
     }

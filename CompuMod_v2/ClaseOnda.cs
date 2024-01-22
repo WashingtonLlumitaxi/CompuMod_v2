@@ -51,27 +51,16 @@ namespace CompuMod_v2
             }
         }
 
-        public class DatosPunto
-        {
-            public double X { get; set; }
-            public double Y { get; set; }
-            public double Z { get; set; }
-        }
-
-        public List<DatosPunto> datosPuntos = new List<DatosPunto>();
-
 
         public void GrafOnda(Bitmap pixelVec)
         {
             double x, y, z;
-            int sx, sy;
             int color0;
 
             ColoresPaleta(); //Paleta para que se pinte
             //PaletaOndaNew();
             Color c;
 
-           
 
             for (int i = 0; i < 600; i++)
             {
@@ -84,22 +73,14 @@ namespace CompuMod_v2
                     //z = w * (Math.Sqrt((x * x) + (y * y)) - t * v);
                     z = m * Math.Sin(z) + 1;
 
-
-                    datosPuntos.Add(new DatosPunto { X = x, Y = y, Z = z });
-
                     color0 = (int)(z * 7.5);
                     c = paleta0[color0];
                     pixelVec.SetPixel(i, j, c);
                 }
             }
 
-            //foreach (var punto in datosPuntos)
-            //{
-            //    dataGridView1.Rows.Add(punto.X, punto.Y, punto.Z);
-            //    Console.WriteLine($"X={punto.X}, Y={punto.Y}, Z={punto.Z}");
-
-            //}
         }
+
 
         public void Interferencia(Bitmap pixelVec)
         {
@@ -165,12 +146,14 @@ namespace CompuMod_v2
 
         public void GrafOnda3D(Bitmap pixelVec)
         {
+
             ClaseVector3D cv3d = new ClaseVector3D();
             double x, y, z, z1, z2, z3, dx, dy;
 
-            dx = 0.1;
-            dy = 0.1;
+           
             cv3d.color0 = Color.Green;
+
+          
 
             //x = -9;
             //do
@@ -207,6 +190,8 @@ namespace CompuMod_v2
                     cv3d.Yo = y;
                     cv3d.Zo = m * Math.Sin(w * (Math.Sqrt((x + 2) * (x + 2) + (y * y))) - v * t);
                     cv3d.Encender3D(pixelVec);
+
+               
 
                     y = y + 0.1;
                 } while (y <= 6);
@@ -299,6 +284,128 @@ namespace CompuMod_v2
                 x = x + 0.15;
             } while (x <= 8);
 
+        }
+
+        //public void GrafOndaInf(Bitmap pixelVec)
+        public double[, ,] ObtenerDatosMatriz(Bitmap pixelVec)
+        {
+            double x, y, z1, z2;
+            int color0;
+
+            ColoresPaleta();
+      
+            Color c;
+
+            double[,,] datosMatriz = new double[600, 500, 3];
+
+            for (int i = 0; i < 600; i++)
+            {
+                for (int j = 0; j < 500; j++)
+                {
+                    //
+                    //Transformar(i, j, out x, out y);
+                    //z = w * (Math.Sqrt(((x + 4) * (x + 4)) + ((y + 1) * (y + 1))) - v * t);
+                    //z = m * Math.Sin(z) + 1;
+                    //color0 = (int)(z * 7.5);  //Se multiplica por 7.5 porque se tiene 15 colores y se lo divide para 2 porque la funcion seno toma valores de -1 a 1
+                    //                          //Console.WriteLine($"X: {x:F3}   Y: {y:F3} RGB: {paleta0[color0].Name}");
+                    //writer.WriteLine($"{x:F5};{y:F5};{z:F5};{paleta0[color0].Name}");
+                    //c = paleta0[color0];
+                    //viewPort.SetPixel(i, j, c);
+                    //
+
+                    Transforma(i, j, out x, out y);
+                   // x = x + 6; 
+                   // y = y - 0; 
+                   // z1 = w * (Math.Sqrt((x * x) + (y * y))) - v * t;
+                    z1 = w * (Math.Sqrt(((x + 6) * (x + 6)) + ((y + 1) * (y + 1))) - v * t);
+                    z2 = m * Math.Sin(z1) + 1;
+
+                    //datosMatriz[i, j] = z2;
+                    datosMatriz[i, j, 0] = x;
+                    datosMatriz[i, j, 1] = y;
+                    datosMatriz[i, j, 2] = z2;
+
+
+
+                    color0 = (int)(z2 * 7.5);
+                    c = paleta0[color0];
+                    pixelVec.SetPixel(i, j, c);
+                }
+            }
+            return datosMatriz;
+        }
+
+        public double[,,] GrafOnda3Infor(Bitmap pixelVec)
+        {
+
+
+            //double[,,] datosMatriz = new double[600, 500, 3];
+
+            ClaseVector3D cv3d = new ClaseVector3D();
+            double x, y, z, z1, z2, z3;
+            int dx, dy, dz;
+            cv3d.color0 = Color.Green;
+
+            //x = -7;
+            //do
+            //{
+            //    y = -6;
+            //    do
+            //    {
+            //        //x = x - 3;
+            //        //y = y - 1;
+            //        cv3d.Xo = x;
+            //        cv3d.Yo = y;
+            //        cv3d.Zo = m * Math.Sin(w * (Math.Sqrt((x + 2) * (x + 2) + (y * y))) - v * t);
+            //        cv3d.Encender3D(pixelVec);
+
+            //        dx = Convert.ToInt32(x);
+            //        dy = Convert.ToInt32(y);
+            //        dz = Convert.ToInt32(cv3d.Zo);
+
+            //        datosMatriz[0, 0, 0] = x;
+            //        datosMatriz[1, 1, 1] = y;
+            //        datosMatriz[2, 2, 2] = cv3d.Zo;
+
+
+            //        y = y + 0.1;
+            //    } while (y <= 6);
+            //    x = x + 0.1;
+
+            //} while (x <= 7);
+            int filas = 600;
+            int columnas = 500;
+
+            double[,,] datosMatriz = new double[filas, columnas, 3];
+
+        
+            for (double i = -7; i <= 7; i += 0.1)
+            {
+            
+                for (double j = -6; j <= 6; j += 0.1)
+                {
+                    cv3d.Xo = i;
+                    cv3d.Yo = j;
+                    cv3d.Zo = m * Math.Sin(w * (Math.Sqrt((i + 2) * (i + 2) + (j * j))) - v * t);
+                    cv3d.Encender3D(pixelVec);
+
+                    //datosMatriz[i, j, 0] = x;
+                    //datosMatriz[i, j, 1] = y;
+                    //datosMatriz[i, j, 2] = cv3d.Zo;
+
+                    int indiceFila = (int)((i + 7) / 0.1); // Ajusta según el rango y la resolución
+                    int indiceColumna = (int)((j + 6) / 0.1); // Ajusta según el rango y la resolución
+
+                    datosMatriz[indiceFila, indiceColumna, 0] = i;
+                    datosMatriz[indiceFila, indiceColumna, 1] = j;
+                    datosMatriz[indiceFila, indiceColumna, 2] = cv3d.Zo;
+
+                 
+                }
+
+             
+            }
+            return datosMatriz;
         }
 
     }
