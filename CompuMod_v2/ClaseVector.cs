@@ -17,10 +17,10 @@ namespace CompuMod_v2
         public int sx2 = 600;
         public int sy1 = 0;
         public int sy2 = 500;
-        public double x1 = -10;//-2.5;//-10;
-        public double x2 = 10;//2.5;//10;
-        public double y1 = -8.33;//-2;//-8.33;//-5;
-        public double y2 = 8.33;//2;//8.33;//5;
+        public double x1 = -5;//-10;//-2.5;//-10;
+        public double x2 = 5;//10;//2.5;//10;
+        public double y1 = -4.16;//-8.33;//-2;//-8.33;//-5;
+        public double y2 = 4.16;//8.33;//2;//8.33;//5;
         public double Xo;
         public double Yo;
         public Color color0;

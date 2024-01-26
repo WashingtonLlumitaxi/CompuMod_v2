@@ -1888,5 +1888,12 @@ namespace CompuMod_v2
 
 
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            ClaseCuerda cuer = new();
+            cuer.Grafico(pixelVec);
+            ptbPixel.Image = pixelVec;
+        }
     }
 }
