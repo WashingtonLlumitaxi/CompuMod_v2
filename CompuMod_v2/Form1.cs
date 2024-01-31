@@ -1802,26 +1802,7 @@ namespace CompuMod_v2
 
         }
 
-        Color[] paleta0 = new Color[16];
-        public void ColoresPaleta()
-        {
-            paleta0[0] = Color.Black;
-            paleta0[1] = Color.Navy;
-            paleta0[2] = Color.Green;
-            paleta0[3] = Color.Aqua;
-            paleta0[4] = Color.Red;
-            paleta0[5] = Color.Purple;
-            paleta0[6] = Color.Maroon;
-            paleta0[7] = Color.LightGray;
-            paleta0[8] = Color.DarkGray;
-            paleta0[9] = Color.Blue;
-            paleta0[10] = Color.Lime;
-            paleta0[11] = Color.Silver;
-            paleta0[12] = Color.Teal;
-            paleta0[13] = Color.Fuchsia;
-            paleta0[14] = Color.Yellow;
-            paleta0[15] = Color.White;
-        }
+     
         private void btnO1_Click(object sender, EventArgs e)
         {
 
@@ -1892,8 +1873,30 @@ namespace CompuMod_v2
         private void button2_Click(object sender, EventArgs e)
         {
             ClaseCuerda cuer = new();
+            cuer.t = 3.37;
             cuer.Grafico(pixelVec);
             ptbPixel.Image = pixelVec;
+        }
+
+        private void AnimFourier_Click(object sender, EventArgs e)
+        {
+            ClaseCuerda cuer = new();
+
+            double tp, dtp;
+            tp = 0.5;
+            dtp = 0.007; //Velocidad
+            cuer.t = 3.37;
+            do
+            {
+                cuer.t = tp;
+                cuer.Grafico(pixelVec);
+                ptbPixel.Image = pixelVec;
+                tp += dtp;
+                System.Windows.Forms.Application.DoEvents();
+                cuer.ApagGrafico(pixelVec);
+                ptbPixel.Image = pixelVec;
+            } while (tp <= 30);
+
         }
     }
 }

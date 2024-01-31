@@ -72,6 +72,7 @@ namespace CompuMod_v2
             this.btnO1 = new System.Windows.Forms.Button();
             this.btn3dInf = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
+            this.AnimFourier = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.ptbPixel)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -507,12 +508,23 @@ namespace CompuMod_v2
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
+            // AnimFourier
+            // 
+            this.AnimFourier.Location = new System.Drawing.Point(704, 162);
+            this.AnimFourier.Name = "AnimFourier";
+            this.AnimFourier.Size = new System.Drawing.Size(75, 23);
+            this.AnimFourier.TabIndex = 41;
+            this.AnimFourier.Text = "AnimFou";
+            this.AnimFourier.UseVisualStyleBackColor = true;
+            this.AnimFourier.Click += new System.EventHandler(this.AnimFourier_Click);
+            // 
             // btnTaylor1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.InactiveCaption;
             this.ClientSize = new System.Drawing.Size(847, 660);
+            this.Controls.Add(this.AnimFourier);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.btn3dInf);
             this.Controls.Add(this.btnO1);
@@ -608,6 +620,7 @@ namespace CompuMod_v2
         private System.Windows.Forms.DataGridViewTextBoxColumn y;
         private System.Windows.Forms.DataGridViewTextBoxColumn z;
         private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button AnimFourier;
     }
 }
 

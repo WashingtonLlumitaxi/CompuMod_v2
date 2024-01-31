@@ -28,7 +28,8 @@ namespace CompuMod_v2
             int k = 0;
             sumF = 0;
             //t = 0.76;
-            t = 3.37;
+            //t = 3.37;
+         
 
             do
             {
@@ -51,6 +52,22 @@ namespace CompuMod_v2
             double dx = 0.002;
             ClaseVector vec = new();
             vec.color0 = Color.Blue;
+            do
+            {
+                vec.Xo = x;
+                FourierC(x, out double fou);
+                vec.Yo = fou;
+                vec.Encender(pixelVec);
+                x = x + dx;
+            } while (x <= 4);
+        }
+
+        public void ApagGrafico(Bitmap pixelVec)
+        {
+            double x = 0;
+            double dx = 0.002;
+            ClaseVector vec = new();
+            vec.color0 = Color.White;
             do
             {
                 vec.Xo = x;
