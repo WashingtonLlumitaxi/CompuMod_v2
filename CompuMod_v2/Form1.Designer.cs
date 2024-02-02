@@ -73,8 +73,11 @@ namespace CompuMod_v2
             this.btn3dInf = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.AnimFourier = new System.Windows.Forms.Button();
+            this.btnRungeKut = new System.Windows.Forms.Button();
+            this.dgvRunge1 = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.ptbPixel)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvRunge1)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -518,12 +521,33 @@ namespace CompuMod_v2
             this.AnimFourier.UseVisualStyleBackColor = true;
             this.AnimFourier.Click += new System.EventHandler(this.AnimFourier_Click);
             // 
+            // btnRungeKut
+            // 
+            this.btnRungeKut.Location = new System.Drawing.Point(704, 191);
+            this.btnRungeKut.Name = "btnRungeKut";
+            this.btnRungeKut.Size = new System.Drawing.Size(75, 23);
+            this.btnRungeKut.TabIndex = 42;
+            this.btnRungeKut.Text = "RungeK";
+            this.btnRungeKut.UseVisualStyleBackColor = true;
+            this.btnRungeKut.Click += new System.EventHandler(this.btnRungeKut_Click);
+            // 
+            // dgvRunge1
+            // 
+            this.dgvRunge1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvRunge1.Location = new System.Drawing.Point(30, 58);
+            this.dgvRunge1.Name = "dgvRunge1";
+            this.dgvRunge1.RowTemplate.Height = 25;
+            this.dgvRunge1.Size = new System.Drawing.Size(404, 282);
+            this.dgvRunge1.TabIndex = 43;
+            // 
             // btnTaylor1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.InactiveCaption;
-            this.ClientSize = new System.Drawing.Size(847, 660);
+            this.ClientSize = new System.Drawing.Size(784, 660);
+            this.Controls.Add(this.dgvRunge1);
+            this.Controls.Add(this.btnRungeKut);
             this.Controls.Add(this.AnimFourier);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.btn3dInf);
@@ -570,6 +594,7 @@ namespace CompuMod_v2
             this.Text = "Form1";
             ((System.ComponentModel.ISupportInitialize)(this.ptbPixel)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvRunge1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -621,6 +646,8 @@ namespace CompuMod_v2
         private System.Windows.Forms.DataGridViewTextBoxColumn z;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button AnimFourier;
+        private System.Windows.Forms.Button btnRungeKut;
+        private System.Windows.Forms.DataGridView dgvRunge1;
     }
 }
 

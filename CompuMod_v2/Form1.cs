@@ -1898,5 +1898,69 @@ namespace CompuMod_v2
             } while (tp <= 30);
 
         }
+
+        // Función diferencial
+        static double Function(double t, double y, double k, double M)
+        {
+            return k * y * (M - y);
+        }
+
+        private void btnRungeKut_Click(object sender, EventArgs e)
+        {
+
+            // Parámetros y condiciones iniciales
+            double k = 0.001;
+            double M = 500;
+            double h = 1.0;
+
+            double t0 = 0;
+            double y0 = 1;
+            double tf = 10;
+
+    
+            int numIterations = 20;
+
+   
+            double y = y0;
+            double t = t0;
+
+            double[,] resultados = new double[numIterations + 1, 2];  
+
+            resultados[0, 0] = t;  
+            resultados[0, 1] = y;  
+
+
+            for (int i = 0; i < numIterations; i++)
+            {
+                // Cálculos del Runge-Kutta
+                double k1 = h * Function(t, y, k, M);
+                double k2 = h * Function(t + h / 2, y + k1 / 2, k, M);
+                double k3 = h * Function(t + h / 2, y + k2 / 2, k, M);
+                double k4 = h * Function(t + h, y + k3, k, M);
+
+              
+                y = y + (1.0 / 6.0) * (k1 + 2 * k2 + 2 * k3 + k4);
+                t = t + h;
+
+                resultados[i, 0] = t;
+                resultados[i, 1] = y;
+
+              
+                //Console.WriteLine($"Tiempo: {t}, Enfermos: {y}");
+
+
+
+            }
+
+            dgvRunge1.Columns.Add("Tiempo", "Tiempo");
+            dgvRunge1.Columns.Add("Enfermos", "Enfermos");
+
+            //Mostrar
+
+            for (int i = 0; i <= numIterations; i++)
+            {
+                dgvRunge1.Rows.Add(resultados[i, 0], resultados[i, 1]);
+            }
+        }
     }
 }
