@@ -1486,6 +1486,7 @@ namespace CompuMod_v2
 
         }
 
+        //Tercer parcial
         private void btn3d_1_Click(object sender, EventArgs e)
         {
             ClaseVector3D cv3d = new();
@@ -1900,7 +1901,7 @@ namespace CompuMod_v2
         }
 
         // Función diferencial
-        static double Function(double t, double y, double k, double M)
+        static double RungeKutta(double t, double y, double k, double M)
         {
             return k * y * (M - y);
         }
@@ -1910,57 +1911,91 @@ namespace CompuMod_v2
 
             // Parámetros y condiciones iniciales
             double k = 0.001;
-            double M = 500;
+            double M = 500; //Población 
             double h = 1.0;
 
             double t0 = 0;
             double y0 = 1;
-            double tf = 10;
+            //double tf = 10;
 
-    
-            int numIterations = 20;
+            //tiempo final(tf) = número de interaciones 
+            int tf = 20;
 
    
             double y = y0;
             double t = t0;
 
-            double[,] resultados = new double[numIterations + 1, 2];  
+            double[,] resultados = new double[tf + 1, 2];  
 
             resultados[0, 0] = t;  
-            resultados[0, 1] = y;  
+            resultados[0, 1] = y;
 
-
-            for (int i = 0; i < numIterations; i++)
+            //Bucle de datos
+            int i = 0;
+            //for (int i = 0; i < tf; i++)
+            do
             {
                 // Cálculos del Runge-Kutta
-                double k1 = h * Function(t, y, k, M);
-                double k2 = h * Function(t + h / 2, y + k1 / 2, k, M);
-                double k3 = h * Function(t + h / 2, y + k2 / 2, k, M);
-                double k4 = h * Function(t + h, y + k3, k, M);
-
-              
-                y = y + (1.0 / 6.0) * (k1 + 2 * k2 + 2 * k3 + k4);
-                t = t + h;
+                double k1 = h * RungeKutta(t, y, k, M);
+                double k2 = h * RungeKutta(t + h / 2, y + k1 / 2, k, M);
+                double k3 = h * RungeKutta(t + h / 2, y + k2 / 2, k, M);
+                double k4 = h * RungeKutta(t + h, y + k3, k, M);
+                y += (1.0 / 6.0) * (k1 + 2 * k2 + 2 * k3 + k4);
+                t += h;
 
                 resultados[i, 0] = t;
                 resultados[i, 1] = y;
-
-              
-                //Console.WriteLine($"Tiempo: {t}, Enfermos: {y}");
-
-
-
-            }
+                i++;
+            } while (i < tf);
 
             dgvRunge1.Columns.Add("Tiempo", "Tiempo");
             dgvRunge1.Columns.Add("Enfermos", "Enfermos");
 
-            //Mostrar
-
-            for (int i = 0; i <= numIterations; i++)
+            //Mostrar datos de la matriz 
+            for (int j = 0; j <= tf; j++)
             {
-                dgvRunge1.Rows.Add(resultados[i, 0], resultados[i, 1]);
+                dgvRunge1.Rows.Add(resultados[j, 0], resultados[j, 1]);
             }
+        }
+
+        private void btnGrafRunge_Click(object sender, EventArgs e)
+        {
+            double k = 0.001;
+            double M = 500; //Población 
+            double h = 0.01;//1.0;
+            double t0 = 0;
+            double y0 = 1;
+            int tf = 20;
+            double y = y0;
+            double t = t0;
+
+            ///
+         
+            double dt = 0.001;
+
+            ClaseVector cv = new();
+
+            
+            do
+            {
+                cv.Xo = t;
+                double k1 = h * RungeKutta(t, y, k, M);
+                double k2 = h * RungeKutta(t + h / 2, y + k1 / 2, k, M);
+                double k3 = h * RungeKutta(t + h / 2, y + k2 / 2, k, M);
+                double k4 = h * RungeKutta(t + h, y + k3, k, M);
+                y += (1.0 / 6.0) * (k1 + 2 * k2 + 2 * k3 + k4);
+
+                cv.Yo = y;
+                cv.color0 = Color.Red;
+                cv.Encender(pixelVec);
+
+                t += h;
+               
+            } while (t < tf);
+        
+            ptbPixel.Image = pixelVec;
+
+
         }
     }
 }

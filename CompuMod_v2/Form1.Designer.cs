@@ -29,6 +29,8 @@ namespace CompuMod_v2
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label1 = new System.Windows.Forms.Label();
             this.ptbPixel = new System.Windows.Forms.PictureBox();
             this.btnEncender = new System.Windows.Forms.Button();
@@ -75,6 +77,9 @@ namespace CompuMod_v2
             this.AnimFourier = new System.Windows.Forms.Button();
             this.btnRungeKut = new System.Windows.Forms.Button();
             this.dgvRunge1 = new System.Windows.Forms.DataGridView();
+            this.Tiempo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Enfermos = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnGrafRunge = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.ptbPixel)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvRunge1)).BeginInit();
@@ -534,11 +539,38 @@ namespace CompuMod_v2
             // dgvRunge1
             // 
             this.dgvRunge1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvRunge1.Location = new System.Drawing.Point(30, 58);
+            this.dgvRunge1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Tiempo,
+            this.Enfermos});
+            this.dgvRunge1.Location = new System.Drawing.Point(1, 45);
             this.dgvRunge1.Name = "dgvRunge1";
             this.dgvRunge1.RowTemplate.Height = 25;
-            this.dgvRunge1.Size = new System.Drawing.Size(404, 282);
+            this.dgvRunge1.Size = new System.Drawing.Size(43, 500);
             this.dgvRunge1.TabIndex = 43;
+            // 
+            // Tiempo
+            // 
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.SteelBlue;
+            this.Tiempo.DefaultCellStyle = dataGridViewCellStyle1;
+            this.Tiempo.HeaderText = "Tiempo";
+            this.Tiempo.Name = "Tiempo";
+            // 
+            // Enfermos
+            // 
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.IndianRed;
+            this.Enfermos.DefaultCellStyle = dataGridViewCellStyle2;
+            this.Enfermos.HeaderText = "Enfermos";
+            this.Enfermos.Name = "Enfermos";
+            // 
+            // btnGrafRunge
+            // 
+            this.btnGrafRunge.Location = new System.Drawing.Point(623, 221);
+            this.btnGrafRunge.Name = "btnGrafRunge";
+            this.btnGrafRunge.Size = new System.Drawing.Size(75, 23);
+            this.btnGrafRunge.TabIndex = 44;
+            this.btnGrafRunge.Text = "GráficaRunge";
+            this.btnGrafRunge.UseVisualStyleBackColor = true;
+            this.btnGrafRunge.Click += new System.EventHandler(this.btnGrafRunge_Click);
             // 
             // btnTaylor1
             // 
@@ -546,6 +578,7 @@ namespace CompuMod_v2
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.InactiveCaption;
             this.ClientSize = new System.Drawing.Size(784, 660);
+            this.Controls.Add(this.btnGrafRunge);
             this.Controls.Add(this.dgvRunge1);
             this.Controls.Add(this.btnRungeKut);
             this.Controls.Add(this.AnimFourier);
@@ -648,6 +681,9 @@ namespace CompuMod_v2
         private System.Windows.Forms.Button AnimFourier;
         private System.Windows.Forms.Button btnRungeKut;
         private System.Windows.Forms.DataGridView dgvRunge1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Tiempo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Enfermos;
+        private System.Windows.Forms.Button btnGrafRunge;
     }
 }
 
