@@ -1886,7 +1886,7 @@ namespace CompuMod_v2
             double tp, dtp;
             tp = 0.5;
             dtp = 0.007; //Velocidad
-            cuer.t = 3.37;
+            //cuer.t = 3.37;
             do
             {
                 cuer.t = tp;
@@ -1911,7 +1911,7 @@ namespace CompuMod_v2
 
             // Parámetros y condiciones iniciales
             double k = 0.001;
-            double M = 500; //Población 
+            double M = 989; //Población 
             double h = 1.0;
 
             double t0 = 0;
@@ -1919,7 +1919,7 @@ namespace CompuMod_v2
             //double tf = 10;
 
             //tiempo final(tf) = número de interaciones 
-            int tf = 20;
+            int tf = 30;
 
    
             double y = y0;
@@ -1961,11 +1961,11 @@ namespace CompuMod_v2
         private void btnGrafRunge_Click(object sender, EventArgs e)
         {
             double k = 0.001;
-            double M = 500; //Población 
+            double M = 989; //Población 
             double h = 0.01;//1.0;
             double t0 = 0;
             double y0 = 1;
-            int tf = 20;
+            int tf = 30;
             double y = y0;
             double t = t0;
 
@@ -1994,6 +1994,50 @@ namespace CompuMod_v2
             } while (t < tf);
         
             ptbPixel.Image = pixelVec;
+
+
+        }
+
+        private void btnPracPP3_Click(object sender, EventArgs e)
+        {
+            //ClaseCuerda cc = new();
+            //cc.GrafPracZ(pixelVec);
+            //ptbPixel.Image = pixelVec;
+
+            //Animation
+            //double tp = 0.5; //saltos de iteracion
+            //double dtp = 0.005; //velocidad
+            //do
+            //{
+            //    cc.t = tp;
+            //    cc.GrafPracZ(pixelVec);
+            //    ptbPixel.Image = pixelVec;
+            //    tp += dtp;
+            //    System.Windows.Forms.Application.DoEvents();
+            //    cc.ApagGrafPracZ(pixelVec);
+            //    ptbPixel.Image = pixelVec;
+            //} while (tp <= 30);
+
+            ///Interferencia 11
+            ClaseOnda co = new ClaseOnda();
+            co.w = 1.5;  //Inversamente propocional a la longitud de onda
+            co.v = 9.3;
+            co.m = 1;
+            co.t = 1.2;
+            //co.PractPP3(pixelVec);
+            //ptbPixel.Image = pixelVec;
+
+            //Animación
+            double tp = 0;
+            double dtp = 0.05; // velocidad de la animacion
+            do
+            {
+                co.t = tp;
+                co.PractPP3(pixelVec);
+                ptbPixel.Image = pixelVec;
+                System.Windows.Forms.Application.DoEvents(); //Procesa mensajes pendientes
+                tp += dtp;
+            } while (tp <= 2);
 
 
         }

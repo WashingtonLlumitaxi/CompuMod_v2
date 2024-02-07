@@ -80,6 +80,7 @@ namespace CompuMod_v2
             this.Tiempo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Enfermos = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnGrafRunge = new System.Windows.Forms.Button();
+            this.btnPracPP3 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.ptbPixel)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvRunge1)).BeginInit();
@@ -528,7 +529,7 @@ namespace CompuMod_v2
             // 
             // btnRungeKut
             // 
-            this.btnRungeKut.Location = new System.Drawing.Point(704, 191);
+            this.btnRungeKut.Location = new System.Drawing.Point(704, 221);
             this.btnRungeKut.Name = "btnRungeKut";
             this.btnRungeKut.Size = new System.Drawing.Size(75, 23);
             this.btnRungeKut.TabIndex = 42;
@@ -545,7 +546,7 @@ namespace CompuMod_v2
             this.dgvRunge1.Location = new System.Drawing.Point(1, 45);
             this.dgvRunge1.Name = "dgvRunge1";
             this.dgvRunge1.RowTemplate.Height = 25;
-            this.dgvRunge1.Size = new System.Drawing.Size(43, 500);
+            this.dgvRunge1.Size = new System.Drawing.Size(12, 500);
             this.dgvRunge1.TabIndex = 43;
             // 
             // Tiempo
@@ -572,12 +573,23 @@ namespace CompuMod_v2
             this.btnGrafRunge.UseVisualStyleBackColor = true;
             this.btnGrafRunge.Click += new System.EventHandler(this.btnGrafRunge_Click);
             // 
+            // btnPracPP3
+            // 
+            this.btnPracPP3.Location = new System.Drawing.Point(704, 190);
+            this.btnPracPP3.Name = "btnPracPP3";
+            this.btnPracPP3.Size = new System.Drawing.Size(75, 23);
+            this.btnPracPP3.TabIndex = 45;
+            this.btnPracPP3.Text = "PracPP3";
+            this.btnPracPP3.UseVisualStyleBackColor = true;
+            this.btnPracPP3.Click += new System.EventHandler(this.btnPracPP3_Click);
+            // 
             // btnTaylor1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.InactiveCaption;
             this.ClientSize = new System.Drawing.Size(784, 660);
+            this.Controls.Add(this.btnPracPP3);
             this.Controls.Add(this.btnGrafRunge);
             this.Controls.Add(this.dgvRunge1);
             this.Controls.Add(this.btnRungeKut);
@@ -684,6 +696,7 @@ namespace CompuMod_v2
         private System.Windows.Forms.DataGridViewTextBoxColumn Tiempo;
         private System.Windows.Forms.DataGridViewTextBoxColumn Enfermos;
         private System.Windows.Forms.Button btnGrafRunge;
+        private System.Windows.Forms.Button btnPracPP3;
     }
 }
 

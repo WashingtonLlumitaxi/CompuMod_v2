@@ -77,5 +77,63 @@ namespace CompuMod_v2
                 x = x + dx;
             } while (x <= 4);
         }
+
+        ////Practica PP3
+        //public void GraficoPP3(Bitmap pixelVec)
+        //{
+        //    double x = 0;
+        //    double y = 0;
+        //    double dx = 0.0005;
+        //    ClaseVector3D cv3 = new();
+        //    cv3.color0 = Color.Black;
+        //    do
+        //    {
+
+        //        cv3.Xo = x;
+        //        cv3.Yo = y;
+        //        FourierC(y, out double fou);
+        //        cv3.Zo = fou;
+        //        cv3.Encender3D(pixelVec);
+        //        y = y + dx;
+
+        //    } while (y <= 6);
+        //}
+
+        //Dibuja el elemento en el eje Z
+        public void GrafPracZ(Bitmap pixelVec)
+        {
+            double x = 0;
+            double y = 0;
+            double dx = 0.002;
+            ClaseVector3D cv3 = new();
+            cv3.color0 = Color.Green;
+            do
+            {
+                cv3.Xo = x;
+                cv3.Yo = y;
+                FourierC(y, out double fou);
+                cv3.Zo = fou;
+                cv3.Encender3D(pixelVec);
+                y += dx;
+            } while (y <= 8);
+        }
+
+        public void ApagGrafPracZ(Bitmap pixelVec)
+        {
+            double x = 0;
+            double y = 0;
+            double dx = 0.002;
+            ClaseVector3D cv3 = new();
+            cv3.color0 = Color.White;
+            do
+            {
+                cv3.Xo = x;
+                cv3.Yo = y;
+                FourierC(y, out double fou);
+                cv3.Zo = fou;
+                cv3.Encender3D(pixelVec);
+                y += dx;
+            } while (y <= 8);
+        }
     }
 }

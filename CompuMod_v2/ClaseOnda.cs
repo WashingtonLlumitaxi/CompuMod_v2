@@ -61,7 +61,6 @@ namespace CompuMod_v2
             //PaletaOndaNew();
             Color c;
 
-
             for (int i = 0; i < 600; i++)
             {
                 for (int j = 0; j < 500; j++)
@@ -406,6 +405,60 @@ namespace CompuMod_v2
              
             }
             return datosMatriz;
+        }
+
+
+
+        public void PractPP3(Bitmap pixelVec)
+        {
+            double x, y, z, z1, z2, z3, z4, z5, z6, z7, z8, z9, z10, z11;
+            int color0;
+            ColoresPaleta();
+            //PaletaOndaNew();
+            Color c;
+
+            for (int i = 0; i < 600; i++)
+            {
+                for (int j = 0; j < 500; j++)
+                {
+                    Transforma(i, j, out x, out y);
+
+                    //z1 = w * (Math.Sqrt((x + 5) * (x + 5) + (y - (-2)) * (y - (-2))) - v * t); //Fuente 1
+                    //z2 = w * (Math.Sqrt((x + 5) * (x + 5) + (y - 2) * (y - 2)) - v * t); //Fuente 2
+                    ////POSICION (2.3 , 0.4)
+                    //z3 = w * (Math.Sqrt((x - 2.3) * (x - 2.3) + (y - 0.4) * (y - 0.4)) - v * t);
+                    z1 = w * (Math.Sqrt((x + 5) * (x + 5) + (y + 5) * (y + 5)) - (v * t));
+                    z2 = w * (Math.Sqrt((x + 4) * (x + 4) + (y + 4) * (y + 4)) - (v * t));
+                    z3 = w * (Math.Sqrt((x + 3) * (x + 3) + (y + 3) * (y + 3)) - (v * t));
+
+                    z4 = w * (Math.Sqrt((x + 2) * (x + 2) + (y + 2) * (y + 2)) - (v * t));
+                    z5 = w * (Math.Sqrt((x + 1) * (x + 1) + (y + 1) * (y + 1)) - (v * t));
+                    z6 = w * (Math.Sqrt((x + 0) * (x + 0) + (y + 0) * (y + 0)) - (v * t));
+                    z7 = w * (Math.Sqrt((x - 1) * (x - 1) + (y - 1) * (y - 1)) - (v * t));
+                    z8 = w * (Math.Sqrt((x - 1) * (x - 1) + (y - 1) * (y - 1)) - (v * t));
+                    z9 = w * (Math.Sqrt((x - 3) * (x - 3) + (y - 3) * (y - 3)) - (v * t));
+                    z10 = w * (Math.Sqrt((x - 4) * (x - 4) + (y - 4) * (y - 4)) - (v * t));
+                    z11 = w * (Math.Sqrt((x - 5) * (x - 5) + (y - 5) * (y - 5)) - (v * t));
+
+
+                    z1 = Math.Sin(z1) + 1;
+                    z2 = Math.Sin(z2) + 1;
+                    z3 = Math.Sin(z3) + 1;
+                    z4 = Math.Sin(z4) + 1;
+                    z5 = Math.Sin(z5) + 1;
+                    z6 = Math.Sin(z6) + 1;
+                    z7 = Math.Sin(z7) + 1;
+                    z8 = Math.Sin(z8) + 1;
+                    z9 = Math.Sin(z9) + 1;
+                    z10 = Math.Sin(z10) + 1;
+                    z11 = Math.Sin(z11) + 1;
+
+                    z = z1 + z2 + z3 + z4 + z5 + z6+ z7 + z8 + z9 + z10 + z11;
+                    color0 = (int)(z * 0.6818);
+                    c = paleta0[color0];
+                    pixelVec.SetPixel(i, j, c);
+                }
+            }
         }
 
     }
