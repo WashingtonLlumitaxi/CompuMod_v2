@@ -25,7 +25,7 @@ namespace CompuMod_v2
         {
             double ak, bk, sumF, c;//c variable de elasticidad
             c = 1;
-            int k = 0;
+            int k = 5;
             sumF = 0;
             //t = 0.76;
             //t = 3.37;
@@ -34,9 +34,9 @@ namespace CompuMod_v2
             do
             {
                 k = k + 1;
-                ak = (0.11) * (4 * F(2) * Math.Sin(k * Math.PI * 0.5) + F(4) * Math.Sin(k * Math.PI));   //el 0.33 es de la divisiond de 2/6 de la formula de sipmson
+                ak = (0.11) * (4 * F(3.75) * Math.Sin(k * Math.PI * 0.5) + F(3.75) * Math.Sin(k * Math.PI));   //el 0.33 es de la divisiond de 2/6 de la formula de sipmson
                 ak = ak *  0.5;
-                bk = (0.11) * (4 * G(2) * Math.Sin(k * Math.PI * 0.5) + G(4) * Math.Sin(k * Math.PI));
+                bk = (0.11) * (4 * G(2.15) * Math.Sin(k * Math.PI * 0.5) + G(2.15) * Math.Sin(k * Math.PI));
                 bk = bk * (2 / (k * Math.PI * c));
                 sumF = sumF + (ak * Math.Cos((k * Math.PI * c * t) / 4) + bk * Math.Sin((k * Math.PI * c * t) / 4)) * Math.Sin((k * Math.PI * x) / 4);
 

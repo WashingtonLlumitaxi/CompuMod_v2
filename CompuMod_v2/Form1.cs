@@ -1911,7 +1911,7 @@ namespace CompuMod_v2
 
             // Parámetros y condiciones iniciales
             double k = 0.001;
-            double M = 989; //Población 
+            double M = 503; //Población 
             double h = 1.0;
 
             double t0 = 0;
@@ -1935,12 +1935,14 @@ namespace CompuMod_v2
             //for (int i = 0; i < tf; i++)
             do
             {
-                // Cálculos del Runge-Kutta
+                //Cálculos del Runge - Kutta
                 double k1 = h * RungeKutta(t, y, k, M);
                 double k2 = h * RungeKutta(t + h / 2, y + k1 / 2, k, M);
                 double k3 = h * RungeKutta(t + h / 2, y + k2 / 2, k, M);
                 double k4 = h * RungeKutta(t + h, y + k3, k, M);
+
                 y += (1.0 / 6.0) * (k1 + 2 * k2 + 2 * k3 + k4);
+                //y = M / (1 + (M - k / k) * Math.Pow(Math.E, -M * k * t));
                 t += h;
 
                 resultados[i, 0] = t;
@@ -1961,7 +1963,7 @@ namespace CompuMod_v2
         private void btnGrafRunge_Click(object sender, EventArgs e)
         {
             double k = 0.001;
-            double M = 989; //Población 
+            double M = 503; //Población 
             double h = 0.01;//1.0;
             double t0 = 0;
             double y0 = 1;
@@ -2039,6 +2041,94 @@ namespace CompuMod_v2
                 tp += dtp;
             } while (tp <= 2);
 
+
+        }
+
+        private void btnModAn_Click(object sender, EventArgs e)
+        {
+
+            // Parámetros y condiciones iniciales
+            double k = 0.001;
+            double M = 503; //Población 
+            double h = 1.0;
+
+            double t0 = 0;
+            double y0 = 1;
+            //double tf = 10;
+
+            //tiempo final(tf) = número de interaciones 
+            int tf = 30;
+
+
+            double y = y0;
+            double t = t0;
+
+            double[,] resultados = new double[tf + 1, 2];
+
+            resultados[0, 0] = t;
+            resultados[0, 1] = y;
+
+            //Bucle de datos
+            int i = 0;
+            //for (int i = 0; i < tf; i++)
+            do
+            {
+                y = M / (1 + (M - k / k) * Math.Pow(Math.E, -M * k * t));
+                t += h;
+
+                resultados[i, 0] = t;
+                resultados[i, 1] = y;
+                i++;
+            } while (i < tf);
+
+            dgvAnalitico.Columns.Add("Tiempo", "Tiempo");
+            dgvAnalitico.Columns.Add("Enfermos", "Enfermos");
+
+            //Mostrar datos de la matriz 
+            for (int j = 0; j <= tf; j++)
+            {
+                dgvAnalitico.Rows.Add(resultados[j, 0], resultados[j, 1]);
+            }
+
+        }
+
+        private void btnGrafAn_Click(object sender, EventArgs e)
+        {
+            double k = 0.001;
+            double M = 503; //Población 
+            double h = 0.01;//1.0;
+            double t0 = 0;
+            double y0 = 1;
+            int tf = 30;
+            double y = y0;
+            double t = t0;
+
+            ///
+
+            double dt = 0.001;
+
+            ClaseVector cv = new();
+
+
+            do
+            {
+                cv.Xo = t;
+                //double k1 = h * RungeKutta(t, y, k, M);
+                //double k2 = h * RungeKutta(t + h / 2, y + k1 / 2, k, M);
+                //double k3 = h * RungeKutta(t + h / 2, y + k2 / 2, k, M);
+                //double k4 = h * RungeKutta(t + h, y + k3, k, M);
+                //y += (1.0 / 6.0) * (k1 + 2 * k2 + 2 * k3 + k4);
+                y = M / (1 + (M - k / k) * Math.Pow(Math.E, -M * k * t));
+
+                cv.Yo = y;
+                cv.color0 = Color.Blue;
+                cv.Encender(pixelVec);
+
+                t += h;
+
+            } while (t < tf);
+
+            ptbPixel.Image = pixelVec;
 
         }
     }
