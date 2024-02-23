@@ -90,6 +90,9 @@ namespace CompuMod_v2
             this.btnGrafAn = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
+            this.PracExPP1 = new System.Windows.Forms.Button();
+            this.btn_P_PP2 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.ptbPixel)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvRunge1)).BeginInit();
@@ -197,7 +200,7 @@ namespace CompuMod_v2
             // 
             // btnRectas
             // 
-            this.btnRectas.Location = new System.Drawing.Point(618, 143);
+            this.btnRectas.Location = new System.Drawing.Point(628, 278);
             this.btnRectas.Name = "btnRectas";
             this.btnRectas.Size = new System.Drawing.Size(75, 23);
             this.btnRectas.TabIndex = 10;
@@ -391,7 +394,7 @@ namespace CompuMod_v2
             // 
             // btn3d_1
             // 
-            this.btn3d_1.Location = new System.Drawing.Point(791, 45);
+            this.btn3d_1.Location = new System.Drawing.Point(628, 45);
             this.btn3d_1.Name = "btn3d_1";
             this.btn3d_1.Size = new System.Drawing.Size(75, 23);
             this.btn3d_1.TabIndex = 28;
@@ -411,7 +414,7 @@ namespace CompuMod_v2
             // 
             // btn3D_2
             // 
-            this.btn3D_2.Location = new System.Drawing.Point(791, 75);
+            this.btn3D_2.Location = new System.Drawing.Point(628, 75);
             this.btn3D_2.Name = "btn3D_2";
             this.btn3D_2.Size = new System.Drawing.Size(75, 23);
             this.btn3D_2.TabIndex = 30;
@@ -421,7 +424,7 @@ namespace CompuMod_v2
             // 
             // btnPlano3D
             // 
-            this.btnPlano3D.Location = new System.Drawing.Point(872, 45);
+            this.btnPlano3D.Location = new System.Drawing.Point(709, 45);
             this.btnPlano3D.Name = "btnPlano3D";
             this.btnPlano3D.Size = new System.Drawing.Size(75, 23);
             this.btnPlano3D.TabIndex = 31;
@@ -431,7 +434,7 @@ namespace CompuMod_v2
             // 
             // btnOnda_1
             // 
-            this.btnOnda_1.Location = new System.Drawing.Point(872, 74);
+            this.btnOnda_1.Location = new System.Drawing.Point(709, 74);
             this.btnOnda_1.Name = "btnOnda_1";
             this.btnOnda_1.Size = new System.Drawing.Size(75, 23);
             this.btnOnda_1.TabIndex = 32;
@@ -441,7 +444,7 @@ namespace CompuMod_v2
             // 
             // btnInterf_1
             // 
-            this.btnInterf_1.Location = new System.Drawing.Point(791, 191);
+            this.btnInterf_1.Location = new System.Drawing.Point(628, 191);
             this.btnInterf_1.Name = "btnInterf_1";
             this.btnInterf_1.Size = new System.Drawing.Size(75, 23);
             this.btnInterf_1.TabIndex = 33;
@@ -451,7 +454,7 @@ namespace CompuMod_v2
             // 
             // btnGraf3D1
             // 
-            this.btnGraf3D1.Location = new System.Drawing.Point(791, 133);
+            this.btnGraf3D1.Location = new System.Drawing.Point(628, 133);
             this.btnGraf3D1.Name = "btnGraf3D1";
             this.btnGraf3D1.Size = new System.Drawing.Size(75, 23);
             this.btnGraf3D1.TabIndex = 34;
@@ -461,7 +464,7 @@ namespace CompuMod_v2
             // 
             // btnGraf3d2
             // 
-            this.btnGraf3d2.Location = new System.Drawing.Point(791, 162);
+            this.btnGraf3d2.Location = new System.Drawing.Point(628, 162);
             this.btnGraf3d2.Name = "btnGraf3d2";
             this.btnGraf3d2.Size = new System.Drawing.Size(75, 23);
             this.btnGraf3d2.TabIndex = 35;
@@ -499,7 +502,7 @@ namespace CompuMod_v2
             // 
             // btnO1
             // 
-            this.btnO1.Location = new System.Drawing.Point(791, 104);
+            this.btnO1.Location = new System.Drawing.Point(628, 104);
             this.btnO1.Name = "btnO1";
             this.btnO1.Size = new System.Drawing.Size(75, 23);
             this.btnO1.TabIndex = 38;
@@ -509,7 +512,7 @@ namespace CompuMod_v2
             // 
             // btn3dInf
             // 
-            this.btn3dInf.Location = new System.Drawing.Point(872, 103);
+            this.btn3dInf.Location = new System.Drawing.Point(709, 103);
             this.btn3dInf.Name = "btn3dInf";
             this.btn3dInf.Size = new System.Drawing.Size(75, 23);
             this.btn3dInf.TabIndex = 39;
@@ -519,7 +522,7 @@ namespace CompuMod_v2
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(872, 133);
+            this.button2.Location = new System.Drawing.Point(709, 133);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(75, 23);
             this.button2.TabIndex = 40;
@@ -529,7 +532,7 @@ namespace CompuMod_v2
             // 
             // AnimFourier
             // 
-            this.AnimFourier.Location = new System.Drawing.Point(872, 162);
+            this.AnimFourier.Location = new System.Drawing.Point(709, 162);
             this.AnimFourier.Name = "AnimFourier";
             this.AnimFourier.Size = new System.Drawing.Size(75, 23);
             this.AnimFourier.TabIndex = 41;
@@ -539,7 +542,7 @@ namespace CompuMod_v2
             // 
             // btnRungeKut
             // 
-            this.btnRungeKut.Location = new System.Drawing.Point(618, 45);
+            this.btnRungeKut.Location = new System.Drawing.Point(628, 220);
             this.btnRungeKut.Name = "btnRungeKut";
             this.btnRungeKut.Size = new System.Drawing.Size(75, 23);
             this.btnRungeKut.TabIndex = 42;
@@ -553,10 +556,10 @@ namespace CompuMod_v2
             this.dgvRunge1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Tiempo,
             this.Enfermos});
-            this.dgvRunge1.Location = new System.Drawing.Point(12, 65);
+            this.dgvRunge1.Location = new System.Drawing.Point(872, 238);
             this.dgvRunge1.Name = "dgvRunge1";
             this.dgvRunge1.RowTemplate.Height = 25;
-            this.dgvRunge1.Size = new System.Drawing.Size(237, 219);
+            this.dgvRunge1.Size = new System.Drawing.Size(72, 219);
             this.dgvRunge1.TabIndex = 43;
             // 
             // Tiempo
@@ -575,7 +578,7 @@ namespace CompuMod_v2
             // 
             // btnGrafRunge
             // 
-            this.btnGrafRunge.Location = new System.Drawing.Point(616, 184);
+            this.btnGrafRunge.Location = new System.Drawing.Point(708, 219);
             this.btnGrafRunge.Name = "btnGrafRunge";
             this.btnGrafRunge.Size = new System.Drawing.Size(75, 23);
             this.btnGrafRunge.TabIndex = 44;
@@ -585,7 +588,7 @@ namespace CompuMod_v2
             // 
             // btnPracPP3
             // 
-            this.btnPracPP3.Location = new System.Drawing.Point(872, 190);
+            this.btnPracPP3.Location = new System.Drawing.Point(709, 190);
             this.btnPracPP3.Name = "btnPracPP3";
             this.btnPracPP3.Size = new System.Drawing.Size(75, 23);
             this.btnPracPP3.TabIndex = 45;
@@ -599,10 +602,10 @@ namespace CompuMod_v2
             this.dgvAnalitico.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn1,
             this.dataGridViewTextBoxColumn2});
-            this.dgvAnalitico.Location = new System.Drawing.Point(12, 325);
+            this.dgvAnalitico.Location = new System.Drawing.Point(872, 429);
             this.dgvAnalitico.Name = "dgvAnalitico";
             this.dgvAnalitico.RowTemplate.Height = 25;
-            this.dgvAnalitico.Size = new System.Drawing.Size(237, 219);
+            this.dgvAnalitico.Size = new System.Drawing.Size(72, 219);
             this.dgvAnalitico.TabIndex = 46;
             // 
             // dataGridViewTextBoxColumn1
@@ -621,7 +624,7 @@ namespace CompuMod_v2
             // 
             // btnModAn
             // 
-            this.btnModAn.Location = new System.Drawing.Point(618, 75);
+            this.btnModAn.Location = new System.Drawing.Point(628, 249);
             this.btnModAn.Name = "btnModAn";
             this.btnModAn.Size = new System.Drawing.Size(75, 23);
             this.btnModAn.TabIndex = 47;
@@ -631,7 +634,7 @@ namespace CompuMod_v2
             // 
             // btnGrafAn
             // 
-            this.btnGrafAn.Location = new System.Drawing.Point(618, 213);
+            this.btnGrafAn.Location = new System.Drawing.Point(709, 249);
             this.btnGrafAn.Name = "btnGrafAn";
             this.btnGrafAn.Size = new System.Drawing.Size(75, 23);
             this.btnGrafAn.TabIndex = 48;
@@ -643,7 +646,7 @@ namespace CompuMod_v2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI Black", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label2.Location = new System.Drawing.Point(63, 305);
+            this.label2.Location = new System.Drawing.Point(863, 427);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(123, 17);
             this.label2.TabIndex = 49;
@@ -653,18 +656,50 @@ namespace CompuMod_v2
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Segoe UI Black", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label3.Location = new System.Drawing.Point(73, 47);
+            this.label3.Location = new System.Drawing.Point(872, 216);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(87, 17);
             this.label3.TabIndex = 50;
             this.label3.Text = "Runge-Kutta";
+            // 
+            // PracExPP1
+            // 
+            this.PracExPP1.Location = new System.Drawing.Point(709, 278);
+            this.PracExPP1.Name = "PracExPP1";
+            this.PracExPP1.Size = new System.Drawing.Size(75, 23);
+            this.PracExPP1.TabIndex = 51;
+            this.PracExPP1.Text = "PraPP";
+            this.PracExPP1.UseVisualStyleBackColor = true;
+            this.PracExPP1.Click += new System.EventHandler(this.PracExPP1_Click);
+            // 
+            // btn_P_PP2
+            // 
+            this.btn_P_PP2.Location = new System.Drawing.Point(628, 307);
+            this.btn_P_PP2.Name = "btn_P_PP2";
+            this.btn_P_PP2.Size = new System.Drawing.Size(75, 23);
+            this.btn_P_PP2.TabIndex = 52;
+            this.btn_P_PP2.Text = "P_PP2";
+            this.btn_P_PP2.UseVisualStyleBackColor = true;
+            this.btn_P_PP2.Click += new System.EventHandler(this.btn_P_PP2_Click);
+            // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(708, 306);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(75, 23);
+            this.button3.TabIndex = 53;
+            this.button3.Text = "Exa";
+            this.button3.UseVisualStyleBackColor = true;
             // 
             // btnTaylor1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.InactiveCaption;
-            this.ClientSize = new System.Drawing.Size(703, 557);
+            this.ClientSize = new System.Drawing.Size(795, 652);
+            this.Controls.Add(this.button3);
+            this.Controls.Add(this.btn_P_PP2);
+            this.Controls.Add(this.PracExPP1);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.btnGrafAn);
@@ -786,6 +821,9 @@ namespace CompuMod_v2
         private System.Windows.Forms.Button btnGrafAn;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Button PracExPP1;
+        private System.Windows.Forms.Button btn_P_PP2;
+        private System.Windows.Forms.Button button3;
     }
 }
 

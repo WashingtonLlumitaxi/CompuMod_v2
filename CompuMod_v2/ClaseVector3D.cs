@@ -14,22 +14,6 @@ namespace CompuMod_v2
         double ax, ay;
         int sx, sy;
 
-        //public int sx1 = 0;
-        //public int sx2 = 600;
-        //public int sy1 = 0;
-        //public int sy2 = 500;
-        ////public double x1 = -8;
-        ////public double x2 = 8;
-        ////public double y1 = -6.15;
-        ////public double y2 = 6.15;
-        ////public double x1 = -1;//-1;//-8;
-        ////public double x2 = 3;//3; //8;
-        ////public double y1 = -3;//-3; //-6.15;
-        ////public double y2 = 3;//3;//6.15;
-        //public double Xo;
-        //public double Yo;
-        //public Color color0;
-
         public void Axonometrial(double x, double y, double z, out double ax, out double ay)
         {
             ax = x + (0.55) * y * Math.Cos(0.8);

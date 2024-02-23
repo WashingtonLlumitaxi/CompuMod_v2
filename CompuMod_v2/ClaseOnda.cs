@@ -124,19 +124,22 @@ namespace CompuMod_v2
                 {
                     Transforma(i, j, out x, out y);
 
-                    z1 = w * (Math.Sqrt((x + 5) * (x + 5) + (y - (-2)) * (y - (-2))) - v * t); //Fuente 1
-                    z2 = w * (Math.Sqrt((x + 5) * (x + 5) + (y - 2) * (y - 2)) - v * t); //Fuente 2
+                    z1 = w * (Math.Sqrt((x + 3) * (x + 3) + (y - (0)) * (y - (0))) - v * t); //Fuente 1
+                    z2 = w * (Math.Sqrt((x + 0) * (x + 0) + (y - 3) * (y - 3)) - v * t); //Fuente 2
                     //POSICION (2.3 , 0.4)
-                    z3 = w * (Math.Sqrt((x - 2.3) * (x - 2.3) + (y - 0.4) * (y - 0.4)) - v * t);
-           
+                    z3 = w * (Math.Sqrt((x - 3) * (x - 3) + (y - 0) * (y - 0)) - v * t);
+                    z4 = w * (Math.Sqrt((x - 0) * (x - 0) + (y + 3) * (y + 3)) - v * t);
+
 
                     z1 = Math.Sin(z1) + 1;
                     z2 = Math.Sin(z2) + 1;
                     z3 = Math.Sin(z3) + 1;
-                 
+                    z4 = Math.Sin(z4) + 1;
 
-                    z = z1 + z2 + z3;
-                    color0 = (int)(z * 2.5);
+
+                    z = z1 + z2 + z3 + z4;
+                    //(2.5 * 3) / 2; Regla de 3
+                    color0 = (int)(z * 1.87);
                     c = paleta0[color0];
                     pixelVec.SetPixel(i, j, c);
                 }
